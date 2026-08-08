@@ -1,6 +1,6 @@
 # IMPRESIVE website
 
-This repository contains the current dependency-free static website for the IMPRESIVE study-preparedness platform. Its scientific narrative and public-disclosure boundaries are aligned with the owner-approved `IMPRESIVE Sharing.pptx`; that source deck is not included in this public repository.
+This repository contains the current dependency-free static website for the IMPRESIVE study-preparedness platform.
 
 Repository documentation:
 
