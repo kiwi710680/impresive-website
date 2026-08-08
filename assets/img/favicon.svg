@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0063C3"/>
+      <stop offset="1" stop-color="#14B8A6"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#0A2540"/>
+  <!-- network of connected database nodes forming an upward path -->
+  <g stroke="url(#g)" stroke-width="2.4" fill="none" opacity="0.9">
+    <line x1="16" y1="46" x2="32" y2="32"/>
+    <line x1="32" y1="32" x2="48" y2="18"/>
+    <line x1="32" y1="32" x2="48" y2="44"/>
+    <line x1="16" y1="46" x2="30" y2="50"/>
+  </g>
+  <g fill="url(#g)">
+    <circle cx="16" cy="46" r="5"/>
+    <circle cx="32" cy="32" r="6"/>
+    <circle cx="48" cy="18" r="5"/>
+    <circle cx="48" cy="44" r="4.5"/>
+    <circle cx="30" cy="51" r="3.5"/>
+  </g>
+</svg>

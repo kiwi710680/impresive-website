@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="IMPRESIVE partner data environments and the four dimensions used to assess multi-database study readiness.">
+  <title>Data Partners &amp; Readiness | IMPRESIVE</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="databases">
+  <header class="site-header">
+    <noscript><div class="wrap noscript-nav"><a class="noscript-brand" href="index.html">IMPRESIVE</a><nav class="noscript-links" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="why.html">Why</a><a href="methods.html">How</a><a href="cases.html">Case</a><a href="evidence.html">Evidence</a><a href="databases.html">Partner</a><a href="join.html">Join</a></nav></div></noscript>
+  </header>
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap"><p class="crumb"><a href="index.html">Home</a> / Data partners &amp; readiness</p><p class="eyebrow">Partner context</p><h1>Different data environments, one readiness language</h1><p>IMPRESIVE connects national claims, hospital electronic records, and other approved data settings. Partners are described by research context and suitability—not ranked by database size.</p></div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-heading"><p class="eyebrow">Public partner overview</p><h2>Six data environments across four Asian settings</h2><p>Participation, data availability, and use in any future study remain subject to local governance and approvals.</p></div>
+        <div class="grid grid--3">
+          <article class="card partner"><span class="partner-code">NHIRD</span><div><h3>Taiwan</h3><p>National claims data environment supporting population-level healthcare utilization and outcomes research.</p><small>National claims</small></div></article>
+          <article class="card partner"><span class="partner-code">CGRD</span><div><h3>Taiwan</h3><p>Hospital electronic health record environment with clinical detail from the Chang Gung system.</p><small>Hospital EHR</small></div></article>
+          <article class="card partner"><span class="partner-code">NHIS</span><div><h3>South Korea</h3><p>National claims data environment used for population-based research in the Korean healthcare system.</p><small>National claims</small></div></article>
+          <article class="card partner"><span class="partner-code">HIRA</span><div><h3>South Korea</h3><p>Claims-based environment reflecting reimbursed healthcare services and supporting approved utilization and outcomes research.</p><small>National claims</small></div></article>
+          <article class="card partner"><span class="partner-code">DeSC</span><div><h3>Japan</h3><p>Claims data environment contributing a Japanese healthcare context to approved multi-database analyses.</p><small>Claims data</small></div></article>
+          <article class="card partner"><span class="partner-code">CDARS</span><div><h3>Hong Kong</h3><p>Hospital electronic record and reporting environment supporting research in Hong Kong clinical settings.</p><small>Hospital EHR</small></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="wrap">
+        <div class="section-heading"><p class="eyebrow">Four readiness questions</p><h2>A database is ready only in relation to a study</h2></div>
+        <div class="grid grid--4">
+          <article class="card readiness-card readiness-card--data"><h3>Data readiness</h3><p>Can the environment identify the target population, exposure, comparator, outcome, covariates, time zero, and follow-up?</p><ul><li>Variable availability</li><li>Coverage and observation time</li><li>Fit-for-purpose CDM status</li></ul></article>
+          <article class="card readiness-card readiness-card--method"><h3>Method readiness</h3><p>Can the common study design be implemented and checked consistently?</p><ul><li>Protocol and code lists</li><li>Variable definitions</li><li>QA and analysis programs</li></ul></article>
+          <article class="card readiness-card readiness-card--collaboration"><h3>Collaboration readiness</h3><p>Can the local team and governance processes support distributed research?</p><ul><li>Local PI and analysts</li><li>IRB and data-owner review</li><li>Output sharing and revision</li></ul></article>
+          <article class="card readiness-card readiness-card--interpretation"><h3>Interpretation readiness</h3><p>Can results be understood in their population and healthcare context?</p><ul><li>Coding and clinical practice</li><li>Coverage and comparability</li><li>Heterogeneity and transportability</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="survey-framework">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">The instrument behind the readiness check</p>
+          <h2>Eight source-data domains, assessed before any conversion begins</h2>
+          <p>The programme's source data survey classifies each required column as directly available, obtainable through derivation, or not available. The framework and its documented derivations are published below. Per-partner results are not — those belong in governed partner workflows.</p>
+        </div>
+        <div class="survey-matrix">
+          <table>
+            <caption>Source data survey framework: target domains, required columns, and derivations the programme documented</caption>
+            <thead><tr><th scope="col">Target domain</th><th scope="col">Required columns</th><th scope="col">Typical availability</th><th scope="col">Documented derivation where needed</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Demographic</th><td>Person identifier, sex, year of birth</td><td><span class="survey-flag survey-flag--direct">Usually direct</span></td><td>Document whether population descriptors are directly recorded or assumed; do not present an assumption as measured data.</td></tr>
+              <tr><th scope="row">Enrollment</th><td>Person identifier, enrollment date, disenrollment date</td><td><span class="survey-flag survey-flag--derived">Partly derived</span></td><td>Disenrollment commonly derived as the last date in the database or the death date.</td></tr>
+              <tr><th scope="row">Encounter</th><td>Person identifier, visit type, visit start and end dates</td><td><span class="survey-flag survey-flag--derived">Partly derived</span></td><td>Visit end date derived by adding hospitalized days where the source records only an admission date.</td></tr>
+              <tr><th scope="row">Diagnosis</th><td>Person identifier, diagnosis code, diagnosis date</td><td><span class="survey-flag survey-flag--direct">Usually direct</span></td><td>Coding systems differ by site — ICD-9-CM, ICD-10-CM, and KCD-7 all appear across the network.</td></tr>
+              <tr><th scope="row">Prescribing</th><td>Person identifier, drug code, treatment start and end dates</td><td><span class="survey-flag survey-flag--derived">Partly derived</span></td><td>Drug end date derived by adding drug days. Drug codes are typically domestic rather than international.</td></tr>
+              <tr><th scope="row">Procedure</th><td>Person identifier, procedure code, procedure date</td><td><span class="survey-flag survey-flag--direct">Usually direct</span></td><td>Procedure coding mixes international and domestic systems depending on the environment.</td></tr>
+              <tr><th scope="row">Laboratory result</th><td>Person identifier, laboratory data, examination date</td><td><span class="survey-flag survey-flag--derived">Varies by site</span></td><td>Availability differs substantially between claims and hospital record environments.</td></tr>
+              <tr><th scope="row">Death</th><td>Person identifier, death date, cause of death</td><td><span class="survey-flag survey-flag--derived">Varies by site</span></td><td>Cause of death is not available in every environment even where the death date is.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="survey-legend"><span class="survey-flag survey-flag--direct">Directly available in the source</span><span class="survey-flag survey-flag--derived">Requires derivation, calculation, or additional data</span></p>
+        <div class="callout callout--spaced">
+          <strong>Temporal granularity is a separate question.</strong>
+          <p>Two environments can both carry a diagnosis date and still be incompatible for a study, because one records exact dates and another records only the month. That distinction constrains exposure windows, outcome ascertainment, and analytic time windows, and it is assessed alongside the domains above.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section section--soft" id="readiness-check" data-readiness-assessment>
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Browser-only self-assessment</p>
+          <h2>Screen eight source-data domains before formal feasibility work</h2>
+          <p>This explanatory tool converts the source deck's data-survey domains into neutral text statuses and shows where a feasibility conversation would start. It does not certify a partner, replace study-specific review, or publish partner readiness.</p>
+        </div>
+
+        <div class="assessment-layout">
+          <form class="assessment-form" data-assessment-form>
+            <div class="assessment-grid">
+              <label class="assessment-item"><span><strong>Demographic</strong><small>Person identifier, sex, year of birth, and relevant population descriptors</small></span><select name="demographic"><option value="">Choose a status</option><option value="available">Available</option><option value="derivable">Derivable</option><option value="not-available">Not available</option><option value="not-known">Not yet known</option></select></label>
+              <label class="assessment-item"><span><strong>Enrollment</strong><small>Enrollment start and end dates or an approved observation-period analogue</small></span><select name="enrollment"><option value="">Choose a status</option><option value="available">Available</option><option value="derivable">Derivable</option><option value="not-available">Not available</option><option value="not-known">Not yet known</option></select></label>
+              <label class="assessment-item"><span><strong>Encounter</strong><small>Healthcare-visit type and visit start/end information</small></span><select name="encounter"><option value="">Choose a status</option><option value="available">Available</option><option value="derivable">Derivable</option><option value="not-available">Not available</option><option value="not-known">Not yet known</option></select></label>
+              <label class="assessment-item"><span><strong>Diagnosis</strong><small>Diagnosis codes and dates</small></span><select name="diagnosis"><option value="">Choose a status</option><option value="available">Available</option><option value="derivable">Derivable</option><option value="not-available">Not available</option><option value="not-known">Not yet known</option></select></label>
+              <label class="assessment-item"><span><strong>Prescribing</strong><small>Drug codes and treatment start/end information</small></span><select name="prescribing"><option value="">Choose a status</option><option value="available">Available</option><option value="derivable">Derivable</option><option value="not-available">Not available</option><option value="not-known">Not yet known</option></select></label>
+              <label class="assessment-item"><span><strong>Procedure</strong><small>Procedure codes and dates</small></span><select name="procedure"><option value="">Choose a status</option><option value="available">Available</option><option value="derivable">Derivable</option><option value="not-available">Not available</option><option value="not-known">Not yet known</option></select></label>
+              <label class="assessment-item"><span><strong>Laboratory result</strong><small>Laboratory data and examination dates</small></span><select name="laboratory-result"><option value="">Choose a status</option><option value="available">Available</option><option value="derivable">Derivable</option><option value="not-available">Not available</option><option value="not-known">Not yet known</option></select></label>
+              <label class="assessment-item"><span><strong>Death</strong><small>Death date and, where approved and available, cause of death</small></span><select name="death"><option value="">Choose a status</option><option value="available">Available</option><option value="derivable">Derivable</option><option value="not-available">Not available</option><option value="not-known">Not yet known</option></select></label>
+            </div>
+
+            <details class="assessment-context">
+              <summary>Add optional operational context</summary>
+              <div class="grid grid--2">
+                <label><span>Temporal granularity</span><textarea name="temporal-granularity" rows="3" placeholder="For example: exact dates, month-level, or year-level"></textarea></label>
+                <label><span>Governance or access constraints</span><textarea name="governance-constraints" rows="3" placeholder="Record only non-sensitive constraints"></textarea></label>
+                <label><span>Local analytic environment</span><textarea name="analytic-environment" rows="3" placeholder="For example: secure SAS environment"></textarea></label>
+              </div>
+            </details>
+
+            <div class="assessment-actions">
+              <button class="btn btn--primary" type="button" data-assessment-summarize>Summarize readiness</button>
+              <button class="btn btn--outline" type="button" data-assessment-copy disabled>Copy summary</button>
+              <button class="btn btn--outline" type="button" data-assessment-print disabled>Print summary</button>
+              <button class="btn btn--quiet-action" type="reset">Reset</button>
+            </div>
+          </form>
+
+          <aside class="assessment-summary" data-readiness-summary aria-live="polite" aria-atomic="true">
+            <p class="technical-label">Current summary</p>
+            <h3>Complete the domain review</h3>
+            <p>Choose one status for each domain, then generate a neutral feasibility summary.</p>
+          </aside>
+        </div>
+
+        <p class="privacy-note"><strong>Privacy:</strong> answers remain only in this browser tab's memory. The tool uses no storage, network submission, or analytics. Do not enter person-level data, credentials, internal QA findings, or other restricted information.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap grid grid--2">
+        <div><p class="eyebrow">Study-level decision</p><h2>Readiness is not a permanent badge</h2><p class="lead">The same data environment may be ready for one question and unsuitable for another. The decision must be revisited whenever the protocol, data period, definitions, or local environment changes.</p></div>
+        <div class="card"><h3>Minimum feasibility record</h3><ul><li>Question and intended use</li><li>Required populations, variables, and follow-up</li><li>Local source and transformation assumptions</li><li>Quality findings and unresolved limitations</li><li>Governance, disclosure, and execution constraints</li><li>Interpretation plan for expected differences</li></ul></div>
+      </div>
+    </section>
+
+    <section class="section section--dark">
+      <div class="wrap">
+        <div class="section-heading"><p class="eyebrow">Information boundaries</p><h2>Public summaries should not expose internal QA detail</h2><p>Public pages can explain data type, country context, and research suitability. Detailed conversion findings, availability matrices, quality exceptions, and operational notes belong in governed partner workflows.</p></div>
+        <div class="boundary">
+          <div class="yes"><h3>Appropriate for public pages</h3><ul><li>Data-source type and healthcare context</li><li>High-level research suitability</li><li>Readiness framework and definitions</li><li>Approved study or publication summaries</li></ul></div>
+          <div class="not-yet"><h3>Governed detail</h3><ul><li>Internal QA exceptions and remediation</li><li>Restricted variable-availability detail</li><li>Person-level or disclosure-sensitive outputs</li><li>Unapproved cohort counts or study status</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section"><div class="wrap"><div class="cta-band"><div><h2>Partner readiness needs an operating model</h2><p>See the programme roadmap and the distinct roles of PHDc, AsPEN, and IMPRESIVE.</p></div><a class="btn btn--light" href="about.html#alliance">Programme roles &amp; roadmap</a></div></div></section>
+  </main>
+  <footer class="site-footer"></footer>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/mascot.js" defer></script>
+  <script src="assets/js/enhancements.js" defer></script>
+</body>
+</html>

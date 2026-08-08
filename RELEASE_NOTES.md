@@ -1,0 +1,68 @@
+# IMPRESIVE website release notes
+
+## Repository handoff — 2026-08-08
+
+This release establishes the current IMPRESIVE static website as a standalone, maintainable source repository. It does not deploy the site or enable any server-side, member-only, or governed-data function.
+
+### Information architecture
+
+- Uses the visitor sequence Home → About → Why → How → Case → Evidence → Partner → Join.
+- Consolidates programme identity, roadmap, Impact, alliance roles, and governance under About.
+- Keeps Why and How distinct: Why explains the rationale for multinational studies; How explains the preparation and distributed-analysis workflow.
+- Retires Archive as a public content silo while retaining eight `noindex` compatibility redirects.
+- Preserves two detailed case narratives and three reviewable Evidence visualizations.
+
+### Data and evidence
+
+- Centralizes public figure data in `assets/data/results.json` (schema version 1).
+- Generates ASCVD, AD outcome, and AD/PN case-definition figures plus accessible data tables from the same source.
+- Preserves missing/not-reported values instead of converting them to zero.
+- Provides database filters, scale/disease/definition controls, deep links, and SVG/2x PNG downloads.
+- Fixes exported point-estimate markers and rotated axis labels by preserving SVG `translate`/`rotate` attributes and removing conflicting CSS transforms.
+
+### Interaction and accessibility
+
+- Adds keyboard-operable Impact, model-comparison, timeline, FAQ, ETL, and readiness interfaces.
+- Includes skip navigation, focus-visible treatment, no-JavaScript navigation fallback, minimum functional touch targets, reading progress, long-page contents aids, and accessible chart tables.
+- Honors `prefers-reduced-motion` and pauses off-screen or hidden-page mascot animation.
+- Retains one small mascot on compact viewports while limiting card mascots to approved scopes.
+
+### Visual system and identity
+
+- Uses an Amgen-blue structural axis with PHDc green as the restrained readiness/current accent.
+- Keeps the independent six-category evidence palette for database differentiation.
+- Preserves the inline LEGO mascot system, including `fig()`, `tower()`, `tile()`, presets, page scenes, header/footer injection, and card scopes.
+- Documents the effective token, contrast, typography, focus, motion, and governance contract in `brand-spec.md`.
+
+### Governance and participation
+
+- Identifies PHDc as the primary public contact and organizational bridge.
+- Keeps AsPEN as ecosystem/application context rather than the main website contact route.
+- Includes Korea HIRA in the public partner list.
+- Distinguishes public information from future governed functions and partner-only material.
+
+### Documentation and maintenance
+
+- Adds a repository README, architecture handoff report, maintenance manual, release notes, and a dependency-free validation script.
+- Adds repository exclusions for planning records, Graphify outputs, editor files, logs, and Python cache files.
+- Documents the intended canonical project URL separately from this source-repository location.
+
+### Verification completed
+
+- All JavaScript files pass `node --check`.
+- All 19 HTML files pass internal route, fragment, local-asset, and duplicate-ID validation.
+- `results.json` and `site.webmanifest` parse as JSON; `sitemap.xml` parses as XML.
+- No credential-like strings or private-key headers were found in release-scope files.
+- Graphify architecture extraction produced 298 nodes, 369 edges, and 30 communities; its graph-health gate reported no dangling, missing, self-loop, duplicate, or collapsed edges.
+
+### Deferred work
+
+- Additional owner-verified roadmap years and activities.
+- Integration of the prior project-visualization site after ownership, data source, hosting, and access boundaries are confirmed.
+- Downloadable protocols, code lists, QA materials, templates, and analytic modules after release approval.
+- Simulation lab, member authentication, proposal workflow, governed code repository, and evidence-to-decision dashboards on a centre-managed server.
+- A dedicated IMPRESIVE mailbox if later approved.
+
+### Compatibility
+
+No public route was removed without a redirect. This release does not introduce a build step or new runtime dependency.

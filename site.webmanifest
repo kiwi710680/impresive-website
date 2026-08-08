@@ -1,0 +1,17 @@
+{
+  "name": "IMPRESIVE — International Multi-database Study Preparedness",
+  "short_name": "IMPRESIVE",
+  "description": "Prepared databases, integrated evidence, and timely decisions through distributed international real-world evidence research.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f9fbfc",
+  "theme_color": "#0063c3",
+  "icons": [
+    {
+      "src": "assets/img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

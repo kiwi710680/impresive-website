@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "title": "IMPRESIVE Sharing.pptx",
+    "role": "Approved scientific source for public figures"
+  },
+  "databaseOrder": [
+    "NHIRD",
+    "CGRD",
+    "NHIS",
+    "HIRA",
+    "DeSC",
+    "CDARS"
+  ],
+  "databases": {
+    "NHIRD": {
+      "label": "NHIRD",
+      "country": "Taiwan",
+      "color": "#0063c3",
+      "marker": "circle"
+    },
+    "CGRD": {
+      "label": "CGRD",
+      "country": "Taiwan",
+      "color": "#2d746a",
+      "marker": "square"
+    },
+    "NHIS": {
+      "label": "NHIS",
+      "country": "South Korea",
+      "color": "#8a570f",
+      "marker": "triangle"
+    },
+    "HIRA": {
+      "label": "HIRA",
+      "country": "South Korea",
+      "color": "#6c5197",
+      "marker": "diamond",
+      "sourceMarker": "*"
+    },
+    "DeSC": {
+      "label": "DeSC",
+      "country": "Japan",
+      "color": "#9c3c67",
+      "marker": "cross"
+    },
+    "CDARS": {
+      "label": "CDARS",
+      "country": "Hong Kong",
+      "color": "#3f6f82",
+      "marker": "hexagon"
+    }
+  },
+  "figures": {
+    "ascvdRisk": {
+      "title": "Recurrent ASCVD risk in very-high-risk versus high-risk groups",
+      "sourceSlides": [
+        38
+      ],
+      "guideline": "2018 AHA/ACC/Multi-society Guideline",
+      "measure": "Hazard ratio",
+      "reference": 1,
+      "range": {
+        "lower": 1.2,
+        "upper": 1.6
+      },
+      "treatmentFinding": {
+        "lowerPercent": 18,
+        "upperPercent": 34,
+        "statement": "Treatment intensity does not match risk: 18% to 34% were prescribed high-intensity statins during hospitalization."
+      },
+      "interpretation": [
+        "Risk stratification was transferable across the represented East Asian settings.",
+        "The very-high-risk group remained clinically distinct.",
+        "Common-data-model results were broadly consistent overall.",
+        "Terminology mapping was the main source of distortion."
+      ],
+      "notReportedOnSourceSlide": [
+        "database-specific hazard ratios",
+        "confidence intervals for the reported programme-level range",
+        "analysis year",
+        "denominator"
+      ]
+    },
+    "adOutcomes": {
+      "title": "Atopic-dermatitis clinical outcome incidence rates",
+      "sourceSlides": [
+        53,
+        54
+      ],
+      "measure": "Incidence rate",
+      "unit": "events per person-year",
+      "databaseOrder": [
+        "NHIRD",
+        "CGRD",
+        "NHIS",
+        "DeSC",
+        "CDARS"
+      ],
+      "zeroValueNote": "The source slide reports zero values with zero-width confidence intervals for some database-outcome combinations. The underlying zero-event mechanism is not reported.",
+      "outcomes": [
+        {
+          "id": "ad-related-ip-er",
+          "label": "AD-related inpatient or emergency-room event",
+          "values": {
+            "NHIRD": {
+              "estimate": 0,
+              "lower": 0,
+              "upper": 0
+            },
+            "CGRD": {
+              "estimate": 0.06,
+              "lower": 0.05,
+              "upper": 0.07
+            },
+            "NHIS": {
+              "estimate": 0,
+              "lower": 0,
+              "upper": 0
+            },
+            "DeSC": {
+              "estimate": 0,
+              "lower": 0,
+              "upper": 0
+            },
+            "CDARS": {
+              "estimate": 0,
+              "lower": 0,
+              "upper": 0
+            }
+          }
+        },
+        {
+          "id": "complications",
+          "label": "Complications",
+          "values": {
+            "NHIRD": {
+              "estimate": 0.55,
+              "lower": 0.54,
+              "upper": 0.56
+            },
+            "CGRD": {
+              "estimate": 0.55,
+              "lower": 0.52,
+              "upper": 0.58
+            },
+            "NHIS": {
+              "estimate": 0.43,
+              "lower": 0.43,
+              "upper": 0.44
+            },
+            "DeSC": {
+              "estimate": 0.31,
+              "lower": 0.3,
+              "upper": 0.32
+            },
+            "CDARS": {
+              "estimate": 0.04,
+              "lower": 0.02,
+              "upper": 0.07
+            }
+          }
+        },
+        {
+          "id": "treatment-change",
+          "label": "Treatment change",
+          "values": {
+            "NHIRD": {
+              "estimate": 0.3,
+              "lower": 0.3,
+              "upper": 0.31
+            },
+            "CGRD": {
+              "estimate": 0.03,
+              "lower": 0.03,
+              "upper": 0.04
+            },
+            "NHIS": {
+              "estimate": 2.46,
+              "lower": 2.44,
+              "upper": 2.49
+            },
+            "DeSC": {
+              "estimate": 5.54,
+              "lower": 5.4,
+              "upper": 5.67
+            },
+            "CDARS": {
+              "estimate": 0.1,
+              "lower": 0.07,
+              "upper": 0.15
+            }
+          }
+        }
+      ],
+      "notReportedOnSourceSlide": [
+        "analysis year",
+        "database-specific denominator",
+        "reason for reported zero values"
+      ]
+    },
+    "caseDefinitionPrevalence": {
+      "title": "Adult 2020 AD and PN prevalence by case definition",
+      "sourceSlides": [
+        44,
+        45,
+        46,
+        47
+      ],
+      "measure": "Prevalence",
+      "unit": "percent",
+      "population": "Adults",
+      "year": 2020,
+      "databaseOrder": [
+        "NHIRD",
+        "CGRD",
+        "HIRA",
+        "DeSC",
+        "CDARS"
+      ],
+      "definitions": [
+        {
+          "id": "d1",
+          "shortLabel": "D1",
+          "label": "Any diagnosis"
+        },
+        {
+          "id": "d2",
+          "shortLabel": "D2",
+          "label": "Two diagnoses within 180 days"
+        },
+        {
+          "id": "d3",
+          "shortLabel": "D3",
+          "label": "Two diagnoses within 180 days plus systemic AD/PN medication",
+          "databaseSpecificNote": "For CDARS, D3 is any diagnosis plus systemic AD medication."
+        }
+      ],
+      "diseases": {
+        "AD": {
+          "label": "Atopic dermatitis",
+          "values": {
+            "NHIRD": {
+              "d1": 27.65,
+              "d2": 10.47,
+              "d3": 2.63
+            },
+            "CGRD": {
+              "d1": 4.13,
+              "d2": 3,
+              "d3": 1.52
+            },
+            "HIRA": {
+              "d1": 20.54,
+              "d2": 8.85,
+              "d3": 5.25
+            },
+            "DeSC": {
+              "d1": 48.63,
+              "d2": 13.21,
+              "d3": 2.69
+            },
+            "CDARS": {
+              "d1": 0.092,
+              "d2": null,
+              "d3": 0.004
+            }
+          }
+        },
+        "PN": {
+          "label": "Prurigo nodularis",
+          "values": {
+            "NHIRD": {
+              "d1": 1.67,
+              "d2": 0.71,
+              "d3": 0.35
+            },
+            "CGRD": {
+              "d1": 0.86,
+              "d2": 0.625,
+              "d3": 0.317
+            },
+            "HIRA": {
+              "d1": 2.69,
+              "d2": 1.31,
+              "d3": 0.69
+            },
+            "DeSC": {
+              "d1": 0.244,
+              "d2": 0.219,
+              "d3": 0.019
+            },
+            "CDARS": {
+              "d1": 0.085,
+              "d2": null,
+              "d3": 0.002
+            }
+          }
+        }
+      },
+      "nullValueLabel": "Not reported on the source slide",
+      "notReportedOnSourceSlides": [
+        "denominator",
+        "confidence intervals",
+        "explanation of the HIRA source marker"
+      ]
+    }
+  }
+}

@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Selected IMPRESIVE cross-national evidence cases, with auditable figures and study-specific interpretation boundaries.">
+  <title>Evidence | IMPRESIVE</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260808-svg-export-2">
+</head>
+<body data-page="visualization">
+  <header class="site-header">
+    <noscript><div class="wrap noscript-nav"><a class="noscript-brand" href="index.html">IMPRESIVE</a><nav class="noscript-links" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="why.html">Why</a><a href="methods.html">How</a><a href="cases.html">Case</a><a href="evidence.html">Evidence</a><a href="databases.html">Partner</a><a href="join.html">Join</a></nav></div></noscript>
+  </header>
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="crumb"><a href="index.html">Home</a> / Evidence</p>
+        <p class="eyebrow">Cross-national evidence</p>
+        <h1>Results need context, not just comparison</h1>
+        <p>These selected cases distinguish reported values, study-specific interpretation, and information that the approved source did not report. Every figure is generated from one reviewable local data file.</p>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Choose a case</p>
+          <h2>Evidence views from the IMPRESIVE programme</h2>
+          <p>This page owns approved result summaries. Methodology remains under <a href="methods.html">How</a>, partner descriptions remain under <a href="databases.html">Partner</a>, and unreleased tools remain on the <a href="about.html#programme-roadmap">programme roadmap</a>.</p>
+        </div>
+        <nav class="case-nav" aria-label="Evidence cases">
+          <a href="cases.html">← Case studies</a>
+          <a href="#ascvd">ASCVD risk and CDM concordance</a>
+          <a href="#ad-outcomes">AD clinical outcomes</a>
+          <a href="#case-definitions">AD / PN case definitions</a>
+          <a href="#legacy">Future visualization integration</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section" id="ascvd">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Case 01 · ASCVD</p>
+          <h2>Transferable risk stratification, with visible implementation limits</h2>
+          <p>The programme compared recurrent atherosclerotic cardiovascular disease risk and evaluated whether results remained consistent before and after common-data-model conversion.</p>
+        </div>
+
+        <div class="evidence-layout">
+          <figure class="evidence-figure" data-evidence-figure="ascvd">
+            <div class="figure-heading">
+              <div>
+                <p class="technical-label">Programme-level range</p>
+                <h3>Recurrent ASCVD hazard ratio</h3>
+              </div>
+              <a class="data-link" href="assets/data/results.json" download>Download figure data</a>
+            </div>
+            <p>The very-high-risk group had a reported hazard-ratio range of 1.2–1.6 relative to the high-risk group. The source slide did not report database-specific estimates or confidence intervals for this range.</p>
+            <p class="chart-status" data-chart-status role="status">Loading the evidence figure…</p>
+            <div class="chart-shell" data-chart-mount></div>
+            <noscript><p class="chart-error">JavaScript is needed to generate this chart and its accessible data table from <code>assets/data/results.json</code>.</p></noscript>
+            <figcaption>Hazard-ratio range reported under the 2018 AHA/ACC/Multi-society Guideline. The reference line represents the high-risk group.</figcaption>
+            <details class="figure-table">
+              <summary>View accessible data table</summary>
+              <div class="table-scroll" data-table-mount></div>
+            </details>
+          </figure>
+
+          <aside class="interpretation-note">
+            <h3>What the case supports</h3>
+            <ul>
+              <li>Risk stratification was transferable across the represented East Asian settings.</li>
+              <li>The very-high-risk group remained clinically distinct.</li>
+              <li>Common-data-model results were broadly consistent overall.</li>
+              <li>Terminology mapping was the main source of distortion.</li>
+            </ul>
+            <p><strong>Treatment finding:</strong> treatment intensity does not match risk: 18% to 34% were prescribed high-intensity statins during hospitalization.</p>
+            <p><strong>Interpretation rule:</strong> common models improve reproducibility, but they do not remove the need for fit-for-purpose validation in every database.</p>
+          </aside>
+        </div>
+
+        <dl class="figure-metadata">
+          <div><dt>Measure</dt><dd>Hazard ratio</dd></div>
+          <div><dt>Comparison</dt><dd>Very-high-risk versus high-risk groups</dd></div>
+
+        </dl>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="ad-outcomes">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Case 02 · Atopic dermatitis</p>
+          <h2>Three clinical outcomes across five data environments</h2>
+          <p>The approved deck reports incidence rates and confidence intervals for AD-related inpatient or emergency-room events, complications, and treatment change. HIRA is not shown because the source slide did not include HIRA in this outcome figure.</p>
+        </div>
+
+        <figure class="evidence-figure" data-evidence-figure="ad-outcomes">
+          <div class="figure-heading">
+            <div>
+              <p class="technical-label">Confidence-interval dot plot</p>
+              <h3>Reported incidence rates per person-year</h3>
+            </div>
+            <a class="data-link" href="assets/data/results.json" download>Download figure data</a>
+          </div>
+          <div class="chart-controls" data-chart-controls aria-label="AD outcome chart controls"></div>
+          <p class="chart-status" data-chart-status role="status">Loading the evidence figure…</p>
+          <div class="chart-shell chart-shell--wide" data-chart-mount></div>
+          <noscript><p class="chart-error">JavaScript is needed to generate this chart and its accessible data table from <code>assets/data/results.json</code>.</p></noscript>
+          <figcaption>Open markers in the separate “Reported 0” lane reproduce source-slide values of 0 (0–0). Their underlying zero-event mechanism is not reported, so the chart does not interpret them as absence of disease or risk.</figcaption>
+          <details class="figure-table">
+            <summary>View accessible data table</summary>
+            <div class="table-scroll" data-table-mount></div>
+          </details>
+        </figure>
+
+        <div class="interpretation-note interpretation-note--spaced">
+          <h3>Read the differences in context</h3>
+          <p>These rates are events per person-year, not a database scorecard. Population selection, coding, clinical practice, coverage, and implementation can all contribute to the spread. The source deck reports that the common-data-model approach was feasible in an additional therapeutic area and could accommodate flexible disease algorithms.</p>
+        </div>
+
+        <dl class="figure-metadata">
+          <div><dt>Measure</dt><dd>Incidence rate with confidence interval</dd></div>
+          <div><dt>Unit</dt><dd>Events per person-year</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" id="case-definitions">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Case-definition explorer · AD / PN</p>
+          <h2>Prevalence changes as operational definitions become more specific</h2>
+          <p>The explorer holds three case-definition positions fixed and lets the disease or visible databases change. It preserves missing source-slide values as gaps rather than converting them to zero.</p>
+        </div>
+
+        <figure class="evidence-figure" data-evidence-figure="case-definitions">
+          <div class="figure-heading">
+            <div>
+              <p class="technical-label">Adult population · 2020</p>
+              <h3>Prevalence by case definition</h3>
+            </div>
+            <a class="data-link" href="assets/data/results.json" download>Download figure data</a>
+          </div>
+          <div class="definition-register">
+            <div><strong>D1</strong><span>Any diagnosis</span></div>
+            <div><strong>D2</strong><span>Two diagnoses within 180 days</span></div>
+            <div><strong>D3</strong><span>Two diagnoses within 180 days plus systemic AD/PN medication</span></div>
+          </div>
+          <p>No definition is presented as universally correct; the appropriate operational definition depends on the question, database, and validation plan.</p>
+          <p class="source-note"><strong>Database-specific rule:</strong> for CDARS, D3 is any diagnosis plus systemic AD medication.</p>
+          <div class="chart-controls" data-chart-controls aria-label="Case-definition chart controls"></div>
+          <p class="definition-explanation" data-definition-explanation aria-live="polite"></p>
+          <p class="chart-status" data-chart-status role="status">Loading the evidence figure…</p>
+          <div class="chart-shell chart-shell--wide" data-chart-mount></div>
+          <noscript><p class="chart-error">JavaScript is needed to generate this chart and its accessible data table from <code>assets/data/results.json</code>.</p></noscript>
+          <figcaption>Adult 2020 atopic-dermatitis and prurigo-nodularis prevalence on a logarithmic scale. HIRA retains the asterisk shown in the source; the deck does not explain that marker.</figcaption>
+          <details class="figure-table">
+            <summary>View accessible data table</summary>
+            <div class="table-scroll" data-table-mount></div>
+          </details>
+        </figure>
+
+        <dl class="figure-metadata">
+          <div><dt>Measure</dt><dd>Prevalence</dd></div>
+          <div><dt>Population and year</dt><dd>Adults, 2020</dd></div>
+          <div><dt>Not reported</dt><dd>Denominators, confidence intervals, and explanation of the HIRA source marker</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="legacy">
+      <div class="wrap">
+        <div class="integration-slot">
+          <h2>Reserved visualization integration</h2>
+          <p>Previous Visualization Website will be put here!!!</p>
+          <h3>Status: pending technical transfer</h3>
+          <a class="btn btn--outline" href="about.html#programme-roadmap">See the expansion roadmap</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark">
+      <div class="wrap">
+        <div class="cta-band">
+          <div><h2>Evidence is the output; preparedness is the infrastructure</h2><p>Follow the common workflow that makes cross-database interpretation possible.</p></div>
+          <a class="btn btn--light" href="methods.html">See how it works</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"></footer>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/charts.js" defer></script>
+  <script src="assets/js/mascot.js" defer></script>
+  <script src="assets/js/enhancements.js?v=20260808-svg-export-2" defer></script>
+</body>
+</html>
