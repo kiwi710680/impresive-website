@@ -1,5 +1,12 @@
 # IMPRESIVE website release notes
 
+## Mobile Methods figure fix — 2026-08-09
+
+- Preserves the intrinsic aspect ratio of both Methods-page CDM illustrations when their width is reduced.
+- Resets the default browser margin on the shared figure wrapper so the wide Common Data Model infographic can use the available mobile content width.
+- Prevents the wide infographic's HTML height hint from remaining fixed after its width is constrained on narrow screens.
+- Versions the Methods-page stylesheet URL so browsers fetch the repaired responsive rule instead of retaining a stale cached copy.
+
 ## Repository handoff — 2026-08-08
 
 This release establishes the current IMPRESIVE static website as a standalone, maintainable source repository. It does not deploy the site or enable any server-side, member-only, or governed-data function.
