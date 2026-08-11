@@ -13,7 +13,7 @@ Repository documentation:
 
 - Static HTML/CSS/JavaScript; no build step, package manager, framework, backend, database, authentication, or server-side data processing.
 - Shared navigation, footer, core widgets, and browser-only readiness assessment are owned by `assets/js/main.js`.
-- Evidence figures and accessible tables are generated from `assets/data/results.json` by `assets/js/charts.js`.
+- Evidence figures and accessible tables on the detailed case pages are generated from `assets/data/results.json` by `assets/js/charts.js`.
 - The four Impact records have one content source, `assets/js/impact-data.js`, and are rendered by `assets/js/impact.js` on Home and About.
 - Inline LEGO mascot generation and injection are isolated in `assets/js/mascot.js`.
 - All public pages use the consolidated `assets/css/styles.css`; redirect stubs intentionally have no runtime bundle.
@@ -25,14 +25,13 @@ The primary navigation follows one visitor narrative:
 
 1. **Home** — concise platform value and selected cases
 2. **About** — identity, formal name, readiness model, three pillars, programme evolution, living roadmap, full Impact details, the PHDc–AsPEN–IMPRESIVE role map, and Governance / Transparency
-3. **Why** — rationale for international multi-database studies
+3. **Objective** — rationale and objectives for international multi-database studies
 4. **How** — workflow, ETL, CDM routes, quality assurance, distributed execution, and resource-release status
-5. **Case** — verified programme case narratives
-6. **Evidence** — figures and accessible data tables generated from `assets/data/results.json`
-7. **Partner** — six public data environments, including Korea HIRA, and the readiness framework
-8. **Join** — participation pathways, FAQ, and the primary PHDc collaboration route
+5. **Accomplishment** — verified programme case narratives with their interactive figures, downloads, accessible tables, and interpretation boundaries
+6. **Partner** — six public data environments, including Korea HIRA, published scale context, and the readiness framework
+7. **Join** — participation pathways, FAQ, and the primary PHDc collaboration route
 
-`Case` and `Partner` are concise navigation labels. Their page titles use the grammatically natural plural forms “Case studies” and “Partners”.
+The route filenames remain stable for compatibility: `why.html` now appears as Objective, and `cases.html` now appears as Accomplishment.
 
 ## Consolidated and compatibility routes
 
@@ -46,10 +45,11 @@ Legacy routes remain as `noindex` compatibility redirects:
 | `mission.html` | `about.html#programme-roadmap` |
 | `network.html` | `about.html#alliance` |
 | `news.html` | `about.html#programme-roadmap` |
-| `resources.html` | `methods.html#resources` |
+| `resources.html` | `methods.html` |
 | `projects.html` | `cases.html` |
 | `contact.html` | `join.html#contact` |
 | `faq.html` | `join.html#faq` |
+| `evidence.html` | `cases.html`, with former figure hashes mapped to the corresponding detailed case-page figure |
 
 ## Content authority and terminology
 

@@ -6,15 +6,14 @@
   var pages = [
     { id: "home", href: "index.html", label: "Home" },
     { id: "about", href: "about.html", label: "About" },
-    { id: "why", href: "why.html", label: "Why" },
+    { id: "why", href: "why.html", label: "Objective" },
     { id: "methods", href: "methods.html", label: "How" },
-    { id: "cases", href: "cases.html", label: "Case" },
-    { id: "visualization", href: "evidence.html", label: "Evidence" },
+    { id: "cases", href: "cases.html", label: "Accomplishment" },
     { id: "databases", href: "databases.html", label: "Partner" },
     { id: "join", href: "join.html", label: "Join", cta: true }
   ];
 
-  var caseChildren = { "case-ascvd": "cases", "case-adpn": "cases" };
+  var caseChildren = { "case-ascvd": "cases", "case-adpn": "cases", "visualization": "cases" };
 
   var activePage = document.body.getAttribute("data-page") || "";
   var header = document.querySelector(".site-header");
@@ -90,8 +89,8 @@
       '<div class="wrap">' +
         '<div class="footer-grid">' +
           '<div><div class="footer-brand"><img src="assets/img/favicon.svg" alt="">IMPRESIVE</div><p>International multi-database study preparedness for reproducible, privacy-preserving real-world evidence.</p></div>' +
-          '<div><h3>Explore</h3><ul><li><a href="about.html">About IMPRESIVE</a></li><li><a href="why.html">Why international studies</a></li><li><a href="methods.html">How IMPRESIVE works</a></li><li><a href="cases.html">Case studies</a></li></ul></div>' +
-          '<div><h3>Evidence &amp; participation</h3><ul><li><a href="evidence.html">Evidence figures</a></li><li><a href="databases.html">Partners &amp; readiness</a></li><li><a href="about.html#programme-roadmap">Programme roadmap</a></li><li><a href="about.html#governance-transparency">Governance &amp; transparency</a></li><li><a href="join.html">Join, FAQ &amp; contact</a></li></ul></div>' +
+          '<div><h3>Explore</h3><ul><li><a href="about.html">About IMPRESIVE</a></li><li><a href="why.html">Objectives for multinational studies</a></li><li><a href="methods.html">How IMPRESIVE works</a></li><li><a href="cases.html">Accomplishments</a></li></ul></div>' +
+          '<div><h3>Evidence &amp; participation</h3><ul><li><a href="cases.html#case-register">Cases &amp; evidence</a></li><li><a href="databases.html">Partners &amp; readiness</a></li><li><a href="about.html#programme-roadmap">Programme roadmap</a></li><li><a href="about.html#governance-transparency">Governance &amp; transparency</a></li><li><a href="join.html">Join, FAQ &amp; contact</a></li></ul></div>' +
         "</div>" +
         '<div class="footer-bottom"><span>&copy; <span id="year"></span> IMPRESIVE</span><span>Prepared databases · Integrated evidence · Timely decisions</span></div>' +
       "</div>";

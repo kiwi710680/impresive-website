@@ -10,38 +10,94 @@
 </head>
 <body data-page="methods">
   <header class="site-header">
-    <noscript><div class="wrap noscript-nav"><a class="noscript-brand" href="index.html">IMPRESIVE</a><nav class="noscript-links" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="why.html">Why</a><a href="methods.html">How</a><a href="cases.html">Case</a><a href="evidence.html">Evidence</a><a href="databases.html">Partner</a><a href="join.html">Join</a></nav></div></noscript>
+    <noscript><div class="wrap noscript-nav"><a class="noscript-brand" href="index.html">IMPRESIVE</a><nav class="noscript-links" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="why.html">Objective</a><a href="methods.html">How</a><a href="cases.html">Accomplishment</a><a href="databases.html">Partner</a><a href="join.html">Join</a></nav></div></noscript>
   </header>
   <main id="main">
     <section class="page-hero">
       <div class="wrap"><p class="crumb"><a href="index.html">Home</a> / How it works</p><p class="eyebrow">Methods &amp; technology</p><h1>A reproducible path from question to evidence</h1><p>IMPRESIVE combines fit-for-purpose feasibility, common definitions, flexible standardization, quality validation, distributed execution, and contextual interpretation.</p></div>
     </section>
 
+
+    <section class="section section--models" id="models" data-model-comparator>
+      <div class="wrap">
+        <div class="section-heading"><p class="eyebrow">Distributed data networks</p><h2>Three alternatives for what travels</h2><p>The approaches are parallel options with different trade-offs. More standardization can reduce site-to-site implementation variation, but it requires greater preparation and infrastructure.</p></div>
+        <div class="model-controls" role="tablist" aria-label="Compare distributed research approaches">
+          <button id="model-tab-question" type="button" role="tab" aria-selected="true" aria-controls="model-question">Common Question</button>
+          <button id="model-tab-protocol" type="button" role="tab" aria-selected="false" aria-controls="model-protocol" tabindex="-1">Common Protocol</button>
+          <button id="model-tab-cdm" type="button" role="tab" aria-selected="false" aria-controls="model-cdm" tabindex="-1">Common Data Model + Code</button>
+        </div>
+        <div class="model-comparison">
+          <article class="model-card" id="model-question" role="tabpanel" aria-labelledby="model-tab-question" data-model-panel>
+            <span class="model-index">01</span><h3>Common Question</h3>
+            <p><strong>What crosses the boundary:</strong> the coordinating center sends the research question.</p>
+            <p><strong>What remains locally variable:</strong> study design, definitions, methods, and implementation.</p>
+            <div class="variation-scale" data-metric="variation" data-level="high"><span>Relative site-to-site variation</span><strong>Higher</strong><i aria-hidden="true"></i></div>
+            <div class="variation-scale" data-metric="flexibility" data-level="high"><span>Relative local flexibility</span><strong>Higher</strong><i aria-hidden="true"></i></div>
+            <p class="model-tradeoff"><strong>Trade-off:</strong> preserves the most local flexibility, with the greatest risk of implementation differences.</p>
+          </article>
+          <article class="model-card" id="model-protocol" role="tabpanel" aria-labelledby="model-tab-protocol" data-model-panel>
+            <span class="model-index">02</span><h3>Common Protocol</h3>
+            <p><strong>What crosses the boundary:</strong> study design, eligibility criteria, variable definitions, and analytic methods.</p>
+            <p><strong>What remains locally variable:</strong> some interpretation and implementation of the protocol.</p>
+            <div class="variation-scale" data-metric="variation" data-level="medium"><span>Relative site-to-site variation</span><strong>Moderate</strong><i aria-hidden="true"></i></div>
+            <div class="variation-scale" data-metric="flexibility" data-level="medium"><span>Relative local flexibility</span><strong>Moderate</strong><i aria-hidden="true"></i></div>
+            <p class="model-tradeoff"><strong>Trade-off:</strong> improves comparability while retaining local implementation work.</p>
+          </article>
+          <article class="model-card" id="model-cdm" role="tabpanel" aria-labelledby="model-tab-cdm" data-model-panel>
+            <span class="model-index">03</span><h3>Common Data Model + Code</h3>
+            <p><strong>What crosses the boundary:</strong> a standardized data structure and a common analytic program.</p>
+            <p><strong>What remains local:</strong> person-level data, access controls, governance, and documented adaptations.</p>
+            <div class="variation-scale" data-metric="variation" data-level="low"><span>Relative site-to-site variation</span><strong>Lower</strong><i aria-hidden="true"></i></div>
+            <div class="variation-scale" data-metric="flexibility" data-level="low"><span>Relative local flexibility</span><strong>Lower</strong><i aria-hidden="true"></i></div>
+            <p class="model-tradeoff"><strong>Trade-off:</strong> offers the most consistent implementation, with greater mapping and infrastructure requirements.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
     <section class="section" id="workflow">
       <div class="wrap">
         <div class="section-heading"><p class="eyebrow">Eight-step pipeline</p><h2>The IMPRESIVE study workflow</h2></div>
         <ol class="pipeline">
           <li><div><h3>Research question</h3><p>Translate a clinical, policy, or regulatory need into the target population, exposure, comparator, outcome, follow-up, and time zero.</p></div></li>
-          <li><div><h3>Feasibility &amp; fit for purpose</h3><p>Assess whether each data environment can answer this specific question. Full database conversion is not a prerequisite for every study.</p></div></li>
+          <li id="fit-for-purpose"><div><h3>Feasibility &amp; fit for purpose</h3><p>Assess whether each data environment can answer this specific question. Full database conversion is not a prerequisite for every study.</p>
+            <details class="pipeline-details">
+              <summary>See when a multinational study is—or is not—ready</summary>
+              <div class="pipeline-details__body">
+                <p class="eyebrow">Fit for purpose</p>
+                <h4>When a multinational study is—or is not—ready</h4>
+                <div class="boundary">
+                  <div class="yes"><h4>Strong candidate questions</h4><ul><li>Rare events or clinically important subgroups</li><li>Post-marketing safety or utilization questions</li><li>Cross-system treatment-pattern comparisons</li><li>Transportability and heterogeneity assessment</li></ul></div>
+                  <div class="not-yet"><h4>Needs feasibility work first</h4><ul><li>Key exposures, outcomes, or covariates are unavailable</li><li>Follow-up or time zero cannot be defined consistently</li><li>Local governance cannot support the planned execution</li><li>Differences cannot yet be interpreted responsibly</li></ul></div>
+                </div>
+              </div>
+            </details>
+          </div></li>
           <li><div><h3>Protocol &amp; variable definition</h3><p>Align the common protocol, statistical analysis plan, code lists, variable specifications, and output formats.</p></div></li>
           <li><div><h3>Standardization &amp; common data model</h3><p>Use OMOP, Sentinel-like, or another governed structure to create a common analytical interface appropriate to the local setting.</p></div></li>
-          <li><div><h3>Quality validation</h3><p>Check structural conformance, completeness, plausibility, cohort and variable behavior, and analytical consistency.</p></div></li>
+          <li id="quality"><div><h3>Quality validation</h3><p>Check structural conformance, completeness, plausibility, cohort and variable behavior, and analytical consistency.</p>
+            <details class="pipeline-details" data-mascot-scope>
+              <summary>Explore the quality-assurance framework</summary>
+              <div class="pipeline-details__body">
+                <div class="pipeline-detail-heading"><p class="eyebrow">Quality assurance</p><h4>Three canonical dimensions, then study-specific validity</h4><p>General common-data-model quality checks are distinct from validating whether a specific cohort or analysis behaves as intended.</p></div>
+                <div class="grid grid--4 quality-dimensions">
+                  <article class="card"><span class="number">1</span><h4>Conformance</h4><p>Structure, formats, and identifiers.</p></article>
+                  <article class="card"><span class="number">2</span><h4>Completeness</h4><p>Domain and variable availability.</p></article>
+                  <article class="card"><span class="number">3</span><h4>Plausibility</h4><p>Values, dates, and clinical patterns.</p></article>
+                  <article class="card"><span class="number">4</span><h4>Study-specific validity</h4><p>Cohorts, variables, frequencies, and analytic outputs compared with the protocol and source context.</p></article>
+                </div>
+                <div class="grid grid--2 qa-evidence">
+                  <article class="card"><span class="technical-label">OMOP CDM</span><h4>Official Data Quality Dashboard</h4><p><strong>3,000+ automated checks</strong> support general CDM quality assessment.</p></article>
+                  <article class="card"><span class="technical-label">Sentinel CDM</span><h4>Self-developed quality checks</h4><p><strong>Three Qchecks</strong>, plus native-versus-CDM result comparison using a <strong>5% difference threshold</strong>.</p></article>
+                </div>
+              </div>
+            </details>
+          </div></li>
           <li><div><h3>Distributed execution</h3><p>Approved partners run common programs locally and document adaptations, exceptions, and limitations.</p></div></li>
           <li><div><h3>Evidence integration</h3><p>Bring together permitted aggregate outputs while preserving site-level context and distinguishing implementation issues from true differences.</p></div></li>
           <li><div><h3>Visualization &amp; interpretation</h3><p>Present country-specific and integrated findings with transparent definitions, uncertainty, and contextual explanations.</p></div></li>
         </ol>
-      </div>
-    </section>
-
-    <section class="section" id="source-bricks"> 
-      <div class="wrap">
-        <div class="section-heading"><p class="eyebrow">Different bricks, different settings</p><h2>The IMPRESIVE build</h2><p>The illustration uses differently shaped bricks to represent source data that do not begin with the same structure, terminology, or operating constraints.</p></div>
-        
-        <figure class="cdm-showcase reveal" style="max-width:440px;margin:1.4rem auto 0">
-        <img src="assets/img/raw-bricks.jpg" width="488" height="590" loading="lazy"
-          alt="Illustration of differently shaped and coloured bricks representing heterogeneous source data." />
-        <figcaption>Source data begin in different forms; standardization prepares a common analytical interface.</figcaption>
-      </figure>
       </div>
     </section>
 
@@ -117,40 +173,6 @@
             </tbody>
           </table>
         </div>
-      </div>
-    </section>
-
-    <section class="section section--soft" id="quality" data-mascot-scope>
-      <div class="wrap">
-        <div class="section-heading"><p class="eyebrow">Quality assurance</p><h2>Three canonical dimensions, then study-specific validity</h2><p>General common-data-model quality checks are distinct from validating whether a specific cohort or analysis behaves as intended.</p></div>
-        <div class="grid grid--4 quality-dimensions">
-          <article class="card"><span class="number">1</span><h3>Conformance</h3><p>Structure, formats, and identifiers.</p></article>
-          <article class="card"><span class="number">2</span><h3>Completeness</h3><p>Domain and variable availability.</p></article>
-          <article class="card"><span class="number">3</span><h3>Plausibility</h3><p>Values, dates, and clinical patterns.</p></article>
-          <article class="card"><span class="number">4</span><h3>Study-specific validity</h3><p>Cohorts, variables, frequencies, and analytic outputs compared with the protocol and source context.</p></article>
-        </div>
-        <div class="grid grid--2 qa-evidence">
-          <article class="card"><span class="technical-label">OMOP CDM</span><h3>Official Data Quality Dashboard</h3><p><strong>3,000+ automated checks</strong> support general CDM quality assessment.</p></article>
-          <article class="card"><span class="technical-label">Sentinel CDM</span><h3>Self-developed quality checks</h3><p><strong>Three Qchecks</strong>, plus native-versus-CDM result comparison using a <strong>5% difference threshold</strong>.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--dark" id="outputs">
-      <div class="wrap grid grid--2">
-        <div><p class="eyebrow">Distributed by design</p><h2>The analytic program travels—not the source data</h2><p class="lead">Local partners work within their approved secure environments. Only outputs permitted by local governance are returned for review and integration.</p></div>
-        <div class="stack">
-          <article class="card card--quiet"><h3>What is shared</h3><p>Common question, protocol, specifications, analysis program, QA logic, and agreed output structure.</p></article>
-          <article class="card card--quiet"><h3>What stays local</h3><p>Person-level source data, local access controls, data-owner approvals, and environment-specific implementation detail.</p></article>
-          <article class="card card--quiet"><h3>What returns</h3><p>Permitted aggregate results, QA summaries, implementation notes, and limitations needed for interpretation.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--soft" id="resources">
-      <div class="wrap grid grid--2">
-        <div><p class="eyebrow">Method resources</p><h2>Release resources only after content and ownership are verified</h2><p class="lead">The public site can explain the ETL process, structural mappings, quality framework, and approved evidence data. Protocols, code lists, QA tools, and analytic code need separate owner, version, governance, and maintenance review before public release.</p></div>
-        <div class="card"><h3>Current release status</h3><ul><li><strong>Public now:</strong> method descriptions, mapping examples, evidence figures, and figure data</li><li><strong>Pending review:</strong> downloadable templates, code lists, protocols, and QA materials</li><li><strong>Future system:</strong> a governed repository or member workspace</li></ul></div>
       </div>
     </section>
 

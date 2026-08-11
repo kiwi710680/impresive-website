@@ -1,5 +1,19 @@
 # IMPRESIVE website release notes
 
+## Accomplishment integration and content refinement — 2026-08-10
+
+- Updates the visitor sequence to Home → About → Objective → How → Accomplishment → Partner → Join without changing the established route filenames.
+- Integrates the ASCVD and AD/PN evidence figures into their detailed case pages so narrative, visualization, downloads, accessible tables, and interpretation boundaries stay together.
+- Retains `evidence.html` as a `noindex` compatibility route and maps its former figure anchors to the new case-page locations.
+- Moves fit-for-purpose guidance and the full quality-assurance framework into native disclosures under workflow steps 2 and 5.
+- Moves the BTA origin story into the 2019 programme-roadmap milestone and adds a Join call to action to the open horizon.
+- Simplifies the About Impact selectors to icon, title, and key themes while retaining the four detailed keyboard-operable panels; Home continues to show summary cards.
+- Adds date-bound, sourced scale context to the six partner cards and explicitly warns that the values are not comparable study denominators or a ranking.
+- Replaces two small Home record values with a published partner-scale figure and the programme's verified automated quality-check count.
+- Adds `Last updated: 2026/08/10` to the Accomplishment register.
+
+This local update does not deploy the site and does not introduce a build step or new runtime dependency.
+
 ## Mobile Methods figure fix — 2026-08-09
 
 - Preserves the intrinsic aspect ratio of both Methods-page CDM illustrations when their width is reduced.

@@ -10,12 +10,12 @@
 </head>
 <body data-page="case-ascvd">
   <header class="site-header">
-    <noscript><div class="wrap noscript-nav"><a class="noscript-brand" href="index.html">IMPRESIVE</a><nav class="noscript-links" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="why.html">Why</a><a href="methods.html">How</a><a href="cases.html">Case</a><a href="evidence.html">Evidence</a><a href="databases.html">Partner</a><a href="join.html">Join</a></nav></div></noscript>
+    <noscript><div class="wrap noscript-nav"><a class="noscript-brand" href="index.html">IMPRESIVE</a><nav class="noscript-links" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="why.html">Objective</a><a href="methods.html">How</a><a href="cases.html">Accomplishment</a><a href="databases.html">Partner</a><a href="join.html">Join</a></nav></div></noscript>
   </header>
   <main id="main">
     <section class="page-hero">
       <div class="wrap">
-        <p class="crumb"><a href="index.html">Home</a> / <a href="cases.html">Case studies</a> / ASCVD</p>
+        <p class="crumb"><a href="index.html">Home</a> / <a href="cases.html">Accomplishment</a> / ASCVD</p>
         <p class="eyebrow">Case 01 · Cardiovascular</p>
         <h1>ASCVD risk stratification remained informative in East Asian data</h1>
         <p>The programme assessed whether the 2018 AHA/ACC/Multi-society Guideline stratification separated hospitalized ASCVD patients across the represented East Asian settings and examined consistency before and after common-data-model conversion.</p>
@@ -82,7 +82,37 @@
           </div>
         </div>
 
-        <div class="actions"><a class="btn btn--outline" href="evidence.html#ascvd">See the hazard-ratio figure and its data table</a></div>
+      </div>
+    </section>
+
+    <section class="section" id="ascvd-evidence">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Interactive evidence · Case 01</p>
+          <h2>The hazard-ratio finding, its limits, and its data</h2>
+          <p>The figure is generated from the approved local results file. The accessible table and downloads use that same source.</p>
+        </div>
+        <div class="evidence-layout">
+          <figure class="evidence-figure" data-evidence-figure="ascvd">
+            <div class="figure-heading">
+              <div><p class="technical-label">Programme-level range</p><h3>Recurrent ASCVD hazard ratio</h3></div>
+              <a class="data-link" href="assets/data/results.json" download>Download figure data</a>
+            </div>
+            <p>The very-high-risk group had a reported hazard-ratio range of 1.2–1.6 relative to the high-risk group. The source slide did not report database-specific estimates or confidence intervals for this range.</p>
+            <p class="chart-status" data-chart-status role="status">Loading the evidence figure…</p>
+            <div class="chart-shell" data-chart-mount></div>
+            <noscript><p class="chart-error">JavaScript is needed to generate this chart and its accessible data table from <code>assets/data/results.json</code>.</p></noscript>
+            <figcaption>Hazard-ratio range reported under the 2018 AHA/ACC/Multi-society Guideline. The reference line represents the high-risk group.</figcaption>
+            <details class="figure-table"><summary>View accessible data table</summary><div class="table-scroll" data-table-mount></div></details>
+          </figure>
+          <aside class="interpretation-note">
+            <h3>What the case supports</h3>
+            <ul><li>Risk stratification was transferable across the represented East Asian settings.</li><li>The very-high-risk group remained clinically distinct.</li><li>Common-data-model results were broadly consistent overall.</li><li>Terminology mapping was the main source of distortion.</li></ul>
+            <p><strong>Treatment finding:</strong> treatment intensity does not match risk: 18% to 34% were prescribed high-intensity statins during hospitalization.</p>
+            <p><strong>Interpretation rule:</strong> common models improve reproducibility, but they do not remove the need for fit-for-purpose validation in every database.</p>
+          </aside>
+        </div>
+        <dl class="figure-metadata"><div><dt>Measure</dt><dd>Hazard ratio</dd></div><div><dt>Comparison</dt><dd>Very-high-risk versus high-risk groups</dd></div></dl>
       </div>
     </section>
 
@@ -151,7 +181,8 @@
   </main>
   <footer class="site-footer"></footer>
   <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/charts.js" defer></script>
   <script src="assets/js/mascot.js" defer></script>
-  <script src="assets/js/enhancements.js" defer></script>
+  <script src="assets/js/enhancements.js?v=20260808-svg-export-2" defer></script>
 </body>
 </html>

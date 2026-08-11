@@ -320,7 +320,7 @@
   }
 
   function setupReadingTools() {
-    if (!["methods", "case-ascvd"].includes(document.body.getAttribute("data-page"))) return;
+    if (!["methods", "case-ascvd", "case-adpn"].includes(document.body.getAttribute("data-page"))) return;
     var main = document.querySelector("main");
     var hero = main && main.querySelector(":scope > .page-hero");
     if (!main || !hero) return;
