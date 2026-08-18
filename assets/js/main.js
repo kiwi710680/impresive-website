@@ -6,26 +6,37 @@
   var pages = [
     { id: "home", href: "index.html", label: "Home" },
     { id: "about", href: "about.html", label: "About" },
-    { id: "why", href: "why.html", label: "Objective" },
-    { id: "methods", href: "methods.html", label: "How" },
+    { id: "objective", href: "objective.html", label: "Objective" },
+    { id: "how", href: "how.html", label: "How" },
     { id: "cases", href: "cases.html", label: "Accomplishment" },
     { id: "databases", href: "databases.html", label: "Partner" },
     { id: "join", href: "join.html", label: "Join", cta: true }
   ];
 
-  var caseChildren = { "case-ascvd": "cases", "case-adpn": "cases", "visualization": "cases" };
+  /* Pages that are reached from a parent rather than from the primary nav.
+     Methods is deliberately not a nav item: it is the technical destination
+     behind How, so How stays marked as current while it is open. */
+  var caseChildren = {
+    "case-ascvd": "cases", "case-adpn": "cases", "transportability": "cases",
+    "visualization": "cases", "methods": "how"
+  };
 
   var activePage = document.body.getAttribute("data-page") || "";
   var header = document.querySelector(".site-header");
   var footer = document.querySelector(".site-footer");
   var main = document.querySelector("main");
 
+  /* Pages served from a sub-directory (the visualization app) declare how far
+     up the site root is, so the shared header and footer resolve from there
+     instead of from their own folder. */
+  var base = document.body.getAttribute("data-nav-base") || "";
+
   var navPage = caseChildren[activePage] || activePage;
 
   function pageLink(page) {
     var current = page.id === navPage ? ' aria-current="page"' : "";
     var cssClass = page.cta ? ' class="nav-join"' : "";
-    return '<a href="' + page.href + '"' + cssClass + current + '>' + page.label + "</a>";
+    return '<a href="' + base + page.href + '"' + cssClass + current + '>' + page.label + "</a>";
   }
 
   if (main) {
@@ -40,8 +51,8 @@
   if (header) {
     header.innerHTML =
       '<div class="wrap nav">' +
-        '<a class="brand" href="index.html" aria-label="IMPRESIVE home">' +
-          '<img src="assets/img/favicon.svg" alt="">' +
+        '<a class="brand" href="' + base + 'index.html" aria-label="IMPRESIVE home">' +
+          '<img src="' + base + 'assets/img/favicon.svg" alt="">' +
           '<span>IMPRESIVE<small>Study preparedness platform</small></span>' +
         "</a>" +
         '<button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-navigation"><span class="nav-toggle-lines" aria-hidden="true"></span></button>' +
@@ -88,9 +99,9 @@
       '<div class="lego-parade-slot" aria-hidden="true"></div>' +
       '<div class="wrap">' +
         '<div class="footer-grid">' +
-          '<div><div class="footer-brand"><img src="assets/img/favicon.svg" alt="">IMPRESIVE</div><p>International multi-database study preparedness for reproducible, privacy-preserving real-world evidence.</p></div>' +
-          '<div><h3>Explore</h3><ul><li><a href="about.html">About IMPRESIVE</a></li><li><a href="why.html">Objectives for multinational studies</a></li><li><a href="methods.html">How IMPRESIVE works</a></li><li><a href="cases.html">Accomplishments</a></li></ul></div>' +
-          '<div><h3>Evidence &amp; participation</h3><ul><li><a href="cases.html#case-register">Cases &amp; evidence</a></li><li><a href="databases.html">Partners &amp; readiness</a></li><li><a href="about.html#programme-roadmap">Programme roadmap</a></li><li><a href="about.html#governance-transparency">Governance &amp; transparency</a></li><li><a href="join.html">Join, FAQ &amp; contact</a></li></ul></div>' +
+          '<div><div class="footer-brand"><img src="' + base + 'assets/img/favicon.svg" alt="">IMPRESIVE</div><p>International multi-database study preparedness for reproducible, privacy-preserving real-world evidence.</p></div>' +
+          '<div><h3>Explore</h3><ul><li><a href="' + base + 'about.html">About IMPRESIVE</a></li><li><a href="' + base + 'objective.html">Objectives for multinational studies</a></li><li><a href="' + base + 'how.html">How IMPRESIVE works</a></li><li><a href="' + base + 'methods.html">Methods &amp; technical reference</a></li><li><a href="' + base + 'cases.html">Accomplishments</a></li></ul></div>' +
+          '<div><h3>Evidence &amp; participation</h3><ul><li><a href="' + base + 'cases.html#case-register">Cases &amp; evidence</a></li><li><a href="' + base + 'databases.html">Partners &amp; readiness</a></li><li><a href="' + base + 'about.html#programme-roadmap">Programme roadmap</a></li><li><a href="' + base + 'about.html#governance-transparency">Governance &amp; transparency</a></li><li><a href="' + base + 'join.html">Join, FAQ &amp; contact</a></li></ul></div>' +
         "</div>" +
         '<div class="footer-bottom"><span>&copy; <span id="year"></span> IMPRESIVE</span><span>Prepared databases · Integrated evidence · Timely decisions</span></div>' +
       "</div>";

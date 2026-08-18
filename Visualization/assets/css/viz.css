@@ -1,0 +1,395 @@
+/* Visualization platform — extends the parent site's design system.
+   Amgen blue carries the very-high-risk group and every primary control;
+   the comparison group uses a distinct rose so the two are never confused
+   with the site's green "current/available" semantic. */
+
+:root {
+  --viz-exposure: #0063c3;
+  --viz-reference: #c2426a;
+  --viz-line-strong: #93aec4;
+  --viz-surface: #ffffff;
+}
+
+body[data-page="visualization"] { background: var(--canvas); }
+
+/* ------------------------------------------------------------- chrome */
+
+/* The app wears the site header, footer, scroll-progress bar and contents
+   list built by the shared scripts, so it has no navigation chrome of its own.
+   Module anchors only have to clear the sticky site header. */
+[data-viz-app] > section[id] { scroll-margin-top: 84px; }
+
+.viz-hero .case-hero-stats { margin-top: 1.75rem; }
+.viz-outro { padding-block: clamp(2rem, 4vw, 3.25rem) clamp(2.5rem, 5vw, 4rem); }
+
+/* ------------------------------------------------------------- banner */
+
+.viz-banner {
+  display: flex; flex-wrap: wrap; gap: .5rem 1rem;
+  width: min(calc(100% - 2rem), var(--max-width));
+  margin: 1.5rem auto -1rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid #e5c48c;
+  border-left: 5px solid var(--amber-700);
+  border-radius: var(--radius-sm);
+  background: var(--amber-100);
+  color: #5c3a09;
+  font-size: .92rem;
+}
+.viz-banner strong { flex: none; }
+
+/* ------------------------------------------------------- global control */
+
+.viz-globalbar-section { padding-block: clamp(2rem, 4vw, 3rem) 0; }
+.viz-globalbar {
+  display: flex; flex-wrap: wrap; align-items: end; gap: 1rem 1.5rem;
+  padding: 1.15rem 1.35rem;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--brand-blue);
+  border-radius: var(--radius);
+  background: var(--viz-surface);
+  box-shadow: var(--shadow);
+}
+.viz-globalbar__field { display: grid; gap: .35rem; min-width: min(100%, 320px); }
+.viz-globalbar__field label { color: var(--blue-900); font-size: .82rem; font-weight: 800; }
+.viz-globalbar__field select {
+  min-height: 44px; padding: .55rem .8rem;
+  border: 1px solid var(--viz-line-strong); border-radius: 9px;
+  background: var(--white); color: var(--ink); font: inherit;
+}
+.viz-globalbar__note { flex: 1 1 260px; margin: 0; color: var(--ink-soft); font-size: .88rem; }
+
+.viz-status { width: min(calc(100% - 2rem), var(--max-width)); margin: 2rem auto; }
+
+/* ----------------------------------------------------------- controls */
+
+.viz-controlgroup { margin-bottom: 1.25rem; }
+.viz-controlgroup .technical-label { margin-bottom: .5rem; }
+.explorer-button--sub[aria-pressed="true"] { border-color: var(--viz-reference); background: var(--viz-reference); color: #fff; }
+.explorer-button:disabled { opacity: .4; cursor: not-allowed; }
+.btn--small { min-height: 40px; padding: .35rem .9rem; font-size: .86rem; }
+
+.viz-panel {
+  display: grid; gap: 1.35rem;
+  padding: clamp(1.15rem, 3vw, 1.75rem);
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--viz-surface);
+  box-shadow: var(--shadow);
+}
+.viz-panel__section { display: grid; gap: .6rem; min-width: 0; }
+/* A select sizes itself to its longest option, so "Fine & Gray
+   subdistribution hazard ratio" would otherwise widen the page on a phone. */
+.viz-panel .explorer-field,
+.analysis-row .explorer-field { min-width: 0; max-width: 100%; }
+.viz-panel select,
+.analysis-row select { width: 100%; max-width: 100%; text-overflow: ellipsis; }
+.viz-panel__head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; }
+.viz-panel__head .technical-label { margin: 0; }
+
+.outcome-chip { font-size: .86rem; }
+
+.analysis-row {
+  display: flex; flex-wrap: wrap; align-items: end; gap: 1rem;
+  padding: .9rem 1rem; margin-bottom: .6rem;
+  border: 1px solid var(--line); border-radius: var(--radius-sm);
+  background: var(--blue-50, #f2f7fd);
+}
+.analysis-row--main { border-left: 4px solid var(--brand-blue); background: var(--blue-100); }
+.analysis-row__label { min-width: 168px; color: var(--blue-900); font-size: .9rem; font-weight: 800; }
+.analysis-row__fields { display: flex; flex-wrap: wrap; gap: .85rem; flex: 1; }
+.analysis-row__fields .explorer-field { min-width: min(100%, 190px); }
+.analysis-remove {
+  min-width: 40px; min-height: 40px;
+  border: 1px solid #e3b6c4; border-radius: 8px;
+  background: #fdeef2; color: #a3324f;
+  cursor: pointer; font-size: 1.1rem; line-height: 1;
+}
+.analysis-remove:hover { background: #f9d8e1; }
+
+/* ------------------------------------------------------------ figures */
+
+.viz-figure { margin: 0 0 1.75rem; }
+.viz-figure figcaption { margin-bottom: .6rem; color: var(--blue-900); font-size: .95rem; font-weight: 700; }
+.viz-figure-title { margin: 1.5rem 0 1rem; color: var(--blue-900); font-size: 1.15rem; }
+.viz-figure-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin: 2rem 0 .75rem; }
+.viz-figure-head h3 { margin: 0; }
+.viz-figure-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 1.5rem; }
+.viz-section-download { display: flex; justify-content: flex-end; margin: -1rem 0 1rem; }
+.viz-figure-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .5rem; margin: 0 0 .65rem; }
+.viz-figure-actions .btn { min-height: 44px; }
+
+.viz-chart-shell {
+  position: relative;
+  overflow-x: auto;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--viz-surface);
+}
+.viz-chart { display: block; width: 100%; height: auto; }
+.viz-chart--pie { max-width: 340px; margin-inline: auto; }
+.viz-chart--forest { min-width: 720px; }
+.viz-chart-shell:focus-within { outline: 3px solid var(--white); outline-offset: 2px; box-shadow: 0 0 0 6px rgba(7, 55, 99, .85); }
+
+.viz-gridline { stroke: var(--line); stroke-width: 1; }
+.viz-axis-line { stroke: var(--viz-line-strong); stroke-width: 1.5; }
+.viz-axis-label { fill: var(--ink-soft); font-size: 12px; }
+.viz-axis-title { fill: var(--ink); font-size: 13px; font-weight: 700; }
+.viz-annotation { fill: var(--ink-soft); font-size: 12px; font-style: italic; }
+.viz-row-label { fill: var(--blue-900); font-size: 13px; font-weight: 700; }
+.viz-row-sublabel { fill: var(--ink-soft); font-size: 11.5px; }
+.viz-slice { stroke: #fff; stroke-width: 2; }
+.viz-slice-label { fill: #fff; font-size: 13px; font-weight: 800; }
+.viz-slice-label--pct { font-size: 11px; font-weight: 700; }
+.viz-bar { stroke: #fff; stroke-width: .5; }
+.viz-point { stroke: #fff; stroke-width: 1.5; }
+.viz-interval { stroke-width: 3; stroke-linecap: round; }
+/* An interval drawn at the readable minimum is dashed so it is not mistaken
+   for a measured width; the exact limits are printed beside the estimate. */
+.viz-interval--minimum { stroke-dasharray: 5 3; stroke-linecap: butt; opacity: .78; }
+.viz-interval-cap { stroke-width: 2.5; }
+.viz-interval-cap--foreground { stroke-width: 2; }
+.viz-row-axis { stroke: var(--viz-line-strong); stroke-width: 1; }
+.viz-ci-column-label { fill: var(--blue-900); font-size: 12px; font-weight: 800; }
+.viz-ci-value { font-size: 12px; font-weight: 750; font-variant-numeric: tabular-nums; }
+.viz-whisker { stroke-width: 1.5; }
+.viz-box { stroke-width: 1.5; }
+.viz-median { stroke-width: 3; }
+.viz-equality { stroke: var(--ink-soft); stroke-width: 1.5; stroke-dasharray: 6 5; }
+.viz-reference { stroke: var(--viz-reference); stroke-width: 1.8; stroke-dasharray: 6 4; }
+.is-active-mark { stroke: var(--blue-900); stroke-width: 3; }
+
+.viz-legend { display: flex; flex-wrap: wrap; gap: .5rem 1.1rem; margin-top: .9rem; }
+.viz-legend__item { display: inline-flex; align-items: center; gap: .45rem; color: var(--ink-soft); font-size: .82rem; font-weight: 650; }
+.viz-legend__item::before { width: 13px; height: 13px; border-radius: 3px; background: var(--legend-color, var(--brand-blue)); content: ""; flex: none; }
+
+.viz-empty { margin: 0; padding: 2rem 1rem; color: var(--ink-soft); text-align: center; }
+.viz-note { margin: .8rem 0 0; color: var(--ink-soft); font-size: .84rem; }
+
+/* --------------------------------------------------------- cohort flow */
+
+/* A single centred spine. Every step is a full-width child of the same grid,
+   so the connectors, the exclusion branch, and the terminal split all share
+   one vertical axis at 50%. --flow-gap is used to place the split's rail on
+   the exact column centres rather than an approximate 25%/75%. */
+.cohort-flow {
+  --flow-node-width: min(100%, 430px);
+  --flow-gap: clamp(1rem, 3vw, 2rem);
+  --flow-connector: clamp(26px, 4vw, 56px);
+  display: grid;
+  /* An explicit full-width column: with an auto column the track is sized by
+     its widest child, which pushed the boxes off the connectors' centre. */
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  width: 100%;
+  padding: clamp(1.1rem, 3vw, 2rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--viz-surface);
+}
+/* Grid, not flex: as a flex item the node shrank below the step width and
+   sat off the spine's centre. A single grid child stretches deterministically.
+   Namespaced under the component root: the parent stylesheet owns an unrelated
+   .flow-step (a five-column process strip) whose counter, arrow glyph, border,
+   and min-height leaked onto these steps when the names collided. */
+.cohort-flow__step { display: grid; width: var(--flow-node-width); }
+.cohort-flow__step > .flow-node { max-width: none; }
+
+.flow-link { position: relative; width: 2px; height: 34px; background: var(--viz-line-strong); }
+.flow-link::after {
+  position: absolute; bottom: -1px; left: -4px;
+  border-top: 7px solid var(--viz-line-strong);
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  content: "";
+}
+
+/* The spine continues straight down through the branch row; the exclusion box
+   sits in the right half on a horizontal connector. */
+.flow-branch {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  width: 100%;
+  padding-block: 6px 10px;
+}
+.flow-branch::before {
+  position: absolute; top: 0; bottom: 0; left: 50%;
+  width: 2px; margin-left: -1px;
+  background: var(--viz-line-strong);
+  content: "";
+}
+.flow-branch__connector {
+  position: absolute; top: 44px; left: 50%;
+  width: var(--flow-connector); height: 2px;
+  background: var(--viz-line-strong);
+}
+.flow-branch__connector::after {
+  position: absolute; top: -4px; right: -1px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 7px solid var(--viz-line-strong);
+  content: "";
+}
+.flow-branch__box {
+  grid-column: 2;
+  display: grid;
+  gap: .4rem;
+  max-width: 540px;
+  margin-left: calc(var(--flow-connector) + .75rem);
+}
+.flow-branch__label { color: var(--viz-reference); font-size: .72rem; font-weight: 850; letter-spacing: .06em; text-transform: uppercase; }
+
+/* Terminal split: stub down from the spine, a bar between the two column
+   centres, then a drop into each box. */
+.flow-split {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--flow-gap);
+  width: min(100%, 860px);
+  padding-top: 46px;
+}
+.flow-split::after {
+  position: absolute; top: 0; left: 50%;
+  width: 2px; height: 22px; margin-left: -1px;
+  background: var(--viz-line-strong);
+  content: "";
+}
+.flow-split::before {
+  position: absolute; top: 22px;
+  left: calc(25% - var(--flow-gap) / 4);
+  right: calc(25% - var(--flow-gap) / 4);
+  height: 2px;
+  background: var(--viz-line-strong);
+  content: "";
+}
+.flow-split > .flow-node { position: relative; }
+.flow-split > .flow-node::before {
+  position: absolute; top: -24px; left: 50%;
+  width: 2px; height: 24px; margin-left: -1px;
+  background: var(--viz-line-strong);
+  content: "";
+}
+.flow-node {
+  display: grid; gap: .25rem; width: 100%; min-width: 0; max-width: 520px;
+  padding: .9rem 1.1rem; border: 1px solid var(--line); border-left: 4px solid var(--brand-blue);
+  border-radius: var(--radius-sm); background: var(--white);
+}
+.flow-node strong { color: var(--blue-900); font-size: .95rem; }
+.flow-node__n { color: var(--ink-soft); font-size: .88rem; font-variant-numeric: tabular-nums; }
+.flow-node--include { border-left-color: var(--plum-700); }
+.flow-node--exclude { border-left-color: var(--viz-reference); background: #fdf3f6; }
+.flow-node--target { border-left-color: var(--green-600); background: var(--green-50); }
+.flow-node--exposure { border-left-color: var(--viz-exposure); }
+.flow-node--reference { border-left-color: var(--viz-reference); }
+.flow-exclusions { margin: .5rem 0 0; padding-left: 1.1rem; color: var(--ink-soft); font-size: .86rem; }
+.flow-exclusions ul { margin-top: .3rem; padding-left: 1rem; }
+.flow-arrow { width: 2px; height: 26px; background: var(--viz-line-strong); }
+.flow-arrow::after { display: block; margin-left: -4px; border-top: 7px solid var(--viz-line-strong); border-right: 5px solid transparent; border-left: 5px solid transparent; content: ""; transform: translateY(26px); }
+
+/* --------------------------------------------------------------- table */
+
+.viz-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--viz-surface); }
+.viz-scroll:focus-visible { outline: 3px solid var(--white); outline-offset: 2px; box-shadow: 0 0 0 6px rgba(7, 55, 99, .85); }
+.viz-table { min-width: 720px; }
+.viz-table td.is-numeric, .viz-table th.is-numeric { text-align: right; font-variant-numeric: tabular-nums; }
+.viz-table tbody tr.is-selected { background: var(--blue-100); }
+/* The row checkbox is the primary control in a 130-row table, so the whole
+   cell is the hit area rather than the 20px box itself. */
+.viz-table td:first-child, .viz-table th:first-child { padding: 0; }
+.viz-table td:first-child { position: relative; }
+.viz-table input[type="checkbox"] {
+  width: 22px; height: 22px; margin: 0;
+  accent-color: var(--brand-blue); cursor: pointer;
+}
+.viz-pick {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; min-width: 56px; min-height: 46px;
+  cursor: pointer;
+}
+.viz-pick:hover { background: var(--blue-100); }
+.viz-table tbody td:first-child { width: 56px; min-width: 56px; }
+.viz-table thead th:first-child { padding: .7rem; }
+.viz-table thead th { position: sticky; top: 0; z-index: 2; }
+.viz-sort {
+  display: inline-flex; align-items: center; gap: .3rem;
+  min-height: 40px; padding: 0; border: 0; background: transparent;
+  color: inherit; cursor: pointer; font: inherit; font-weight: 800;
+}
+.viz-sort::after { color: var(--ink-soft); content: "↕"; font-size: .8em; }
+.viz-sort[data-direction="asc"]::after { color: var(--brand-blue); content: "↑"; }
+.viz-sort[data-direction="desc"]::after { color: var(--brand-blue); content: "↓"; }
+
+.viz-tablebar { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: .9rem; }
+.viz-tablebar__actions { display: flex; flex-wrap: wrap; gap: .6rem; }
+.viz-tablebar__actions--right { justify-content: flex-end; margin-bottom: .9rem; }
+.viz-search { min-width: min(100%, 320px); }
+.viz-search input {
+  min-height: 44px; padding: .55rem .8rem;
+  border: 1px solid var(--viz-line-strong); border-radius: 9px;
+  background: var(--white); color: var(--ink); font: inherit; font-weight: 400;
+}
+.viz-status-line { margin: 0 0 .8rem; color: var(--ink-soft); font-size: .88rem; }
+.viz-linked-table { overflow: hidden; margin-top: 2rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--viz-surface); box-shadow: var(--shadow); }
+.viz-linked-table > summary { display: flex; min-height: 88px; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.25rem; cursor: pointer; list-style: none; }
+.viz-linked-table > summary::-webkit-details-marker { display: none; }
+.viz-linked-table > summary > span:first-child { display: grid; gap: .25rem; }
+.viz-linked-table > summary .eyebrow { margin: 0; }
+.viz-linked-table > summary strong { color: var(--blue-900); font-size: 1.08rem; }
+.viz-linked-table > summary small { color: var(--ink-soft); font-size: .84rem; }
+.viz-linked-table__hint { flex: 0 0 auto; padding: .45rem .75rem; border-radius: 999px; background: var(--blue-100); color: var(--blue-800); font-size: .78rem; font-weight: 800; }
+.viz-linked-table[open] > summary { border-bottom: 1px solid var(--line); background: var(--blue-100); }
+.viz-linked-table__hint .when-open { display: none; }
+.viz-linked-table[open] .viz-linked-table__hint .when-closed { display: none; }
+.viz-linked-table[open] .viz-linked-table__hint .when-open { display: inline; }
+.viz-linked-table__body { padding: 1.25rem; }
+.viz-linked-table__body > p:first-child { margin-top: 0; color: var(--ink-soft); }
+
+/* -------------------------------------------------------- outcome panel */
+
+.outcome-panel { margin-bottom: 1rem; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--viz-surface); }
+.outcome-panel summary {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .75rem;
+  min-height: 52px; padding: .75rem 1.1rem; cursor: pointer;
+  color: var(--blue-900); font-size: 1rem;
+}
+.outcome-panel summary:hover { background: var(--blue-100); }
+.outcome-panel[open] summary { border-bottom: 1px solid var(--line); }
+.outcome-primary { padding: .15rem .55rem; border-radius: 4px; background: var(--green-100); color: var(--green-800); font-size: .7rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; }
+.outcome-panel .viz-scroll { border: 0; border-radius: 0; }
+
+/* --------------------------------------------------------- responsive */
+
+@media (max-width: 900px) {
+  .analysis-row__label { min-width: 100%; }
+  /* Below the branch breakpoint the exclusion box drops onto the spine, so the
+     horizontal connector and the half-width column are no longer meaningful. */
+  .flow-branch { grid-template-columns: minmax(0, 1fr); padding-block: 0 4px; }
+  .flow-branch::before { display: none; }
+  .flow-branch__connector { display: none; }
+  .flow-branch__box { grid-column: 1; width: min(100%, 560px); margin-left: 0; justify-self: center; }
+}
+@media (max-width: 620px) {
+  .viz-figure-head { align-items: flex-start; flex-direction: column; }
+  .viz-tablebar { align-items: stretch; flex-direction: column; }
+  .viz-section-download, .viz-figure-actions { justify-content: flex-start; }
+  .flow-split { grid-template-columns: minmax(0, 1fr); padding-top: 0; }
+  .flow-split::before, .flow-split::after { display: none; }
+  .flow-split > .flow-node::before { display: none; }
+  .viz-linked-table > summary { align-items: flex-start; flex-direction: column; }
+  .cohort-flow__step { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .viz-slice, .viz-bar, .viz-point { transition: none !important; }
+}
+
+@media print {
+  .site-header, .site-footer, .reading-tools, .viz-tablebar__actions, .analysis-remove { display: none !important; }
+  .viz-chart-shell, .viz-scroll { overflow: visible; border: 1px solid #999; }
+  .outcome-panel { break-inside: avoid; }
+}

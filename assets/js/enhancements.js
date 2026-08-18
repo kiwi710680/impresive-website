@@ -4,6 +4,34 @@
   var reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var storagePrefix = "impresive:";
 
+  function alignCurrentFragment() {
+    if (!window.location.hash) return;
+    var id;
+    try { id = decodeURIComponent(window.location.hash.slice(1)); }
+    catch (error) { id = window.location.hash.slice(1); }
+    var target = document.getElementById(id);
+    if (!target) return;
+    window.requestAnimationFrame(function () {
+      window.requestAnimationFrame(function () {
+        var root = document.documentElement;
+        var previousBehavior = root.style.scrollBehavior;
+        root.style.scrollBehavior = "auto";
+        target.scrollIntoView({ block: "start" });
+        root.style.scrollBehavior = previousBehavior;
+      });
+    });
+  }
+
+  /* Native fragment scrolling can occur before fetch-driven modules finish
+     inserting content above the target. Re-align only on real lifecycle and
+     content-ready events; no timer or scroll polling is involved. */
+  window.addEventListener("load", alignCurrentFragment);
+  window.addEventListener("hashchange", alignCurrentFragment);
+  window.addEventListener("popstate", alignCurrentFragment);
+  window.addEventListener("pageshow", alignCurrentFragment);
+  document.addEventListener("impresive:content-ready", alignCurrentFragment);
+  alignCurrentFragment();
+
   function observeOnce(items, callback, options) {
     var elements = Array.from(items || []).filter(Boolean);
     if (!elements.length) return;
@@ -320,11 +348,15 @@
   }
 
   function setupReadingTools() {
-    if (!["methods", "case-ascvd", "case-adpn"].includes(document.body.getAttribute("data-page"))) return;
+    if (!["how", "methods", "case-ascvd", "case-adpn", "databases", "about", "visualization"].includes(document.body.getAttribute("data-page"))) return;
     var main = document.querySelector("main");
     var hero = main && main.querySelector(":scope > .page-hero");
     if (!main || !hero) return;
-    var sections = Array.from(main.querySelectorAll(":scope > section[id]")).filter(function (section) {
+    /* Content sections are usually direct children of main, but the
+       visualization app wraps its modules in one container it toggles on load,
+       so match any section carrying an id and a heading. No page nests
+       sections, so this cannot pick up a sub-section by mistake. */
+    var sections = Array.from(main.querySelectorAll("section[id]")).filter(function (section) {
       return section.querySelector("h2");
     });
     if (sections.length < 2) return;
@@ -358,12 +390,9 @@
     aside.appendChild(details);
     hero.insertAdjacentElement("afterend", aside);
 
-    var wide = window.matchMedia("(min-width: 1280px)");
-    function setDisclosure() {
-      if (wide.matches) details.open = true;
-    }
-    setDisclosure();
-    if (wide.addEventListener) wide.addEventListener("change", setDisclosure);
+    /* Closed at every width. Opening it by default on wide screens is what made
+       it read as an obstacle rather than an aid. */
+    details.open = false;
 
     if ("IntersectionObserver" in window) {
       var links = Array.from(list.querySelectorAll("a"));
@@ -379,10 +408,43 @@
     }
   }
 
+  function setupChartTooltips() {
+    var tooltip = document.createElement("div");
+    tooltip.className = "chart-tooltip chart-tooltip--fixed";
+    tooltip.hidden = true;
+    document.body.appendChild(tooltip);
+
+    function attach(node) {
+      if (node.dataset.chartTooltipReady === "true") return;
+      node.dataset.chartTooltipReady = "true";
+      if (!node.hasAttribute("tabindex")) node.setAttribute("tabindex", "0");
+      var label = node.getAttribute("data-chart-tooltip");
+      if (!node.hasAttribute("aria-label")) node.setAttribute("aria-label", label);
+      function show() {
+        var box = node.getBoundingClientRect();
+        tooltip.textContent = label;
+        tooltip.hidden = false;
+        var left = box.left + box.width / 2 - tooltip.offsetWidth / 2;
+        tooltip.style.left = Math.max(8, Math.min(window.innerWidth - tooltip.offsetWidth - 8, left)) + "px";
+        tooltip.style.top = Math.max(8, box.top - tooltip.offsetHeight - 10) + "px";
+      }
+      function hide() { tooltip.hidden = true; }
+      node.addEventListener("mouseenter", show);
+      node.addEventListener("mouseleave", hide);
+      node.addEventListener("focus", show);
+      node.addEventListener("blur", hide);
+    }
+
+    function scan(scope) { Array.from((scope || document).querySelectorAll("[data-chart-tooltip]")).forEach(attach); }
+    scan(document);
+    new MutationObserver(function (records) { records.forEach(function (record) { Array.from(record.addedNodes).forEach(function (node) { if (node.nodeType !== 1) return; if (node.matches && node.matches("[data-chart-tooltip]")) attach(node); scan(node); }); }); }).observe(document.body, { childList: true, subtree: true });
+  }
+
   addScrollProgress();
   addRecordBandMotion();
   addRoadmapMotion();
   addModelMotion();
   setupEvidenceUtilities();
+  setupChartTooltips();
   setupReadingTools();
 })();

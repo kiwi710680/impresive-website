@@ -3,22 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="ASCVD case study: testing whether 2018 AHA/ACC/Multi-society risk stratification transfers to East Asian data environments, and whether common-data-model conversion changes the answer.">
+  <meta name="description" content="ASCVD case study: whether 2018 AHA/ACC/Multi-society risk stratification continued to distinguish recurrent risk across East Asian data environments, and whether one shared study specification could be implemented across common-data-model environments.">
+  <link rel="canonical" href="https://phd-center.github.io/impresive/case-ascvd.html">
   <title>Case 01 · ASCVD | IMPRESIVE</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260817a">
 </head>
 <body data-page="case-ascvd">
   <header class="site-header">
-    <noscript><div class="wrap noscript-nav"><a class="noscript-brand" href="index.html">IMPRESIVE</a><nav class="noscript-links" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="why.html">Objective</a><a href="methods.html">How</a><a href="cases.html">Accomplishment</a><a href="databases.html">Partner</a><a href="join.html">Join</a></nav></div></noscript>
+    <noscript><div class="wrap noscript-nav"><a class="noscript-brand" href="index.html">IMPRESIVE</a><nav class="noscript-links" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="objective.html">Objective</a><a href="how.html">How</a><a href="cases.html">Accomplishment</a><a href="databases.html">Partner</a><a href="join.html">Join</a></nav></div></noscript>
   </header>
   <main id="main">
     <section class="page-hero">
       <div class="wrap">
         <p class="crumb"><a href="index.html">Home</a> / <a href="cases.html">Accomplishment</a> / ASCVD</p>
         <p class="eyebrow">Case 01 · Cardiovascular</p>
-        <h1>ASCVD risk stratification remained informative in East Asian data</h1>
-        <p>The programme assessed whether the 2018 AHA/ACC/Multi-society Guideline stratification separated hospitalized ASCVD patients across the represented East Asian settings and examined consistency before and after common-data-model conversion.</p>
+        <h1>Comparable risk stratification across East Asian data environments</h1>
+        <p>IMPRESIVE established a cross-database study-preparedness framework in the ASCVD case. The programme compared very-high-risk and high-risk patients across countries based on common-data-model.</p>
         <dl class="case-hero-stats">
           <div><dt>Population</dt><dd>Hospitalized ASCVD</dd></div>
           <div><dt>Comparison</dt><dd>Very-high-risk vs high-risk</dd></div>
@@ -27,6 +28,19 @@
         </dl>
       </div>
     </section>
+
+    <section class="section section--soft" id="ascvd-cohort">
+      <div class="wrap">
+        <div class="research-explorer" data-cohort-summary="ASCVD"></div>
+      </div>
+    </section>
+<!--
+    <section class="section" id="network-growth">
+      <div class="wrap">
+        <div class="section-heading"><p class="eyebrow">Watch the network grow</p><h2>From one local environment to reusable cross-disease infrastructure</h2><p>Advance through the steps to see coverage expand across environments and disease areas. The sequence visualizes represented coverage—not pooled patient counts.</p><p><a class="data-link" href="assets/data/expansion-0812.json" download>Download source data</a></p></div>
+        <div class="research-explorer" data-network-growth></div>
+      </div>
+    </section> -->
 
     <section class="section" id="question">
       <div class="wrap">
@@ -38,22 +52,22 @@
           <li>
             <span class="story-label">The scientific question</span>
             <div>
-              <h3>Does the 2018 AHA/ACC/Multi-society stratification transfer?</h3>
-              <p>The guideline separates patients at very high risk of recurrent atherosclerotic cardiovascular events from those at high risk. The study examined whether that stratification was transferable to East Asian settings.</p>
+              <h3>Does the guideline-based risk stratification distinguish recurrent risk across East Asian settings?</h3>
+              <p>The 2018 AHA/ACC/Multi-society Guideline distinguishes patients at very high risk of recurrent atherosclerotic cardiovascular events from those at high risk. The study examined whether the same stratification continued to distinguish recurrent risk across the represented East Asian settings.</p>
             </div>
           </li>
           <li>
-            <span class="story-label">The engineering question</span>
+            <span class="story-label">The implementation question</span>
             <div>
-              <h3>Are results consistent across implementation routes?</h3>
-              <p>The programme compared a conventional protocol-based analysis with common-data-model results in ASCVD cohorts from Taiwan and Korea.</p>
+              <h3>Do CDM implementations produce interpretable results across data environments?</h3>
+              <p>The programme implemented the same ASCVD study question in common-data-model environments across countries, allowing results to be reviewed across sites and implementation pathways.</p>
             </div>
           </li>
           <li>
-            <span class="story-label">Why both at once</span>
+            <span class="story-label">Why test both</span>
             <div>
               <h3>One case, two complementary questions</h3>
-              <p>The case evaluated the clinical stratification and the consistency of results before and after conversion without treating common-data-model use as proof of validity by itself.</p>
+              <p>The case examined both whether the clinical risk stratification remained informative across settings and whether the shared study specification could be implemented consistently within different CDM-based data environments.</p>
             </div>
           </li>
         </ol>
@@ -64,21 +78,19 @@
       <div class="wrap">
         <div class="section-heading">
           <p class="eyebrow">What came back</p>
-          <h2>The risk gradient held, while treatment intensity remained limited</h2>
+          <h2>The risk gradient persisted, while treatment intensity remained limited</h2>
         </div>
 
         <div class="grid grid--2">
           <div class="pull-finding">
-            <p class="technical-label">Reported hazard-ratio range</p>
+            <p class="technical-label">Reported HR range across CDM-based analyses</p>
             <strong class="pull-number">1.2 – 1.6</strong>
-            <p>Recurrent ASCVD in the very-high-risk group relative to the high-risk group. The very-high-risk group remained clinically distinct, and risk stratification was transferable across the represented East Asian settings.</p>
-            <p class="source-note">The source slide reports a programme-level range. It does not report database-specific estimates or confidence intervals for this range.</p>
+            <p>Across the represented CDM-based data environments, the very-high-risk group consistently showed higher recurrent ASCVD risk than the high-risk group, indicating that the shared stratification remained informative across settings.</p>
           </div>
           <div class="pull-finding" id="treatment">
             <p class="technical-label">High-intensity statin use during hospitalization</p>
             <strong class="pull-number">18% – 34%</strong>
-            <p><strong>Treatment intensity does not match risk.</strong> Between 18% and 34% of patients were prescribed high-intensity statins during hospitalization.</p>
-            <p class="source-note">The source slide reports the range but does not provide database-specific denominators on this summary slide.</p>
+            <p><strong>Treatment intensity remained limited despite elevated recurrent risk.</strong> Between 18% and 34% of patients were prescribed high-intensity statins during hospitalization.</p>
           </div>
         </div>
 
@@ -89,25 +101,23 @@
       <div class="wrap">
         <div class="section-heading">
           <p class="eyebrow">Interactive evidence · Case 01</p>
-          <h2>The hazard-ratio finding, its limits, and its data</h2>
-          <p>The figure is generated from the approved local results file. The accessible table and downloads use that same source.</p>
+          <h2>Recurrent ASCVD hazard ratio</h2>
         </div>
         <div class="evidence-layout">
           <figure class="evidence-figure" data-evidence-figure="ascvd">
             <div class="figure-heading">
-              <div><p class="technical-label">Programme-level range</p><h3>Recurrent ASCVD hazard ratio</h3></div>
+              <div><h3>Recurrent ASCVD hazard ratio</h3></div>
               <a class="data-link" href="assets/data/results.json" download>Download figure data</a>
             </div>
-            <p>The very-high-risk group had a reported hazard-ratio range of 1.2–1.6 relative to the high-risk group. The source slide did not report database-specific estimates or confidence intervals for this range.</p>
+            <p>The very-high-risk group had a reported hazard-ratio range of 1.2–1.6 relative to the high-risk group.</p>
             <p class="chart-status" data-chart-status role="status">Loading the evidence figure…</p>
             <div class="chart-shell" data-chart-mount></div>
             <noscript><p class="chart-error">JavaScript is needed to generate this chart and its accessible data table from <code>assets/data/results.json</code>.</p></noscript>
-            <figcaption>Hazard-ratio range reported under the 2018 AHA/ACC/Multi-society Guideline. The reference line represents the high-risk group.</figcaption>
             <details class="figure-table"><summary>View accessible data table</summary><div class="table-scroll" data-table-mount></div></details>
           </figure>
           <aside class="interpretation-note">
             <h3>What the case supports</h3>
-            <ul><li>Risk stratification was transferable across the represented East Asian settings.</li><li>The very-high-risk group remained clinically distinct.</li><li>Common-data-model results were broadly consistent overall.</li><li>Terminology mapping was the main source of distortion.</li></ul>
+            <ul><li>The stratification continued to distinguish recurrent risk in the represented East Asian settings.</li><li>The very-high-risk group remained clinically distinct.</li><li>Common-data-model results were broadly consistent overall.</li><li>Terminology mapping was the main source of distortion.</li></ul>
             <p><strong>Treatment finding:</strong> treatment intensity does not match risk: 18% to 34% were prescribed high-intensity statins during hospitalization.</p>
             <p><strong>Interpretation rule:</strong> common models improve reproducibility, but they do not remove the need for fit-for-purpose validation in every database.</p>
           </aside>
@@ -115,7 +125,7 @@
         <dl class="figure-metadata"><div><dt>Measure</dt><dd>Hazard ratio</dd></div><div><dt>Comparison</dt><dd>Very-high-risk versus high-risk groups</dd></div></dl>
       </div>
     </section>
-
+<!--
     <section class="section" id="concordance">
       <div class="wrap">
         <div class="section-heading">
@@ -154,6 +164,45 @@
           </li>
         </ol>
       </div>
+    </section> -->
+
+    <section class="section section--soft" id="subgroup-explorer">
+      <div class="wrap">
+        <div class="section-heading"><p class="eyebrow">Subgroup explorer</p><h2>Index-event patterns differ across strata</h2></div>
+        <figure class="evidence-figure" data-evidence-figure="ascvd-subgroups">
+          <div class="figure-heading"><div><p class="technical-label">Taiwan NHIRD</p><h3>Index-event profile</h3></div><a class="data-link" href="assets/data/expansion-0812.json" download>Download figure data</a></div>
+          <div class="research-explorer" data-subgroup-explorer data-chart-mount></div>
+          <details class="figure-table"><summary>View accessible data table</summary><div class="table-scroll" data-table-mount></div></details>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="risk-comparison">
+      <div class="wrap">
+        <div class="section-heading"><p class="eyebrow">Cross-database comparison</p><h2>Compare the risk across outcomes and data  environments</h2></div>
+        <figure class="evidence-figure" data-evidence-figure="ascvd-risk-comparison">
+          <div class="figure-heading"><div><p class="technical-label">Very-high-risk versus high-risk</p><h3>Estimated hazard ratios across participating data environments</h3></div><a class="data-link" href="assets/data/expansion-0812.json" download>Download figure data</a></div>
+          <p class="provisional-note"><strong>Provisional transcription:</strong> the PowerPoint stores slide 34 as an SVG without a linked chart workbook. Values below were digitized from that image and must be replaced when the original analysis table is available.</p>
+          <div class="research-explorer forest-explorer" data-ascvd-risk-forest data-chart-mount></div>
+          <details class="figure-table"><summary>View accessible data table</summary><div class="table-scroll" data-table-mount></div></details>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="cdm-comparison">
+      <div class="wrap">
+        <div class="section-heading"><p class="eyebrow">Two-CDM comparison</p><h2>Compare both CDM implementation settings at once</h2><p><button class="figure-action" type="button" data-cdm-export>Download comparison CSV</button></p></div>
+        <div class="research-explorer" data-cdm-concordance></div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="extended-visualization">
+      <div class="wrap">
+        <div class="cta-band">
+          <div><p class="eyebrow">Extended case · interactive visualization</p><h2>Explore the ASCVD visualization module</h2><p>Review the current study results for cohort assembly, characteristics, event rates, and comparative estimates through one linked interface.</p></div>
+          <a class="btn btn--light" href="Visualization/index.html">Open the visualization</a>
+        </div>
+      </div>
     </section>
 
     <section class="section" id="implications">
@@ -163,9 +212,9 @@
           <h2>Where this case leads</h2>
         </div>
         <div class="grid grid--3">
-          <article class="card"><h3>An exercised pipeline</h3><p>Conversion, quality assurance, and analysis were implemented end to end within restricted data environments.</p><p><a href="methods.html#etl">See the ETL process →</a></p></article>
-          <article class="card"><h3>A comparison of routes</h3><p>OMOP and Sentinel implementations of the same question, with the trade-offs documented rather than asserted.</p><p><a href="methods.html#cdm-routes">Compare the routes →</a></p></article>
-          <article class="card"><h3>A reusable module library</h3><p>Eligibility, characteristics, drug utilization, and clinical outcome modules that the dermatology work then ran without rebuilding.</p><p><a href="case-adpn.html">See the AD / PN case →</a></p></article>
+          <article class="card"><h3>An end-to-end implementation pipeline</h3><p>Conversion, quality assurance, and analysis were implemented within restricted data environments as a complete end-to-end workflow.</p><p><a href="methods.html#etl">See the ETL process →</a></p></article>
+          <article class="card"><h3>A comparison of CDM routes</h3><p>The same study question was implemented through both OMOP and Sentinel, allowing their practical trade-offs to be examined rather than assumed.</p><p><a href="methods.html#cdm-routes">Compare the routes →</a></p></article>
+          <article class="card"><h3>A reusable module library</h3><p>Reusable modules for eligibility, baseline characteristics, drug utilization, and clinical outcomes were carried forward into the dermatology studies without rebuilding the workflow.</p><p><a href="case-adpn.html">See the AD / PN case →</a></p></article>
         </div>
       </div>
     </section>
@@ -180,9 +229,10 @@
     </section>
   </main>
   <footer class="site-footer"></footer>
-  <script src="assets/js/main.js" defer></script>
-  <script src="assets/js/charts.js" defer></script>
-  <script src="assets/js/mascot.js" defer></script>
-  <script src="assets/js/enhancements.js?v=20260808-svg-export-2" defer></script>
+  <script src="assets/js/main.js?v=20260817a" defer></script>
+  <script src="assets/js/charts.js?v=20260817a" defer></script>
+  <script src="assets/js/explorers.js?v=20260817a" defer></script>
+  <script src="assets/js/mascot.js?v=20260817a" defer></script>
+  <script src="assets/js/enhancements.js?v=20260817a" defer></script>
 </body>
 </html>

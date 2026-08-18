@@ -42,7 +42,7 @@ Open:
 
 `http://localhost:8000/`
 
-Use an HTTP server rather than opening files directly because `evidence.html` fetches `assets/data/results.json`.
+Use an HTTP server rather than opening files directly because the interactive case, Methods, and Partner widgets fetch JSON data files.
 
 Run structural validation:
 
@@ -83,6 +83,10 @@ Get-ChildItem assets\js\*.js | ForEach-Object { node --check $_.FullName }
 | Readiness logic/output wording | `assets/js/main.js` |
 | Public evidence values/metadata | `assets/data/results.json` |
 | Evidence rendering or controls | `assets/js/charts.js` |
+| 0812 cohort/module/map/subgroup/CDM/age/medication values | `assets/data/expansion-0812.json` |
+| 0812 multi-page explorer rendering | `assets/js/explorers.js` |
+| Transportability aggregate estimates | `assets/data/transportability.json` |
+| Transportability forest plot | `assets/js/transportability.js`, `transportability.html` |
 | Figure downloads/reading tools/motion | `assets/js/enhancements.js` |
 | Mascot figures/scenes/card scopes | `assets/js/mascot.js` |
 | Visual tokens/layout/motion | `assets/css/styles.css`, `brand-spec.md` |
@@ -157,7 +161,9 @@ Procedure:
 
 ## 10. Updating evidence data
 
-The public figure source is `assets/data/results.json`.
+The established public figure source is `assets/data/results.json`. The 0812 deck-derived extensions are owned by `assets/data/expansion-0812.json`. The transportability case is isolated in `assets/data/transportability.json`, which records final aggregate estimates supplied from the current raw analysis data.
+
+When transportability results are updated, replace every estimate and interval in `transportability.json`, update its status and source metadata, and validate the accessible table against the forest plot before publication. Do not infer a version, verification date, or approval state that the source does not provide.
 
 ### Before editing
 

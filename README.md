@@ -13,7 +13,10 @@ Repository documentation:
 
 - Static HTML/CSS/JavaScript; no build step, package manager, framework, backend, database, authentication, or server-side data processing.
 - Shared navigation, footer, core widgets, and browser-only readiness assessment are owned by `assets/js/main.js`.
-- Evidence figures and accessible tables on the detailed case pages are generated from `assets/data/results.json` by `assets/js/charts.js`.
+- Established evidence figures and accessible tables are generated from `assets/data/results.json` by `assets/js/charts.js`.
+- The 2026-08-12/13 cohort, geographic partner map, module, subgroup, two-CDM, age-prevalence, medication-matrix, and provisional cross-database forest-plot extensions are generated from `assets/data/expansion-0812.json` by `assets/js/explorers.js`.
+- The slide-34 cross-database ASCVD estimates in `expansion-0812.json` are visibly marked provisional because the PowerPoint stores that figure as an SVG without a linked chart workbook. Replace them from the original analysis table before scientific publication.
+- The transportability case reads `assets/data/transportability.json`. Its metadata records final aggregate results supplied from the current raw analysis data.
 - The four Impact records have one content source, `assets/js/impact-data.js`, and are rendered by `assets/js/impact.js` on Home and About.
 - Inline LEGO mascot generation and injection are isolated in `assets/js/mascot.js`.
 - All public pages use the consolidated `assets/css/styles.css`; redirect stubs intentionally have no runtime bundle.
@@ -27,7 +30,7 @@ The primary navigation follows one visitor narrative:
 2. **About** — identity, formal name, readiness model, three pillars, programme evolution, living roadmap, full Impact details, the PHDc–AsPEN–IMPRESIVE role map, and Governance / Transparency
 3. **Objective** — rationale and objectives for international multi-database studies
 4. **How** — workflow, ETL, CDM routes, quality assurance, distributed execution, and resource-release status
-5. **Accomplishment** — verified programme case narratives with their interactive figures, downloads, accessible tables, and interpretation boundaries
+5. **Accomplishment** — ASCVD, AD/PN, and transportability case narratives with interactive figures, accessible tables, source status, and interpretation boundaries
 6. **Partner** — six public data environments, including Korea HIRA, published scale context, and the readiness framework
 7. **Join** — participation pathways, FAQ, and the primary PHDc collaboration route
 
@@ -54,7 +57,7 @@ Legacy routes remain as `noindex` compatibility redirects:
 ## Content authority and terminology
 
 - `IMPRESIVE Sharing.pptx` is the primary scientific and programme source.
-- Do not publish database-specific results, dates, cohort counts, manuscript status, partner QA findings, or causal explanations unless the approved source explicitly supports them and the content owner has cleared them for release.
+- Do not publish database-specific results, dates, cohort counts, manuscript status, partner QA findings, or causal explanations unless the approved source explicitly supports them and the content owner has cleared them for release. The new case-summary counts are limited to the values explicitly requested from source slide 12; do not sum them or substitute counts from later animation slides.
 - Use **programme** for the research initiative and **program** for executable analytic code.
 - Retain the formal IMPRESIVE spelling: “International Multi-database study PREparedness: Databases Standardization, Integration and Visualization for timely Evaluation on Disease and Treatment.”
 - Preserve missing figure values as missing. Do not convert them to zero.
@@ -105,7 +108,7 @@ Before publishing a content change:
 
 1. verify the claim against the approved source slide or owner-approved material;
 2. update the relevant HTML page rather than creating a duplicate destination;
-3. update `assets/data/results.json` first when a figure value changes;
+3. update the owning data file first when a figure value changes: `results.json`, `expansion-0812.json`, `transportability.json`, or the ASCVD visualization build outputs;
 4. confirm the chart and accessible table still agree;
 5. check internal links and URL fragments;
 6. check desktop and mobile presentation;

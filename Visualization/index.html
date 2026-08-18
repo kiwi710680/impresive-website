@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Interactive review of the IMPRESIVE ASCVD common-data-model outputs: study cohort, baseline characteristics, event rates, and comparative risk estimates.">
+  <link rel="canonical" href="https://phd-center.github.io/impresive/Visualization/index.html">
+  <title>ASCVD Visualization Platform | IMPRESIVE</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/styles.css?v=20260817a">
+  <link rel="stylesheet" href="assets/css/viz.css?v=20260817a">
+</head>
+<body data-page="visualization" data-nav-base="../">
+  <header class="site-header">
+    <noscript><div class="wrap noscript-nav"><a class="noscript-brand" href="../index.html">IMPRESIVE</a><nav class="noscript-links" aria-label="Primary navigation"><a href="../index.html">Home</a><a href="../about.html">About</a><a href="../objective.html">Objective</a><a href="../how.html">How</a><a href="../cases.html">Accomplishment</a><a href="../databases.html">Partner</a><a href="../join.html">Join</a></nav></div></noscript>
+  </header>
+
+
+  <main id="main">
+
+    <section class="page-hero viz-hero">
+      <div class="wrap">
+        <p class="crumb"><a href="../index.html">Home</a> / <a href="../cases.html">Accomplishment</a> / ASCVD visualization</p>
+        <p class="eyebrow">Objective 3 · Visualization infrastructure</p>
+        <h1>Review harmonized ASCVD outputs without running the analysis again</h1>
+        <dl class="case-hero-stats" data-study-facts></dl>
+      </div>
+    </section>
+
+    <section class="section viz-globalbar-section">
+      <div class="wrap">
+        <div class="viz-globalbar" data-global-bar>
+          <div class="viz-globalbar__field">
+            <label for="study-period">Study cohort</label>
+            <select id="study-period" data-period-select></select>
+          </div>
+          <p class="viz-globalbar__note" data-period-note></p>
+        </div>
+        <p class="source-note" data-study-source></p>
+      </div>
+    </section>
+
+    <p class="chart-status viz-status" data-viz-status role="status">Loading the standardized analytical outputs…</p>
+
+    <div data-viz-app hidden>
+
+      <!-- ------------------------------------------------ Module 1 -->
+      <section class="section" id="cohort">
+        <div class="wrap">
+          <div class="section-heading">
+            <p class="eyebrow">Module 1 · Study cohort</p>
+            <h2>How the analysed population was assembled</h2>
+          </div>
+          <div class="viz-section-download"><button class="btn btn--outline btn--small" type="button" data-cohort-export>Download cohort flow CSV</button></div>
+          <div data-cohort-flow></div>
+
+          <div class="section-heading section-heading--sub">
+            <p class="eyebrow">Composition explorer</p>
+            <h2>Cross a main variable with an optional subgroup</h2>
+          </div>
+
+          <div class="viz-controlgroup">
+            <p class="technical-label">Select main variable</p>
+            <div class="explorer-controls" data-cohort-main></div>
+          </div>
+          <div class="viz-controlgroup">
+            <p class="technical-label">Then filter by subgroup (optional)</p>
+            <div class="explorer-controls" data-cohort-sub></div>
+          </div>
+
+          <h3 class="viz-figure-title" data-cohort-title></h3>
+          <div class="viz-figure-grid">
+            <figure class="viz-figure" data-viz-export="impresive-ascvd-cohort-composition">
+              <figcaption>Overall composition</figcaption>
+              <div class="viz-figure-actions" aria-label="Overall composition downloads"><button class="btn btn--outline btn--small" type="button" data-viz-download="png" disabled>Download PNG</button><button class="btn btn--outline btn--small" type="button" data-viz-download="svg" disabled>Download SVG</button></div>
+              <div class="viz-chart-shell" data-cohort-pie></div>
+            </figure>
+            <figure class="viz-figure" data-viz-export="impresive-ascvd-cohort-age">
+              <figcaption>By decade of age</figcaption>
+              <div class="viz-figure-actions" aria-label="Age-distribution downloads"><button class="btn btn--outline btn--small" type="button" data-viz-download="png" disabled>Download PNG</button><button class="btn btn--outline btn--small" type="button" data-viz-download="svg" disabled>Download SVG</button></div>
+              <div class="viz-chart-shell" data-cohort-age></div>
+            </figure>
+          </div>
+          <figure class="viz-figure" data-viz-export="impresive-ascvd-cohort-year">
+            <figcaption>By calendar year of cohort entry</figcaption>
+            <div class="viz-figure-actions" aria-label="Calendar-year downloads"><button class="btn btn--outline btn--small" type="button" data-viz-download="png" disabled>Download PNG</button><button class="btn btn--outline btn--small" type="button" data-viz-download="svg" disabled>Download SVG</button></div>
+            <div class="viz-chart-shell" data-cohort-year></div>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ------------------------------------------------ Module 2 -->
+      <section class="section section--soft" id="characteristics">
+        <div class="wrap">
+          <div class="section-heading">
+            <p class="eyebrow">Module 2 · Baseline characteristics</p>
+            <h2>Compare the two risk groups before reading any outcome</h2>
+          </div>
+
+          <figure class="viz-figure" data-viz-export="impresive-ascvd-characteristics-categorical">
+            <h3>Categorical characteristics · very-high-risk versus high-risk</h3>
+            <div class="viz-figure-actions" aria-label="Categorical-characteristics downloads"><button class="btn btn--outline btn--small" type="button" data-viz-download="png" disabled>Download PNG</button><button class="btn btn--outline btn--small" type="button" data-viz-download="svg" disabled>Download SVG</button></div>
+            <div class="viz-chart-shell" data-char-scatter></div>
+          </figure>
+
+          <div class="viz-figure-head">
+            <h3>Continuous characteristics</h3>
+            <div class="explorer-controls" data-char-mode></div>
+          </div>
+          <figure class="viz-figure" data-viz-export="impresive-ascvd-characteristics-continuous">
+            <div class="viz-figure-actions" aria-label="Continuous-characteristics downloads"><button class="btn btn--outline btn--small" type="button" data-viz-download="png" disabled>Download PNG</button><button class="btn btn--outline btn--small" type="button" data-viz-download="svg" disabled>Download SVG</button></div>
+            <div class="viz-chart-shell" data-char-continuous></div>
+          </figure>
+
+          <details class="viz-linked-table">
+            <summary>
+              <span><span class="eyebrow">Linked table</span><strong>Select characteristics to focus both figures</strong><small>Search, sort, and select the characteristics used by both figures above.</small></span>
+              <span class="viz-linked-table__hint"><span class="when-closed">Open selection table</span><span class="when-open">Close selection table</span></span>
+            </summary>
+            <div class="viz-linked-table__body">
+              <p>Sort any column, search by name, and tick the characteristics you want. The figures above redraw from your selection without reloading the page.</p>
+              <div class="viz-tablebar">
+                <label class="explorer-field viz-search">
+                  <span>Search characteristics</span>
+                  <input type="search" data-char-search placeholder="For example: diabetes, LDL, statin">
+                </label>
+                <div class="viz-tablebar__actions">
+                  <button class="btn btn--outline" type="button" data-char-reset>Reset selection</button>
+                  <button class="btn btn--outline" type="button" data-char-export>Download CSV</button>
+                </div>
+              </div>
+              <p class="viz-status-line" data-char-status aria-live="polite"></p>
+              <div data-char-table></div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- ------------------------------------------------ Module 3 -->
+      <section class="section" id="rates">
+        <div class="wrap">
+          <div class="section-heading">
+            <p class="eyebrow">Module 3 · Event rates</p>
+            <h2>Event counts, follow-up, and incidence rates</h2>
+            <p>Select any number of outcomes and build one or more subgroup analyses. Each outcome opens in its own panel so the main analysis and its subgroups stay side by side.</p>
+          </div>
+
+          <div class="viz-panel">
+            <div class="viz-panel__section">
+              <p class="technical-label">Select outcomes</p>
+              <div class="explorer-controls" data-rates-outcomes></div>
+            </div>
+            <div class="viz-panel__section">
+              <div class="viz-panel__head">
+                <p class="technical-label">Analysis</p>
+                <button class="btn btn--outline btn--small" type="button" data-rates-add>+ Add subgroup</button>
+              </div>
+              <div data-rates-analyses></div>
+            </div>
+          </div>
+
+          <div class="viz-tablebar__actions viz-tablebar__actions--right">
+            <button class="btn btn--outline" type="button" data-rates-export>Download CSV</button>
+          </div>
+          <div data-rates-result></div>
+        </div>
+      </section>
+
+      <!-- ------------------------------------------------ Module 4 -->
+      <section class="section section--soft" id="risk">
+        <div class="wrap">
+          <div class="section-heading">
+            <p class="eyebrow">Module 4 · Risk estimate</p>
+            <h2>Comparative effect estimates with their confidence intervals</h2>
+          </div>
+
+          <div class="viz-panel">
+            <div class="viz-panel__section">
+              <p class="technical-label">Select outcomes</p>
+              <div class="explorer-controls" data-risk-outcomes></div>
+            </div>
+            <div class="viz-panel__section">
+              <label class="explorer-field">
+                <span>Select estimator</span>
+                <select data-risk-estimator></select>
+              </label>
+            </div>
+            <div class="viz-panel__section">
+              <div class="viz-panel__head">
+                <p class="technical-label">Analysis</p>
+                <button class="btn btn--outline btn--small" type="button" data-risk-add>+ Add subgroup</button>
+              </div>
+              <div data-risk-analyses></div>
+            </div>
+          </div>
+
+          <figure class="viz-figure" data-viz-export="impresive-ascvd-risk-estimates">
+            <figcaption>Very-high-risk versus high-risk group</figcaption>
+            <div class="viz-figure-actions" aria-label="Risk-estimate downloads"><button class="btn btn--outline btn--small" type="button" data-viz-download="png" disabled>Download PNG</button><button class="btn btn--outline btn--small" type="button" data-viz-download="svg" disabled>Download SVG</button></div>
+            <div class="viz-chart-shell" data-risk-chart></div>
+          </figure>
+
+          <div class="viz-tablebar__actions viz-tablebar__actions--right">
+            <button class="btn btn--outline" type="button" data-risk-export>Download CSV</button>
+          </div>
+          <details class="figure-table">
+            <summary>View the estimates as a table</summary>
+            <div data-risk-table></div>
+          </details>
+        </div>
+      </section>
+
+
+    </div>
+  </main>
+
+  <section class="section viz-outro">
+    <div class="wrap">
+      <div class="cta-band">
+        <div>
+          <h2>Return to the expanding case portfolio</h2>
+          <p>Compare this visualization infrastructure with the established ASCVD and AD/PN cases.</p>
+        </div>
+        <a class="btn btn--light" href="../cases.html">All accomplishments</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer"></footer>
+
+  <script src="../assets/js/main.js?v=20260817a" defer></script>
+  <script src="assets/js/viz-core.js?v=20260817a" defer></script>
+  <script src="assets/js/viz-cohort.js?v=20260817a" defer></script>
+  <script src="assets/js/viz-characteristics.js?v=20260817a" defer></script>
+  <script src="assets/js/viz-outcomes.js?v=20260817a" defer></script>
+  <script src="assets/js/viz-app.js?v=20260817a" defer></script>
+  <script src="../assets/js/enhancements.js?v=20260817a" defer></script>
+</body>
+</html>

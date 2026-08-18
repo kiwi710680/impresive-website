@@ -1,0 +1,227 @@
+{
+  "meta": {
+    "source": "IMPRESIVE real-world evidence generation flow",
+    "note": "Copy for the interactive architecture on how.html. Editing this file changes the site; no JavaScript changes are needed."
+  },
+  "chapters": {
+    "frame": {
+      "label": "Frame",
+      "question": "What decision needs evidence?",
+      "summary": "A decision need is stated with its threshold, then decomposed into common questions that can each be answered separately."
+    },
+    "assess": {
+      "label": "Assess",
+      "question": "Can this source answer this question?",
+      "summary": "Characterisation reports what a source actually contains. Fitness is then judged for a question × source pair, never for a database in general."
+    },
+    "implement": {
+      "label": "Implement",
+      "question": "What travels to each site?",
+      "summary": "The coordinating centre sends one artefact per architecture: a question, a protocol, or an analytic program. Person-level data never leave the site."
+    },
+    "interpret": {
+      "label": "Interpret",
+      "question": "Do the results hold together?",
+      "summary": "Aggregate outputs are pooled with a consistency check, examined through diagnostics, and tested for whether they inform another population."
+    },
+    "integrate": {
+      "label": "Integrate",
+      "question": "Is the totality enough to decide?",
+      "summary": "Evidence is integrated across questions and judged against the threshold defined at the start. What falls short defines the next round."
+    }
+  },
+  "nodes": {
+    "decision-need": {
+      "label": "Decision need",
+      "summary": "The clinical, regulatory, or policy decision that the evidence has to support. The threshold for what would count as sufficient is set here, before any data are examined.",
+      "link": {
+        "href": "objective.html",
+        "text": "Why preparedness starts here"
+      },
+      "step": "1"
+    },
+    "common-questions": {
+      "label": "Common questions",
+      "summary": "The decision need is decomposed into separately answerable questions, so that a source unfit for one facet can still contribute to another.",
+      "link": {
+        "href": "objective.html",
+        "text": "The objective for multinational studies"
+      },
+      "step": "2"
+    },
+    "disease-burden": {
+      "label": "Disease burden",
+      "summary": "How much unmet need exists, and in whom. Prevalence and incidence questions are usually the least demanding of a data source.",
+      "case": "CASE 02 · AD / PN — prevalence measured under three case definitions of increasing specificity.",
+      "link": {
+        "href": "case-adpn.html#case-definitions-evidence",
+        "text": "See the AD / PN prevalence work"
+      }
+    },
+    "treatment-use": {
+      "label": "Treatment use",
+      "summary": "Which treatments are given, to whom, and in what sequence. Answering this requires dispensing or prescribing records with usable dates.",
+      "case": "CASE 02 · AD / PN — index medication profiles compared across data environments.",
+      "link": {
+        "href": "case-adpn.html#medication-mix",
+        "text": "Compare medication profiles"
+      }
+    },
+    "effectiveness": {
+      "label": "Effectiveness",
+      "summary": "Whether a treatment or a risk classification distinguishes outcomes. This is the most demanding facet: it needs exposure, outcome, covariates, follow-up, and a defensible time zero.",
+      "case": "CASE 01 · ASCVD — whether a guideline-based stratification continued to distinguish recurrent risk.",
+      "link": {
+        "href": "case-ascvd.html",
+        "text": "Read the ASCVD case"
+      }
+    },
+    "safety": {
+      "label": "Safety",
+      "summary": "Long-term or rare adverse outcomes. Often the facet that most needs several data environments, because single sources rarely carry enough events.",
+      "link": {
+        "href": "methods.html#fit-for-purpose",
+        "text": "When a question needs more than one source"
+      }
+    },
+    "data-characterisation": {
+      "label": "Data characterisation",
+      "summary": "Counts, coverage, coding availability, and temporal completeness are examined before any analysis is specified. This is descriptive work, and it is a deliverable in its own right.",
+      "link": {
+        "href": "Visualization/index.html",
+        "text": "Open the characterisation interface"
+      },
+      "step": "3"
+    },
+    "characterisation-plots": {
+      "label": "Characterisation plots",
+      "summary": "The descriptive output of characterisation: cohort assembly, baseline composition, and distributions, reviewed before anyone reads an effect estimate.",
+      "link": {
+        "href": "Visualization/index.html",
+        "text": "Open the visualization platform"
+      }
+    },
+    "fit-for-purpose": {
+      "label": "Fit-for-purpose assessment",
+      "summary": "Fitness is a property of a question × source pair, not of a database. The same environment can be fit for a burden question and unfit for an effectiveness question.",
+      "link": {
+        "href": "methods.html#fit-for-purpose",
+        "text": "The fit-for-purpose criteria"
+      },
+      "step": "4"
+    },
+    "coordinating-centre": {
+      "label": "Coordinating centre",
+      "summary": "Sends one artefact to every participating site and receives only permitted aggregate output in return. It never receives person-level data.",
+      "link": {
+        "href": "methods.html#models",
+        "text": "Compare the three architectures"
+      }
+    },
+    "common-question": {
+      "label": "Common question",
+      "summary": "Only the research question travels. Each site chooses its own design, definitions, and methods, so local flexibility is highest and implementation variation is highest too.",
+      "link": {
+        "href": "methods.html#models",
+        "text": "Trade-offs in detail"
+      },
+      "step": "5a"
+    },
+    "common-protocol": {
+      "label": "Common protocol",
+      "summary": "Design, eligibility, variable definitions, and analytic methods travel. Each site builds its own local implementation of that protocol.",
+      "link": {
+        "href": "methods.html#models",
+        "text": "Trade-offs in detail"
+      },
+      "step": "5b"
+    },
+    "common-data-model": {
+      "label": "Common data model",
+      "summary": "Native data are conformed to a shared structure so one analytic program can run everywhere. The lowest implementation variation, at the cost of mapping and infrastructure work.",
+      "case": "CASE 01 · ASCVD — this case exercised the common-data-model pathway across East Asian environments.",
+      "link": {
+        "href": "methods.html#cdm-routes",
+        "text": "OMOP and Sentinel routes"
+      },
+      "step": "5c"
+    },
+    "pooling": {
+      "label": "Pooling and assessing consistency",
+      "summary": "Aggregate results are brought together and checked for consistency across sites and designs. Displaying a range is not the same as pooling an estimate.",
+      "link": {
+        "href": "case-ascvd.html#risk-comparison",
+        "text": "Cross-database comparison"
+      },
+      "step": "6"
+    },
+    "diagnostics": {
+      "label": "Visualisation and diagnostics",
+      "summary": "Balance, overlap, and negative controls are inspected before an estimate is interpreted. Diagnostics are how implementation problems are separated from real differences.",
+      "link": {
+        "href": "Visualization/index.html",
+        "text": "Open the diagnostics interface"
+      },
+      "step": "8"
+    },
+    "transportability": {
+      "label": "Assessing transportability",
+      "summary": "Whether an estimate from one study sample can inform a different target population, while preserving the differences between them rather than averaging them away.",
+      "case": "CASE 03 · TRANSPORTABILITY — estimates from Taiwan examined against a Japanese setting.",
+      "link": {
+        "href": "transportability.html",
+        "text": "Read the transportability case"
+      },
+      "step": "7"
+    },
+    "second-best": {
+      "label": "Second-best analysis",
+      "summary": "Where a question × database pair fails the assessment, execution is bypassed. The questions are redefined, data partners extended, or a prospective or external control used — and the cycle returns to step 1.",
+      "link": {
+        "href": "methods.html#fit-for-purpose",
+        "text": "What falling short produces"
+      },
+      "step": "5*"
+    },
+    "evidence-integration": {
+      "label": "Evidence integration and visualization",
+      "summary": "Findings across questions are assembled into a totality, with each contribution weighted by the design that produced it and the context it came from.",
+      "link": {
+        "href": "cases.html",
+        "text": "The case portfolio"
+      },
+      "step": "8"
+    },
+    "fit-for-decision": {
+      "label": "Fit-for-decision",
+      "summary": "To what extent do the findings inform the decision? The totality is compared with the threshold set in step 1. Whatever falls short defines the next round.",
+      "link": {
+        "href": "cases.html",
+        "text": "What the programme has produced"
+      },
+      "step": "9"
+    },
+    "next-iteration": {
+      "label": "Next iteration",
+      "summary": "The common layers are rebuilt with what was learned: a re-scoped question, extended mappings, additional sites, or an alternative design. Preparedness is iterative, not one-off.",
+      "link": {
+        "href": "about.html#programme-roadmap",
+        "text": "The programme roadmap"
+      }
+    },
+    "results": {
+      "step": "",
+      "label": "Results",
+      "summary": "Each site returns permitted aggregate output to the coordinating centre. Person-level data never leave the approved local environment.",
+      "link": {
+        "href": "methods.html#models",
+        "text": "What each architecture returns"
+      }
+    }
+  },
+  "intro": {
+    "eyebrow": "The full pathway",
+    "title": "Nine steps from decision need to decision",
+    "body": "Every numbered step is explained here. Select any box in the diagram to see what it means, which case exercised it, and where its technical detail lives."
+  }
+}

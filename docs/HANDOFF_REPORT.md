@@ -125,6 +125,8 @@ Redirect stubs are `noindex`, include a canonical destination, and intentionally
 | `assets/js/impact.js` | Impact card/detail rendering, tabs, counter, previous/next, hash navigation | Preserve tab semantics, keyboard keys, IDs, and static fallback removal |
 | `assets/js/interactive.js` | Four-step ETL walkthrough | Loaded only by Methods; keep step content consistent with method copy and ETL diagram |
 | `assets/js/charts.js` | Evidence fetch, SVG construction, controls, legends, accessible tables | Never hard-code replacement study values in the renderer; missing values remain missing |
+| `assets/js/explorers.js` | Cohort cards, network growth, subgroup and two-CDM comparisons, age/medication views, modules, code lists, route filters, partner map | Reads `expansion-0812.json`; keep source-slide metadata and do not pool partner counts |
+| `assets/js/transportability.js` | Forest plot and accessible result table | Reads final aggregate estimates and visible source metadata from `assets/data/transportability.json` |
 | `assets/js/enhancements.js` | Record/roadmap/model/chart motion, reading aids, figure download/copy, disclosure persistence | SVG export must remove CSS motion transforms while preserving SVG `translate`/`rotate` attributes |
 | `assets/js/mascot.js` | `fig()`, `tower()`, `tile()`, presets, scenes, shared/card injection, visibility pausing | SVG must remain inline; do not broaden approved card selectors |
 
@@ -138,6 +140,11 @@ Redirect stubs are `noindex`, include a canonical destination, and intentionally
 - AD clinical-outcome incidence data;
 - AD/PN case-definition prevalence data;
 - source-slide references and explicit not-reported boundaries.
+
+Two additional data ownership boundaries were introduced on 2026-08-12:
+
+- `assets/data/expansion-0812.json` contains exact PowerPoint text or native chart-cache transcriptions for cohort summaries, network coverage, subgroup views, two-CDM comparisons, age-specific prevalence, medication profiles, reusable modules, local code lists, and partner-map context.
+- `assets/data/transportability.json` contains the current final aggregate transportability estimates supplied from the raw analysis data. Keep its status and source metadata synchronized with any future replacement.
 
 At runtime:
 

@@ -207,12 +207,17 @@
       class: "range-estimate"
     }));
     [data.range.lower, data.range.upper].forEach(function (value) {
-      svg.appendChild(svgElement("circle", {
+      var endpoint = svgElement("circle", {
         cx: x(value),
         cy: axisY,
         r: 7,
-        class: "range-endpoint"
-      }));
+        class: "range-endpoint",
+        tabindex: 0,
+        role: "img",
+        "aria-label": "Reported hazard-ratio range endpoint: " + formatNumber(value),
+        "data-chart-tooltip": "Reported hazard-ratio range endpoint: " + formatNumber(value)
+      });
+      svg.appendChild(endpoint);
       svg.appendChild(svgElement("text", {
         x: x(value),
         y: axisY - 22,
@@ -358,7 +363,9 @@
               class: "confidence-interval"
             }));
           }
-          appendMarker(svg, x(value.estimate), y, databases[code], 5, value.estimate === 0);
+          var marker = appendMarker(svg, x(value.estimate), y, databases[code], 5, value.estimate === 0);
+          var tooltip = outcome.label + " · " + code + ": " + formatNumber(value.estimate) + " events per person-year (95% CI " + formatNumber(value.lower) + "–" + formatNumber(value.upper) + ")";
+          marker.setAttribute("tabindex", "0"); marker.setAttribute("role", "img"); marker.setAttribute("aria-label", tooltip); marker.setAttribute("data-chart-tooltip", tooltip);
         });
       });
 
@@ -547,7 +554,9 @@
             return;
           }
           var marker = appendMarker(svg, xPositions[index], y(value), database, 5, false);
-          marker.appendChild(svgElement("title", {}, code + " " + definition.shortLabel + ": " + formatNumber(value) + "%"));
+          var tooltip = code + " · " + definition.shortLabel + ": " + formatNumber(value) + "%";
+          marker.appendChild(svgElement("title", {}, tooltip));
+          marker.setAttribute("tabindex", "0"); marker.setAttribute("role", "img"); marker.setAttribute("aria-label", tooltip); marker.setAttribute("data-chart-tooltip", tooltip);
         });
       });
 
@@ -562,7 +571,7 @@
 
       if (explanation) {
         var selectedDefinition = data.definitions[emphasizedIndex];
-        var explanationText = selectedDefinition.shortLabel + " — " + selectedDefinition.label + ". The emphasis changes only the reading guide; it does not declare this definition preferable.";
+        var explanationText = selectedDefinition.shortLabel + " — " + selectedDefinition.label+".";
         if (selectedDefinition.databaseSpecificNote) explanationText += " " + selectedDefinition.databaseSpecificNote;
         explanation.textContent = explanationText;
       }
@@ -614,6 +623,7 @@
       document.querySelectorAll("[data-chart-status]").forEach(function (status) {
         status.hidden = true;
       });
+      document.dispatchEvent(new CustomEvent("impresive:content-ready"));
     })
     .catch(function (error) {
       showLoadError("The figure data could not be loaded. Use the source notes below or view this site through its local web server. " + error.message);

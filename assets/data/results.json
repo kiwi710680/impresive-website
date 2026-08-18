@@ -16,38 +16,38 @@
     "NHIRD": {
       "label": "NHIRD",
       "country": "Taiwan",
-      "color": "#0063c3",
+      "color": "#174a7e",
       "marker": "circle"
     },
     "CGRD": {
       "label": "CGRD",
       "country": "Taiwan",
-      "color": "#2d746a",
+      "color": "#2c7a4b",
       "marker": "square"
     },
     "NHIS": {
       "label": "NHIS",
       "country": "South Korea",
-      "color": "#8a570f",
+      "color": "#a55a00",
       "marker": "triangle"
     },
     "HIRA": {
       "label": "HIRA",
       "country": "South Korea",
-      "color": "#6c5197",
+      "color": "#6b4fa3",
       "marker": "diamond",
       "sourceMarker": "*"
     },
     "DeSC": {
       "label": "DeSC",
       "country": "Japan",
-      "color": "#9c3c67",
+      "color": "#a33b6b",
       "marker": "cross"
     },
     "CDARS": {
       "label": "CDARS",
       "country": "Hong Kong",
-      "color": "#3f6f82",
+      "color": "#007c91",
       "marker": "hexagon"
     }
   },

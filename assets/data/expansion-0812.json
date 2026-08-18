@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "title": "IMPRESIVE Sharing.pptx",
+    "extraction": "PowerPoint text and native chart caches",
+    "note": "Values in this file are transcribed from the named source slides. Transportability estimates are stored separately because they are provisional image-derived values."
+  },
+  "databaseOrder": ["NHIRD", "CGRD", "NHIS", "HIRA", "DeSC", "CDARS"],
+  "databases": {
+    "NHIRD": {"country": "Taiwan", "type": "claims", "color": "#174a7e", "marker": "circle"},
+    "CGRD": {"country": "Taiwan", "type": "ehr", "color": "#2c7a4b", "marker": "square"},
+    "NHIS": {"country": "South Korea", "type": "claims", "color": "#a55a00", "marker": "triangle"},
+    "HIRA": {"country": "South Korea", "type": "claims", "color": "#6b4fa3", "marker": "diamond"},
+    "DeSC": {"country": "Japan", "type": "claims", "color": "#a33b6b", "marker": "cross"},
+    "CDARS": {"country": "Hong Kong", "type": "ehr", "color": "#007c91", "marker": "hexagon"}
+  },
+  "cohorts": {
+    "sourceSlides": [12],
+    "ASCVD": [
+      {"database": "NHIRD", "period": "2016–2022", "n": 534743, "female": 181803, "femalePercent": 34},
+      {"database": "CGRD", "period": "2016–2023", "n": 35158, "female": 11450, "femalePercent": 32.6},
+      {"database": "NHIS", "period": "2019–2023", "n": 1622525, "female": 655571, "femalePercent": 40.4},
+      {"database": "CDARS", "period": "2005–2019", "n": 9524, "female": 3483, "femalePercent": 36.6},
+      {"database": "DeSC", "period": "2014–2023", "n": 10570, "female": 4810, "femalePercent": 45.5}
+    ],
+    "AD": [
+      {"database": "NHIRD", "period": "2017–2021", "n": 151847, "female": 79987, "femalePercent": 52.7},
+      {"database": "CGRD", "period": "2016–2023", "n": 3888, "female": 1975, "femalePercent": 50.8},
+      {"database": "HIRA", "period": "2019–2023", "n": 519043, "female": 288535, "femalePercent": 55.6},
+      {"database": "CDARS", "period": "2017–2023", "n": 199, "female": 89, "femalePercent": 44.7},
+      {"database": "DeSC", "period": "2014–2023", "n": 7689, "female": 4158, "femalePercent": 54.1}
+    ],
+    "PN": [
+      {"database": "NHIRD", "period": "2017–2021", "n": 23726, "female": 9742, "femalePercent": 41.1},
+      {"database": "CGRD", "period": "2016–2023", "n": 803, "female": 313, "femalePercent": 39},
+      {"database": "HIRA", "period": "2019–2023", "n": 71851, "female": 32345, "femalePercent": 45},
+      {"database": "CDARS", "period": "2017–2023", "n": 179, "female": 82, "femalePercent": 45.8},
+      {"database": "DeSC", "period": "2014–2023", "n": 241, "female": 112, "femalePercent": 46.5}
+    ]
+  },
+  "networkGrowth": {
+    "sourceSlides": [29, 30, 31, 32, 33, 43],
+    "steps": [
+      {"label": "Taiwan foundation", "databases": ["NHIRD"], "diseases": ["ASCVD"], "cohorts": 3},
+      {"label": "Hospital detail added", "databases": ["NHIRD", "CGRD"], "diseases": ["ASCVD"], "cohorts": 5},
+      {"label": "Cross-country comparison", "databases": ["NHIRD", "CGRD", "NHIS"], "diseases": ["ASCVD"], "cohorts": null},
+      {"label": "Japan and Hong Kong connected", "databases": ["NHIRD", "CGRD", "NHIS", "DeSC", "CDARS"], "diseases": ["ASCVD"], "cohorts": null},
+      {"label": "Reusable modules across diseases", "databases": ["NHIRD", "CGRD", "NHIS", "HIRA", "DeSC", "CDARS"], "diseases": ["ASCVD", "AD", "PN"], "cohorts": 15}
+    ]
+  },
+  "ascvdSubgroups": {
+    "sourceSlides": [36, 37],
+    "categories": ["ACS", "MI", "Angina", "Hemorrhagic stroke", "Ischemic stroke", "TIA", "PAD", "PCI", "CABG"],
+    "views": {
+      "allPatients": {
+        "label": "Taiwan NHIRD, all patients",
+        "series": {
+          "All patients": [23.6, 14.4, 19.4, 8.3, 30.7, 7.8, 1.5, 35.6, 2.0]
+        }
+      },
+      "age": {
+        "label": "Taiwan NHIRD by age",
+        "series": {
+          "0–39": [27.3, 19.8, 18.6, 20.8, 23.0, 8.6, 0.8, 25.5, 1.8],
+          "40–64": [27.0, 17.2, 22.5, 10.7, 25.1, 6.2, 0.9, 38.7, 2.4],
+          "65+": [21.1, 12.7, 16.8, 6.4, 35.3, 8.7, 2.2, 33.8, 1.8]
+        }
+      },
+      "age40Sex": {
+        "label": "Taiwan NHIRD, age 40–64 by sex",
+        "series": {
+          "Male": [29.6, 19.7, 21.6, 9.5, 24.4, 4.7, 0.9, 43.9, 2.6],
+          "Female": [18.8, 9.5, 25.3, 14.4, 27.3, 10.8, 1.1, 22.8, 1.6]
+        }
+      },
+      "age65Sex": {
+        "label": "Taiwan NHIRD, age 65+ by sex",
+        "series": {
+          "Male": [22.7, 13.9, 17.2, 5.7, 32.8, 7.5, 2.0, 39.1, 2.3],
+          "Female": [18.8, 11.0, 16.2, 7.3, 38.9, 10.3, 2.5, 26.2, 1.2]
+        }
+      }
+    }
+  },
+  "ascvdRiskForest": {
+    "sourceSlides": [34],
+    "measure": "Hazard ratio with 95% confidence interval",
+    "reference": 1,
+    "provisional": true,
+    "extraction": "Digitized visually from the slide 34 SVG because the PowerPoint contains no linked chart workbook for this figure. Replace with the original analysis table when available.",
+    "databaseOrder": ["NHIRD", "NHIS", "DeSC", "CDARS", "CGRD"],
+    "outcomes": [
+      {"label": "ASCVD recurrence", "values": {"NHIRD": [1.52, 1.45, 1.59], "NHIS": [1.46, 1.40, 1.52], "DeSC": [1.18, 1.07, 1.29], "CDARS": [1.16, 1.07, 1.25], "CGRD": [1.36, 1.28, 1.43]}},
+      {"label": "Major CV events", "values": {"NHIRD": [1.60, 1.51, 1.69], "NHIS": [2.18, 2.12, 2.24], "DeSC": [1.59, 1.41, 1.80], "CDARS": [0.98, 0.88, 1.09], "CGRD": [1.48, 1.39, 1.57]}},
+      {"label": "ACS", "values": {"NHIRD": [2.09, 2.01, 2.17], "NHIS": [2.18, 2.12, 2.24], "DeSC": [1.96, 1.42, 2.75], "CDARS": [1.10, 1.02, 1.18], "CGRD": [1.72, 1.56, 1.87]}},
+      {"label": "MI", "values": {"NHIRD": [2.48, 2.35, 2.60], "NHIS": [2.10, 2.04, 2.16], "DeSC": [1.36, 1.00, 1.86], "CDARS": [1.59, 1.21, 1.95], "CGRD": [2.75, 2.43, 3.10]}},
+      {"label": "Ischemic stroke", "values": {"NHIRD": [2.34, 2.26, 2.43], "NHIS": [2.60, 2.54, 2.66], "DeSC": [3.18, 2.58, 3.91], "CDARS": [1.37, 1.14, 1.64], "CGRD": [1.56, 1.39, 1.73]}},
+      {"label": "PAD", "values": {"NHIRD": [4.75, 4.25, 5.25], "NHIS": [3.63, 3.54, 3.73], "DeSC": [6.67, 3.54, 8.00], "CDARS": [4.50, 3.55, 5.70], "CGRD": [3.62, 2.75, 4.78]}},
+      {"label": "Coronary revascularization", "values": {"NHIRD": [1.36, 1.28, 1.44], "NHIS": [1.52, 1.46, 1.58], "DeSC": [0.82, 0.71, 0.94], "CDARS": [0.71, 0.63, 0.81], "CGRD": [1.38, 1.30, 1.46]}},
+      {"label": "CV death", "values": {"NHIRD": [3.46, 3.27, 3.65], "NHIS": [3.53, 3.46, 3.60], "DeSC": [3.05, 1.70, 5.45], "CDARS": [1.49, 0.84, 2.65], "CGRD": [2.29, 1.25, 3.55]}},
+      {"label": "All-cause death", "values": {"NHIRD": [2.54, 2.46, 2.62], "NHIS": [2.24, 2.18, 2.30], "DeSC": [1.52, 1.35, 1.69], "CDARS": [0.68, 0.54, 0.86], "CGRD": [2.47, 2.09, 2.91]}}
+    ]
+  },
+  "cdmConcordance": {
+    "sourceSlides": [26, 27],
+    "categories": ["[High Risk] pLDL", "[High Risk] CKD", "[High Risk] Current smoking", "[High Risk] Congestive HF", "[High Risk] Hypertension", "[High Risk] Diabetes mellitus", "[High Risk] History of CABG/PCI outside major ASCVD events", "[High Risk] Familial hypercholesterolemia", "[High Risk] Age 65+", "[Major event] Symptomatic PAD", "[Major event] Ischemic stroke", "[Major event] History of MI", "[Major event] Recent ACS event", "[Index] CABG", "[Index] PCI", "[Index] PAD", "[Index] TIA", "[Index] Ischemic stroke", "[Index] Hemorrhagic stroke", "[Index] Angina", "[Index] MI", "[Index] ACS"],
+    "countries": {
+      "Taiwan NHIRD": {
+        "OMOP": [6.08, 20.02, 4.51, 17.42, 72.32, 41.18, 15.26, 0, 56.63, 5.13, 35.77, 4.78, 26.23, 2.10, 35.21, 2.34, 7.72, 30.57, 8.55, 19.31, 14.27, 23.29],
+        "Sentinel": [5.7, 19.2, 4.3, 16.1, 69.0, 38.9, 15.7, 0, 56.5, 3.3, 35.7, 4.6, 26.6, 2.0, 35.6, 1.5, 7.8, 30.7, 8.3, 19.4, 14.4, 23.6]
+      },
+      "South Korea NHIS": {
+        "OMOP": [12.5, 6.0, 0.1, 8.5, 57.4, 30.3, 7.1, 0, 59.6, 10.5, 41.8, 3.9, 25.5, 1.2, 25.2, 3.3, 9.0, 36.2, 9.6, 27.1, 12.1, 24.1],
+        "Sentinel": [9.446, 8.375, 0.051, 8.094, 51.296, 25.938, 6.706, 0, 59.666, 6.808, 37.384, 3.656, 23.047, 0.707, 22.658, 2.063, 7.998, 32.376, 8.39, 34.763, 10.867, 21.454]
+      }
+    }
+  },
+  "agePrevalence": {
+    "sourceSlides": [48, 49, 50, 51],
+    "unit": "percent",
+    "ageGroups": ["12–19", "20–39", "40–59", "60+"],
+    "databaseOrder": ["NHIRD", "HIRA", "DeSC", "CDARS", "CGRD"],
+    "diseases": {
+      "AD": {
+        "NHIRD": [3.72, 2.72, 2.18, 3.18], "HIRA": [13.37, 7.95, 3.57, 4.44], "DeSC": [4.14, 2.40, 3.01, 2.82], "CDARS": [0.005, 0.005, 0.001, 0.004], "CGRD": [4.25, 2.72, 0.63, 0.36]
+      },
+      "PN": {
+        "NHIRD": [0.14, 0.23, 0.36, 0.62], "HIRA": [0.36, 0.58, 0.64, 0.89], "DeSC": [0.019, 0.046, 0.082, 0.127], "CDARS": [null, 0.002, 0.002, 0.008], "CGRD": [0.06, 0.10, 0.15, 0.27]
+      }
+    }
+  },
+  "medicationMix": {
+    "sourceSlides": [52],
+    "unit": "percent",
+    "categories": ["JAK inhibitors", "Biologics", "Neuromodulators", "Immunosuppressants", "Oral corticosteroids"],
+    "databaseOrder": ["CDARS", "DeSC", "NHIS", "CGRD", "NHIRD"],
+    "diseases": {
+      "AD": {"CDARS": [0, 8.5, 8.0, 30.2, 71.4], "DeSC": [0.3, 1.6, 6.5, 6.6, 94.6], "NHIS": [0, 0.2, 4.4, 7.0, 96.2], "CGRD": [1.4, 4.7, 3.3, 41.7, 74.3], "NHIRD": [0, 0, 2.3, 4.9, 97.8]},
+      "PN": {"CDARS": [0, 1.1, 12.8, 23.5, 83.8], "DeSC": [0.8, 4.1, 6.2, 12.0, 88.8], "NHIS": [0, 0.1, 6.0, 5.6, 97.2], "CGRD": [0, 1.5, 10.0, 20.0, 80.0], "NHIRD": [0, 0, 2.8, 3.9, 98.2]}
+    }
+  },
+  "analysisModules": {
+    "sourceSlides": [42],
+    "modules": [
+      {"id": "setup", "label": "Set up", "output": "Study parameters and local execution settings", "caseUse": "ASCVD and AD/PN", "changes": "Study period, database switches and local paths", "unchanged": "Shared execution contract and output structure"},
+      {"id": "eligibility", "label": "Eligibility criteria", "output": "Study cohort and attrition", "caseUse": "ASCVD and AD/PN", "changes": "Disease definitions, index event and look-back", "unchanged": "Cohort construction pattern"},
+      {"id": "prevalence", "label": "Prevalence estimate", "output": "Case-definition-specific prevalence", "caseUse": "Added for AD/PN", "changes": "Definitions D1–D3 and calendar year", "unchanged": "Distributed summary template", "new": true},
+      {"id": "characteristics", "label": "Characteristics", "output": "Baseline profile", "caseUse": "ASCVD and AD/PN", "changes": "Study-specific covariates and windows", "unchanged": "Summary-statistics module"},
+      {"id": "drug", "label": "Drug utilization", "output": "Treatment pattern summaries", "caseUse": "ASCVD and AD/PN", "changes": "Drug code lists and utilization windows", "unchanged": "Reusable drug-utilization engine"},
+      {"id": "outcome", "label": "Clinical outcome", "output": "Outcome rates and comparative estimates", "caseUse": "ASCVD and AD/PN", "changes": "Outcome definitions and follow-up", "unchanged": "Common analytical and output structure"}
+    ]
+  },
+  "codeLists": {
+    "sourceSlides": [42],
+    "concepts": {
+      "Ischemic stroke": {
+        "NHIRD": ["I63"], "CGRD": ["I63"], "NHIS": ["I63", "I64"], "HIRA": ["I63", "I64"], "CDARS": ["433", "434"], "DeSC": ["I63"]
+      },
+      "Statin": {
+        "NHIRD": ["A039307100", "A039403100", "A039582100", "A039601100", "A040060100", "…"],
+        "CGRD": ["P6A080M", "P6A085M", "P6A086M", "P7A208M", "PCF067M", "PCF069M", "…"],
+        "NHIS": ["111501", "472300", "502201", "502202", "524100", "527000", "…"],
+        "HIRA": ["111501", "472300", "502201", "502202", "524100", "527000", "…"],
+        "CDARS": ["ATOR02", "ATOR01", "SIMV01", "SIMV02", "ROSU01", "PRAV02", "FLUV02", "ROSU02", "PRAV01", "…"],
+        "DeSC": ["622204901", "622098501", "622161901", "622170201", "622076401", "62218670", "…"]
+      }
+    }
+  },
+  "partnerSurvey": {
+    "sourceSlides": [13],
+    "statusLabels": {"available": "Directly available", "derived": "Derived or additional calculation", "unavailable": "Unavailable or assumption"},
+    "countries": {
+      "Taiwan": {"databases": ["NHIRD", "CGRD"], "caseParticipation": ["ASCVD", "AD", "PN"], "coding": ["ICD-9/10-CM", "Domestic drug and procedure codes", "Hospital-specific laboratory codes"]},
+      "South Korea": {"databases": ["NHIS", "HIRA"], "caseParticipation": ["ASCVD", "AD", "PN"], "coding": ["ICD-10-CM / KCD-7", "Domestic drug and procedure codes"]},
+      "Japan": {"databases": ["DeSC"], "caseParticipation": ["ASCVD", "AD", "PN"], "coding": ["ICD-10-CM", "Domestic drug, procedure and laboratory codes"]},
+      "Hong Kong": {"databases": ["CDARS"], "caseParticipation": ["ASCVD", "AD", "PN"], "coding": ["Local clinical coding", "Domestic drug and laboratory codes"]}
+    }
+  }
+}

@@ -1,5 +1,52 @@
 # IMPRESIVE website release notes
 
+## Publication correctness pass — 2026-08-18
+
+- Reconciles the ASCVD visualization with its current study-result dataset and removes obsolete dummy-workbook and demonstration-data warnings. The interface remains interactive, but the values are not labelled as demonstration data.
+- Records final transportability aggregate results in `assets/data/transportability.json`, displays their source metadata, and updates the maintenance documentation to the active file.
+- Clarifies that the readiness summary remains in the browser and can be discussed with the IMPRESIVE team; it is not submitted by the page.
+- Re-aligns deep links after asynchronous content renders, corrects dark-hero link contrast, and removes the visualization heading-level skip.
+- Normalizes canonical URLs and redirect fallbacks to the established GitHub Pages convention, and reduces `evidence.html` to a compatibility redirect with preserved legacy hash mappings.
+
+Earlier entries below describe the repository state at the date shown. Where an earlier transportability or ASCVD visualization status differs, this publication-correctness entry supersedes it.
+
+## Interaction and comparison refinement — 2026-08-13
+
+- Reframes the Accomplishment cards around what each case made visible instead of foregrounding three isolated counts or ranges.
+- Uses the supplied local flag assets across cohort summaries, network expansion, ASCVD database controls, CDM comparison headings, partner-map markers, and transportability settings.
+- Separates outcome and subgroup label columns in ASCVD index-event SVGs so labels no longer collide.
+- Replaces the single-variable OMOP/Sentinel dropdown with three disclosure groups that align every Major-event, Index, and High-risk variable across Taiwan NHIRD and South Korea NHIS.
+- Redesigns the cohort-growth explorer as a flag-led, labeled country journey rather than anonymous numbered database circles.
+- Keeps partner details closed until a marker is selected, moves them to a readable side panel, and integrates case-specific ASCVD/AD/PN cohort summaries into the selected setting.
+- Increases categorical separation between NHIRD/CGRD/CDARS and retains database-specific marker shapes in the provisional ASCVD forest plot.
+- Keeps the three About pillar cards aligned to the same row height when one disclosure is open.
+- Replaces the abstract partner-network diagram with an offline geographic East Asia view using flag markers, environment filters, database counts, coding context, and case participation.
+- Adds compact evidence previews to the three Accomplishment cards while preserving their concise deep-link structure.
+- Adds country flags to cohort summaries and strengthens the staged network-growth interaction.
+- Restores all four native slide-36/37 ASCVD subgroup views, adds accessible data tables, and enables active-state PNG/SVG downloads through the existing export pipeline.
+- Adds a slide-34 cross-database ASCVD forest plot with hover/focus tooltips and downloads. Its values are explicitly provisional and image-derived until the original analysis table is supplied.
+- Aligns both OMOP/Sentinel implementation settings side by side for direct comparison.
+- Replaces the AD/PN single-database medication dropdown with AD/PN controls and an aligned five-database comparison matrix.
+- Adds visible pointer and keyboard-focus tooltips to line-chart points, hazard-ratio endpoints, outcome estimates, and case-definition points.
+- Strengthens the About three-pillar portal as a connected site map with direct destinations and quick links.
+- Fixes the Methods workflow counter so nested disclosure items no longer renumber the canonical eight steps.
+- Replaces the final AD/PN evidence call with forward navigation to Case 03 plus a return to the Accomplishment index, avoiding a jump back to an earlier position on the same long page.
+
+This local revision does not commit, push, or deploy the site. No new runtime dependency was added.
+
+## Research expansion prototype — 2026-08-12
+
+- Reduces Home and internal-page cover heights while retaining the established blue-to-green identity.
+- Replaces the Home hero LEGO scene with the authentic PHDc logo; shared header, footer, card, and internal-page mascot behavior remains intact.
+- Adds source-slide-12 cohort summaries to the ASCVD and AD/PN cases without pooling partner counts.
+- Adds a third Accomplishment card and a dedicated transportability case with study aim, periods, target-trial specification, interpretation boundaries, and an interactive provisional forest plot.
+- Adds an East Asia partner map with country selection and claims/EHR filters.
+- Adds Methods interactions for harmonization layers, route filtering, reusable analysis modules, and local code-list comparison.
+- Adds ASCVD network-growth, subgroup, and two-CDM explorers, plus AD/PN age-prevalence and index-medication explorers.
+- Adds `assets/data/expansion-0812.json` for PowerPoint-derived values and keeps image-derived transportability estimates isolated in `assets/data/transportability-provisional.json`.
+
+This local revision does not commit, push, or deploy the site. Transportability estimates remain provisional until replaced from the original analysis dataset.
+
 ## Accomplishment integration and content refinement — 2026-08-10
 
 - Updates the visitor sequence to Home → About → Objective → How → Accomplishment → Partner → Join without changing the established route filenames.

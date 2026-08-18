@@ -1,6 +1,12 @@
 (function () {
   "use strict";
 
+  /* Scientific pages use data and methodology as their visual language, so the
+     mascots stay on the pages that carry the programme's identity rather than
+     its evidence. Case studies and Methods opt out entirely. */
+  var MASCOT_PAGES = ["home", "about", "objective", "how", "join", "databases"];
+  if (MASCOT_PAGES.indexOf(document.body.getAttribute("data-page") || "") === -1) return;
+
   var OUTLINE = 'stroke="#0a2540" stroke-width="2.4" stroke-linejoin="round"';
 
   function fig(options) {
@@ -94,17 +100,15 @@
 
   function injectHero() {
     var hero = document.querySelector(".hero, .page-hero");
+    /* Home used to opt out, which left the one page that should introduce the
+       programme as the only page with an unillustrated hero. */
     if (!hero || hero.querySelector(".lego-scene")) return;
 
     var scenes = {
       home: [tower(), fig(presets.BLUE), fig(presets.GREEN), stack(tile("chart", "#0063C3"), tile("network", "#2589A0"))],
       about: [tower(), fig(presets.BLUE), fig(presets.TEAL)],
-      why: [fig(presets.RED), fig(presets.BLUE), fig(presets.GREEN), stack(tile("check", "#3F8C6E"))],
-      methods: [fig(presets.GREEN), fig(presets.BLUE), stack(tile("chart", "#0063C3"), tile("check", "#2589A0"))],
-      cases: [tower(), fig(presets.GREEN), fig(presets.BLUE)],
-      "case-ascvd": [fig(presets.BLUE), fig(presets.NAVY), stack(tile("chart", "#0063C3"), tile("check", "#3F8C6E"))],
-      "case-adpn": [fig(presets.TEAL), fig(presets.GREEN), stack(tile("network", "#2589A0"))],
-      visualization: [fig(presets.BLUE), fig(presets.TEAL), stack(tile("chart", "#0063C3"), tile("network", "#3F8C6E"))],
+      objective: [fig(presets.RED), fig(presets.BLUE), fig(presets.GREEN), stack(tile("check", "#3F8C6E"))],
+      how: [fig(presets.GREEN), fig(presets.BLUE), stack(tile("chart", "#0063C3"), tile("check", "#2589A0"))],
       databases: [tower(), fig(presets.BLUE), stack(tile("globe", "#2589A0"))],
       join: [fig(presets.BLUE), fig(presets.GREEN), fig(presets.NAVY), stack(tile("network", "#2589A0"))]
     };
