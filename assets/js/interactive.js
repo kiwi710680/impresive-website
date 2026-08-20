@@ -72,7 +72,7 @@
     function show(index) {
       var step = ETL_STEPS[index];
       buttons.forEach(function (button, position) {
-        button.setAttribute("aria-selected", String(position === index));
+        button.setAttribute("aria-pressed", String(position === index));
       });
 
       clear(detailMount);
@@ -91,7 +91,7 @@
       var item = document.createElement("li");
       var button = document.createElement("button");
       button.type = "button";
-      button.setAttribute("aria-selected", "false");
+      button.setAttribute("aria-pressed", "false");
       button.appendChild(el("span", "step-num", "0" + (index + 1)));
       button.appendChild(el("span", "step-name", step.name));
       button.addEventListener("click", function () { show(index); });

@@ -28,6 +28,8 @@ No one person should silently change both scientific evidence and its approval s
 - Never remove reduced-motion, keyboard, focus, no-JavaScript, or table fallbacks for aesthetic reasons.
 - Never edit the first CSS token block and assume it is the effective brand layer; verify the later override block and `brand-spec.md`.
 
+The production layout contains intentionally hand-tuned page- and component-level adjustments. Future maintenance should prefer narrowly scoped changes over global CSS normalization or redesign unless a redesign has been explicitly approved.
+
 ## 3. Local setup
 
 There is no dependency installation or build step.
@@ -76,8 +78,9 @@ Get-ChildItem assets\js\*.js | ForEach-Object { node --check $_.FullName }
 | Shared navigation order or label | `assets/js/main.js`, every `<noscript>` navigation, README, sitemap |
 | Shared footer | `assets/js/main.js` |
 | Page copy or section order | Relevant `.html` page |
-| About roadmap/alliance/governance | `about.html` |
-| Impact copy | `assets/js/impact-data.js` plus Home/About static fallbacks |
+| About roadmap/alliance and programme identity | `about.html` |
+| Objective, distributed-analysis boundary, and Impact | `objective.html`, `assets/js/impact-data.js` |
+| Evidence-preparation flowchart structure/copy | `how.html`, `assets/data/architecture.json`, `assets/js/architecture.js` |
 | ETL walkthrough | `assets/js/interactive.js`, `methods.html`, ETL diagram if applicable |
 | Partner description/readiness fields | `databases.html` |
 | Readiness logic/output wording | `assets/js/main.js` |
@@ -104,14 +107,28 @@ Get-ChildItem assets\js\*.js | ForEach-Object { node --check $_.FullName }
 6. Update page metadata when the page purpose changes.
 7. Run `python scripts\validate-site.py` to catch broken local paths, anchors, and duplicate IDs.
 
+### Adding, retiring, or moving a page
+
+1. Confirm that the topic does not already have a clear owner page.
+2. Add the page with the shared stylesheet, required page-specific scripts, `data-page`, metadata, skip link, semantic landmarks, and `<noscript>` navigation.
+3. Add it to `assets/js/main.js` only when it is a true primary-navigation destination; otherwise map it to the appropriate parent.
+4. Update direct internal links, the sitemap when the page is indexable, and README/documentation ownership tables.
+5. When retiring a public filename, keep a small `noindex` compatibility redirect with canonical and visible fallback links.
+6. Validate filename casing and relative paths on a case-sensitive static host.
+7. Test the new route at desktop, tablet, and mobile widths before release.
+
 ### Protected anchors
 
 At minimum, treat these as public contracts:
 
 - `about.html#programme-roadmap`
 - `about.html#alliance`
-- `about.html#governance-transparency`
-- `methods.html#resources`
+- `objective.html#impact`
+- `objective.html#resources`
+- `methods.html#quality`
+- `methods.html#code-harmonization`
+- `methods.html#models`
+- `methods.html#cdm-routes`
 - `join.html#contact`
 - `join.html#faq`
 - Evidence section anchors used by Copy link controls
@@ -130,7 +147,9 @@ If a route or label changes, update all of the following:
 6. sitemap and redirect stubs;
 7. active-state and keyboard/mobile behavior in a browser.
 
-Current order is Home → About → Why → How → Case → Evidence → Partner → Join.
+Current order is Home → About → Objective → How → Accomplishment → Partner → Join.
+
+`methods.html` maps to How. `case-ascvd.html`, `case-adpn.html`, `transportability.html`, and `Visualization/index.html` map to Accomplishment. Keep these child mappings synchronized with the active-navigation logic.
 
 ## 8. Updating the programme roadmap
 
@@ -146,18 +165,30 @@ For every new milestone, record:
 
 Use the existing complete/current/future classes. The current item has meaningful pulse behavior; do not mark multiple events as current without a deliberate design decision.
 
+### Updating the evidence-preparation flowchart
+
+The SVG structure is hand-authored in `how.html`; the selected-node explanation is read from `assets/data/architecture.json` by `assets/js/architecture.js`.
+
+When changing it:
+
+1. preserve the approved pathway structure unless a separate redesign is authorized;
+2. keep each selectable SVG `data-node` exactly matched to a record in `architecture.json`;
+3. keep visible step badges, JSON `step` values, and accessible `aria-label` step numbers synchronized;
+4. keep node destination links valid and use existing protected anchors where possible;
+5. test click, Enter/Space, arrow-key movement, selected/pressed state, and the detail-panel update;
+6. inspect desktop, stacked tablet, and horizontally contained mobile presentation without globally changing generic SVG rules.
+
 ## 9. Updating Impact
 
-`assets/js/impact-data.js` is the live content source for all four Impact records.
+`assets/js/impact-data.js` is the live content source for all four Impact records. The public interface is owned by `objective.html#impact`.
 
 Procedure:
 
 1. Update the relevant record in `impact-data.js`.
 2. Preserve the four stable IDs: `scientific`, `clinical`, `economic`, `education`.
-3. Update the static fallback markup in both `index.html` and `about.html` so no-JavaScript content agrees.
-4. Test Home summary cards.
-5. Test About tabs, previous/next controls, counter, URL hash, click, ArrowLeft/ArrowRight, Home, and End.
-6. Confirm one detail panel is active and IDs remain unique.
+3. Update the equivalent static records in `objective.html` so no-JavaScript content agrees.
+4. Test Objective tabs, previous/next controls, counter, URL hash, click, ArrowLeft/ArrowRight, Home, and End.
+5. Confirm one detail panel is active and IDs remain unique.
 
 ## 10. Updating evidence data
 
@@ -270,6 +301,16 @@ The effective design-system override begins in the later `:root` block in `style
 - preserve the dual focus ring and dark-surface text tokens;
 - verify contrast and visited-link behavior on both light cards and dark surfaces.
 
+### Images, SVGs, and icons
+
+- Keep local asset names and path casing stable; GitHub Pages is case-sensitive.
+- Preserve intrinsic aspect ratio. Prefer component-specific responsive rules over a global `img` or `svg` override.
+- Hand-authored diagrams may use an intentional `viewBox`, internal markers, symbols, and overflow containment. Test them before changing coordinates or replacing them.
+- Inline mascot SVG must remain inline because its internal classes are animated by site CSS.
+- Evidence SVGs require accessible titles/descriptions and a matching HTML data table.
+- Use an empty alternative for a decorative image and concise meaningful alternative text when an image identifies an organization or communicates content.
+- Do not replace an existing illustration or icon merely for visual consistency during maintenance.
+
 ## 15. Redirects, sitemap, robots, and canonical URL
 
 When moving content:
@@ -308,11 +349,12 @@ Get-ChildItem assets\js\*.js | ForEach-Object { node --check $_.FullName }
 
 ### Browser smoke test
 
-- Home loads with navigation, hero, case cards, Impact cards, and network section.
-- About Impact tabs and roadmap work by mouse and keyboard.
-- Why model comparator switches all three modes.
-- Methods ETL walkthrough switches all four steps.
-- Evidence loads all figures and tables; controls redraw correctly.
+- Home loads with navigation, hero, programme record, workflow preview, and accomplishment links.
+- About programme evolution and organizational-role links work.
+- Objective Impact tabs work by mouse and keyboard.
+- How flowchart updates its panel for every selectable node and keeps mobile containment usable.
+- Methods model comparator and ETL walkthrough switch all options/steps.
+- ASCVD, AD/PN, Transportability, and Visualization figures/tables load and controls redraw correctly.
 - Evidence SVG/PNG downloads retain point estimates and axis titles.
 - Partner readiness summary handles all status branches and reset.
 - Join FAQ, PHDc link, and email work.
@@ -338,7 +380,7 @@ Get-ChildItem assets\js\*.js | ForEach-Object { node --check $_.FullName }
 5. Commit with an English summary.
 6. Push the reviewed branch without force.
 7. Merge through the repository's approved process.
-8. If deploying, verify the live project URL and repeat the smoke test.
+8. If deploying, verify the live project URL and repeat the smoke test, including filename casing and relative assets below the project subpath.
 9. Record the commit and approver in the team's governed release log.
 
 ## 19. Rollback and incident response

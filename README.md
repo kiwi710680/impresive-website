@@ -17,7 +17,8 @@ Repository documentation:
 - The 2026-08-12/13 cohort, geographic partner map, module, subgroup, two-CDM, age-prevalence, medication-matrix, and provisional cross-database forest-plot extensions are generated from `assets/data/expansion-0812.json` by `assets/js/explorers.js`.
 - The slide-34 cross-database ASCVD estimates in `expansion-0812.json` are visibly marked provisional because the PowerPoint stores that figure as an SVG without a linked chart workbook. Replace them from the original analysis table before scientific publication.
 - The transportability case reads `assets/data/transportability.json`. Its metadata records final aggregate results supplied from the current raw analysis data.
-- The four Impact records have one content source, `assets/js/impact-data.js`, and are rendered by `assets/js/impact.js` on Home and About.
+- The four Impact records have one content source, `assets/js/impact-data.js`, and are rendered by `assets/js/impact.js` on Objective.
+- The interactive evidence-preparation flowchart is defined in `how.html`, described by `assets/data/architecture.json`, and controlled by `assets/js/architecture.js`.
 - Inline LEGO mascot generation and injection are isolated in `assets/js/mascot.js`.
 - All public pages use the consolidated `assets/css/styles.css`; redirect stubs intentionally have no runtime bundle.
 - The intended canonical deployment path remains `https://phd-center.github.io/impresive/`. Pushing this source repository does not by itself deploy or transfer the canonical site.
@@ -26,15 +27,15 @@ Repository documentation:
 
 The primary navigation follows one visitor narrative:
 
-1. **Home** — concise platform value and selected cases
-2. **About** — identity, formal name, readiness model, three pillars, programme evolution, living roadmap, full Impact details, the PHDc–AsPEN–IMPRESIVE role map, and Governance / Transparency
-3. **Objective** — rationale and objectives for international multi-database studies
-4. **How** — workflow, ETL, CDM routes, quality assurance, distributed execution, and resource-release status
+1. **Home** — platform proposition, programme record, workflow preview, and selected accomplishments
+2. **About** — identity, readiness and capability models, programme evolution, and the PHDc–AsPEN–IMPRESIVE role map
+3. **Objective** — rationale, objectives, distributed-analysis boundary, and the four Impact records
+4. **How** — interactive evidence-preparation pathway from decision need to decision-ready evidence
 5. **Accomplishment** — ASCVD, AD/PN, and transportability case narratives with interactive figures, accessible tables, source status, and interpretation boundaries
-6. **Partner** — six public data environments, including Korea HIRA, published scale context, and the readiness framework
+6. **Partner** — public data-environment context and the study-specific readiness framework
 7. **Join** — participation pathways, FAQ, and the primary PHDc collaboration route
 
-The route filenames remain stable for compatibility: `why.html` now appears as Objective, and `cases.html` now appears as Accomplishment.
+`methods.html` is the technical-reference child of How. `Visualization/index.html` is the interactive ASCVD-results child of the Accomplishment section. Legacy filenames such as `why.html` and `evidence.html` remain compatibility redirects rather than primary navigation destinations.
 
 ## Consolidated and compatibility routes
 
@@ -66,7 +67,7 @@ Legacy routes remain as `noindex` compatibility redirects:
 ## Shared modules and mascot scope
 
 - `assets/js/impact-data.js` is the single live source for the four Impact titles, themes, summaries, and detailed explanations.
-- `assets/js/impact.js` renders only four linked summary cards on Home and the full keyboard-accessible tab/detail interface on About. After successful rendering, it removes the static fallback to prevent duplicate element IDs.
+- `assets/js/impact.js` enhances the four static Impact records on Objective into a keyboard-accessible tab/detail interface. The static markup remains the no-JavaScript source of the same content.
 - `assets/js/mascot.js` owns `fig()`, `tower()`, `tile()`, colour presets, page-scene definitions, and all mascot injection logic.
 - Hero compositions remain page-specific. Header and footer decorations are shared.
 - Card mascots are deliberately limited to `.impact-card`, `.model-card`, `.readiness-card`, `.route-card`, `.card.partner`, and cards inside an explicitly marked `[data-mascot-scope]` section. Do not broaden this selector to every `.card`.

@@ -665,7 +665,7 @@
         var width = 980, left = 235, right = 900, top = 70, rowHeight = 78, height = top + data.outcomes.length * rowHeight + 70;
         var xMin = 0.5, xMax = 8;
         var x = function (value) { return left + ((value - xMin) / (xMax - xMin)) * (right - left); };
-        var svg = createSvg("svg", { viewBox: "0 0 " + width + " " + height, role: "img", "aria-label": "Provisional cross-database forest plot of ASCVD hazard ratios" });
+        var svg = createSvg("svg", { viewBox: "0 0 " + width + " " + height, role: "img" });
         var tooltip = createChartTooltip(chart);
         [1, 2, 3, 4, 5, 6, 7, 8].forEach(function (tick) {
           svg.appendChild(createSvg("line", { x1: x(tick), x2: x(tick), y1: 38, y2: height - 54, class: tick === 1 ? "forest-reference" : "chart-gridline" }));

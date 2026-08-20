@@ -14,6 +14,21 @@
     <noscript><div class="wrap noscript-nav"><a class="noscript-brand" href="index.html">IMPRESIVE</a><nav class="noscript-links" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="objective.html">Objective</a><a href="how.html">How</a><a href="cases.html">Accomplishment</a><a href="databases.html">Partner</a><a href="join.html">Join</a></nav></div></noscript>
   </header>
   <main id="main">
+
+
+
+
+
+
+
+    <!-- <section class="section section--soft" id="analysis-modules">
+      <div class="wrap">
+        <div class="section-heading"><p class="eyebrow">Reusable analysis module library</p><h2>Change the study parameters, not the whole analytical engine</h2><p>The pipeline was reused across therapeutic areas. Select a module to see its output, where it was used, and the boundary between study-specific parameters and shared code.</p></div>
+        <div class="research-explorer" data-analysis-modules></div>
+      </div>
+    </section> -->
+
+
     <section class="page-hero">
       <div class="wrap">
         <p class="crumb"><a href="index.html">Home</a> / <a href="how.html">How it works</a> / Methods</p>
@@ -22,7 +37,6 @@
         <p>This page is the canonical destination for definitions, conversion specifications, quality rules, and analytical components. For the architecture these steps sit inside, start with <a href="how.html">How IMPRESIVE works</a>.</p>
       </div>
     </section>
-
     <section class="section" id="fit-for-purpose">
       <div class="wrap">
         <div class="section-heading">
@@ -40,106 +54,12 @@
         </div>
       </div>
     </section>
-
-    <section class="section section--soft" id="quality">
+    <section class="section section--soft" id="code-harmonization">
       <div class="wrap">
-        <div class="section-heading">
-          <p class="eyebrow">Quality assurance</p>
-          <h2>Three canonical dimensions, then study-specific validity</h2>
-          <p>General common-data-model quality checks are distinct from validating whether a specific cohort or analysis behaves as intended.</p>
-        </div>
-        <div class="grid grid--4 quality-dimensions">
-          <article class="card"><span class="number">1</span><h3>Conformance</h3><p>Structure, formats, and identifiers.</p></article>
-          <article class="card"><span class="number">2</span><h3>Completeness</h3><p>Domain and variable availability.</p></article>
-          <article class="card"><span class="number">3</span><h3>Plausibility</h3><p>Values, dates, and clinical patterns.</p></article>
-          <article class="card"><span class="number">4</span><h3>Study-specific validity</h3><p>Cohorts, variables, frequencies, and analytic outputs compared with the protocol and source context.</p></article>
-        </div>
-        <div class="grid grid--2 qa-evidence">
-          <article class="card"><span class="technical-label">OMOP CDM</span><h3>Official Data Quality Dashboard</h3><p><strong>3,000+ automated checks</strong> support general CDM quality assessment.</p></article>
-          <article class="card"><span class="technical-label">Sentinel CDM</span><h3>Self-developed quality checks</h3><p><strong>Three Qchecks</strong>, plus native-versus-CDM result comparison using a <strong>5% difference threshold</strong>.</p></article>
-        </div>
+        <div class="section-heading"><p class="eyebrow">Semantic implementation</p><h2>One clinical concept, different local code lists</h2><p>Compare the source lists used for ischemic stroke and statins. The Harmonize control makes the common study concept visible without hiding the local implementation evidence.</p></div>
+        <div class="research-explorer" data-code-comparator></div>
       </div>
     </section>
-
-    <section class="section" id="etl">
-      <div class="wrap">
-        <div class="section-heading"><p class="eyebrow">Implementation evidence</p><h2>A four-step ETL process with revision built in</h2></div>
-
-        <div class="widget" data-etl-walkthrough>
-          <div class="widget-head">
-            <h3>Walk through the conversion cycle</h3>
-            <p>Select a step. The static outline below the widget remains available if scripting is unavailable.</p>
-          </div>
-          <div class="etl-interactive">
-            <ul class="etl-steps" data-etl-steps></ul>
-            <div class="etl-detail" data-etl-detail></div>
-          </div>
-        </div>
-
-        <noscript>
-          <ol class="etl-process">
-            <li><span>01</span><div><h3>Summarize the source database</h3><p>Document source structure, coding, dates, availability, and database-specific constraints.</p></div></li>
-            <li><span>02</span><div><h3>Create and review the ETL document</h3><p>Specify structural mappings, source vocabulary handling, and database-specific variable definitions.</p></div></li>
-            <li><span>03</span><div><h3>Implement ETL in SAS</h3><p>Apply the reviewed specifications within the approved implementation environment.</p></div></li>
-            <li><span>04</span><div><h3>Perform data-quality checks</h3><p>Compare the transformed structure and study outputs with expectations before analysis proceeds.</p></div></li>
-          </ol>
-        </noscript>
-
-        <img src="assets/img/ETL-process.svg" alt="ETL illustration: heterogeneous source-data bricks enter a conversion funnel and emerge in a standardized structure.">
-      </div>
-    </section>
-
-    <section class="section section--soft" id="cdm-routes">
-      <div class="wrap">
-        <div class="section-heading"><p class="eyebrow">Fit-for-purpose standardization</p><h2>One interface does not require one identical workflow</h2><p>The programme experience compares two common-data-model routes with different strengths and implementation demands.</p></div>
-        <div class="harmonization-stepper" data-harmonization-stepper>
-          <div class="harmonization-tabs" role="tablist" aria-label="Harmonization layers">
-            <button type="button" role="tab" aria-selected="true" aria-controls="layer-raw" data-layer-step><span>01</span> Raw source</button>
-            <button type="button" role="tab" aria-selected="false" aria-controls="layer-structural" data-layer-step><span>02</span> Structural</button>
-            <button type="button" role="tab" aria-selected="false" aria-controls="layer-semantic" data-layer-step><span>03</span> Semantic</button>
-          </div>
-          <div class="harmonization-panel" id="layer-raw" role="tabpanel" data-layer-panel><p class="technical-label">Starting point</p><h3>Different tables, fields, dates, and local codes</h3><p>Example NHIRD drug record: a locally structured pharmacy claim contains domestic product code <code>A039307100</code>. The study first documents where it lives, what its dates mean, and what can be derived.</p><div class="record-transform"><span>Local pharmacy claim</span><strong>A039307100</strong><small>Meaning remains tied to the approved local code list</small></div></div>
-          <div class="harmonization-panel" id="layer-structural" role="tabpanel" data-layer-panel hidden><p class="technical-label">Sentinel and OMOP</p><h3>A common table-and-column interface</h3><p>Both routes can reorganize the record so common programmes know where drug exposure is represented. Sentinel emphasizes this structural layer while retaining more source terminology.</p><div class="record-transform"><span>Common structure</span><strong><code>DISPENSING</code> / <code>DRUG_EXPOSURE</code></strong><small>Source code and its provenance stay documented</small></div></div>
-          <div class="harmonization-panel" id="layer-semantic" role="tabpanel" data-layer-panel hidden><p class="technical-label">OMOP additional layer</p><h3>Common concepts across source vocabularies</h3><p>OMOP adds semantic vocabulary mapping so the local code can be represented under a shared drug concept. This can strengthen comparability but increases mapping, review, and computing requirements.</p><div class="record-transform"><span>Shared study concept</span><strong>Statin therapy</strong><small>The local source code remains traceable to the standardized concept</small></div></div>
-          <p class="stewardship-note"><strong>Stewardship context:</strong> Sentinel CDM was developed for the US FDA Sentinel active-surveillance programme. OMOP CDM is stewarded by the Observational Health Data Sciences and Informatics (OHDSI) community. Source: IMPRESIVE Sharing, slide 5.</p>
-        </div>
-        <div class="grid grid--2">
-          <article class="card route-card"><span class="technical-label">Stronger semantic standardization</span><h3>OMOP CDM</h3>
-            <ul><li>Standardizes structure and semantic vocabularies.</li><li>Required extensive vocabulary mapping and greater computing resources in the implementation described by the programme.</li><li>Required ETL development with dummy data outside the secure environment before transfer into that environment.</li><li>Requires locally maintained mappings where source codes have no established crosswalk.</li></ul>
-          </article>
-          <article class="card route-card"><span class="technical-label">Source-preserving operational fit</span><h3>Sentinel CDM</h3>
-            <ul><li>Emphasizes structural standardization while retaining more source terminology.</li><li>Manages vocabulary differences through study definitions and site-level code lists.</li><li>Was easier to implement within the secure SAS environment described by the programme.</li><li>Still requires documented local adaptation, including drug-strength and source-code handling.</li></ul>
-          </article>
-        </div>
-        <div class="callout callout--spaced"><strong>Local adaptation is part of the method.</strong><p>Structural conversion alone is not enough. Date construction, drug information, source-specific code mapping, and variable definitions must be documented and validated.</p></div>
-        <div class="section-heading section-heading--sub"><p class="eyebrow">Structural mapping example</p><h3>One source, two common structures</h3><p>The approved NHIRD mapping shows how the same clinical domains are represented in OMOP and Sentinel.</p></div>
-        <div class="route-table-widget" data-route-table data-route-active="both">
-          <div class="explorer-controls" data-route-controls aria-label="Filter mapping routes">
-            <button class="explorer-button" type="button" aria-pressed="true" data-route-mode="both">Both routes</button>
-            <button class="explorer-button" type="button" aria-pressed="false" data-route-mode="omop">OMOP only</button>
-            <button class="explorer-button" type="button" aria-pressed="false" data-route-mode="sentinel">Sentinel only</button>
-          </div>
-        <div class="table-scroll" tabindex="0" aria-label="Scrollable OMOP and Sentinel structural mapping table">
-          <table class="research-table">
-            <caption>NHIRD source domains mapped to OMOP CDM and Sentinel CDM</caption>
-            <thead><tr><th scope="col">Clinical domain</th><th scope="col">Taiwan NHIRD</th><th scope="col" class="route-col-omop">OMOP CDM</th><th scope="col" class="route-col-sentinel">Sentinel CDM</th></tr></thead>
-            <tbody>
-              <tr><th scope="row">Demographics</th><td>Beneficiary data</td><td class="route-col-omop"><code>PERSON</code></td><td class="route-col-sentinel"><code>DEMOGRAPHIC</code></td></tr>
-              <tr><th scope="row">Observation period</th><td>Enrollment data</td><td class="route-col-omop"><code>OBSERVATION_PERIOD</code></td><td class="route-col-sentinel"><code>ENROLLMENT</code></td></tr>
-              <tr><th scope="row">Healthcare encounters</th><td>Inpatient, outpatient &amp; pharmacy claims</td><td class="route-col-omop"><code>VISIT_OCCURRENCE</code></td><td class="route-col-sentinel"><code>ENCOUNTER</code></td></tr>
-              <tr><th scope="row">Diagnoses</th><td>Inpatient &amp; outpatient claims</td><td class="route-col-omop"><code>CONDITION_OCCURRENCE</code></td><td class="route-col-sentinel"><code>DIAGNOSIS</code></td></tr>
-              <tr><th scope="row">Medications</th><td>Inpatient, outpatient &amp; pharmacy claims</td><td class="route-col-omop"><code>DRUG_EXPOSURE</code></td><td class="route-col-sentinel"><code>DISPENSING</code></td></tr>
-              <tr><th scope="row">Procedures</th><td>Inpatient &amp; outpatient claims</td><td class="route-col-omop"><code>PROCEDURE_OCCURRENCE</code></td><td class="route-col-sentinel"><code>PROCEDURE</code></td></tr>
-              <tr><th scope="row">Laboratory results</th><td>N/A</td><td class="route-col-omop"><code>MEASUREMENT</code>, <code>OBSERVATION</code></td><td class="route-col-sentinel"><code>LABORATORY_RESULT</code>, <code>VITAL_SIGN</code></td></tr>
-              <tr><th scope="row">Mortality</th><td>Death registry</td><td class="route-col-omop"><code>DEATH</code></td><td class="route-col-sentinel"><code>DEATH</code> &amp; <code>CAUSE_OF_DEATH</code></td></tr>
-              <tr class="mapping-emphasis"><th scope="row">Drug dose</th><td>Drug reference data</td><td class="route-col-omop"><code>DRUG_STRENGTH</code><small>Standard OMOP table</small></td><td class="route-col-sentinel">N/A <strong>[Self-created]</strong><small>Local extension required</small></td></tr>
-            </tbody>
-          </table>
-        </div>
-        </div>
-      </div>
-    </section>
-
     <section class="section section--models" id="models" data-model-comparator>
       <div class="wrap">
         <div class="section-heading"><p class="eyebrow">Distributed data networks</p><h2>Three alternatives for what travels</h2><p>The approaches are parallel options with different trade-offs. More standardization can reduce site-to-site implementation variation, but it requires greater preparation and infrastructure.</p></div>
@@ -175,27 +95,108 @@
           </article>
         </div>
       </div>
-    </section>
-
-    <section class="section section--soft" id="analysis-modules">
+    </section>    
+    <section class="section section--soft" id="cdm-routes">
       <div class="wrap">
-        <div class="section-heading"><p class="eyebrow">Reusable analysis module library</p><h2>Change the study parameters, not the whole analytical engine</h2><p>The pipeline was reused across therapeutic areas. Select a module to see its output, where it was used, and the boundary between study-specific parameters and shared code.</p></div>
-        <div class="research-explorer" data-analysis-modules></div>
+        <div class="section-heading"><h2>Fit-for-purpose standardization</h2><p>Compare two common-data-model routes with different strengths and implementation demands.</p></div>
+        <div class="harmonization-stepper" data-harmonization-stepper>
+          <div class="harmonization-tabs" role="tablist" aria-label="Harmonization layers">
+            <button type="button" role="tab" aria-selected="true" aria-controls="layer-raw" data-layer-step><span>01</span> Raw source</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="layer-structural" data-layer-step><span>02</span> Structural</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="layer-semantic" data-layer-step><span>03</span> Semantic</button>
+          </div>
+          <div class="harmonization-panel" id="layer-raw" role="tabpanel" data-layer-panel><p class="technical-label">Starting point</p><h3>Different tables, fields, dates, and local codes</h3><p>Example NHIRD drug record: a locally structured pharmacy claim contains domestic product code <code>A039307100</code>. The study first documents where it lives, what its dates mean, and what can be derived.</p><div class="record-transform"><span>Local pharmacy claim</span><strong>A039307100</strong><small>Meaning remains tied to the approved local code list</small></div></div>
+          <div class="harmonization-panel" id="layer-structural" role="tabpanel" data-layer-panel hidden><p class="technical-label">Sentinel and OMOP</p><h3>A common table-and-column interface</h3><p>Both routes can reorganize the record so common programmes know where drug exposure is represented. Sentinel emphasizes this structural layer while retaining more source terminology.</p><div class="record-transform"><span>Common structure</span><strong><code>DISPENSING</code> / <code>DRUG_EXPOSURE</code></strong><small>Source code and its provenance stay documented</small></div></div>
+          <div class="harmonization-panel" id="layer-semantic" role="tabpanel" data-layer-panel hidden><p class="technical-label">OMOP additional layer</p><h3>Common concepts across source vocabularies</h3><p>OMOP adds semantic vocabulary mapping so the local code can be represented under a shared drug concept. This can strengthen comparability but increases mapping, review, and computing requirements.</p><div class="record-transform"><span>Shared study concept</span><strong>Statin therapy</strong><small>The local source code remains traceable to the standardized concept</small></div></div>
+          <p class="stewardship-note"><strong>Stewardship context:</strong> Sentinel CDM was developed for the US FDA Sentinel active-surveillance programme. OMOP CDM is stewarded by the Observational Health Data Sciences and Informatics (OHDSI) community.</p>
+        </div>
+        <div class="grid grid--2">
+          <article class="card route-card"><span class="technical-label">Stronger semantic standardization</span><h3>OMOP CDM</h3>
+            <ul><li>Standardizes structure and semantic vocabularies.</li><li>Required extensive vocabulary mapping and greater computing resources in the implementation described by the programme.</li><li>Required ETL development with dummy data outside the secure environment before transfer into that environment.</li><li>Requires locally maintained mappings where source codes have no established crosswalk.</li></ul>
+          </article>
+          <article class="card route-card"><span class="technical-label">Source-preserving operational fit</span><h3>Sentinel CDM</h3>
+            <ul><li>Emphasizes structural standardization while retaining more source terminology.</li><li>Manages vocabulary differences through study definitions and site-level code lists.</li><li>Was easier to implement within the secure SAS environment described by the programme.</li><li>Still requires documented local adaptation, including drug-strength and source-code handling.</li></ul>
+          </article>
+        </div>
+        <div class="callout callout--spaced"><strong>Local adaptation is part of the method.</strong><p>Structural conversion alone is not enough. Date construction, drug information, source-specific code mapping, and variable definitions must be documented and validated.</p></div>
+        <div class="section-heading section-heading--sub"><h2>Structural mapping example</h2><p>The NHIRD mapping shows how the same clinical domains are represented in OMOP and Sentinel.</p></div>
+        <div class="route-table-widget" data-route-table data-route-active="both">
+          <div class="explorer-controls" data-route-controls aria-label="Filter mapping routes">
+            <button class="explorer-button" type="button" aria-pressed="true" data-route-mode="both">Both routes</button>
+            <button class="explorer-button" type="button" aria-pressed="false" data-route-mode="omop">OMOP only</button>
+            <button class="explorer-button" type="button" aria-pressed="false" data-route-mode="sentinel">Sentinel only</button>
+          </div>
+        <div class="table-scroll" tabindex="0" aria-label="Scrollable OMOP and Sentinel structural mapping table">
+          <table class="research-table">
+            <caption>NHIRD source domains mapped to OMOP CDM and Sentinel CDM</caption>
+            <thead><tr><th scope="col">Clinical domain</th><th scope="col">Taiwan NHIRD</th><th scope="col" class="route-col-omop">OMOP CDM</th><th scope="col" class="route-col-sentinel">Sentinel CDM</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Demographics</th><td>Beneficiary data</td><td class="route-col-omop"><code>PERSON</code></td><td class="route-col-sentinel"><code>DEMOGRAPHIC</code></td></tr>
+              <tr><th scope="row">Observation period</th><td>Enrollment data</td><td class="route-col-omop"><code>OBSERVATION_PERIOD</code></td><td class="route-col-sentinel"><code>ENROLLMENT</code></td></tr>
+              <tr><th scope="row">Healthcare encounters</th><td>Inpatient, outpatient &amp; pharmacy claims</td><td class="route-col-omop"><code>VISIT_OCCURRENCE</code></td><td class="route-col-sentinel"><code>ENCOUNTER</code></td></tr>
+              <tr><th scope="row">Diagnoses</th><td>Inpatient &amp; outpatient claims</td><td class="route-col-omop"><code>CONDITION_OCCURRENCE</code></td><td class="route-col-sentinel"><code>DIAGNOSIS</code></td></tr>
+              <tr><th scope="row">Medications</th><td>Inpatient, outpatient &amp; pharmacy claims</td><td class="route-col-omop"><code>DRUG_EXPOSURE</code></td><td class="route-col-sentinel"><code>DISPENSING</code></td></tr>
+              <tr><th scope="row">Procedures</th><td>Inpatient &amp; outpatient claims</td><td class="route-col-omop"><code>PROCEDURE_OCCURRENCE</code></td><td class="route-col-sentinel"><code>PROCEDURE</code></td></tr>
+              <tr><th scope="row">Laboratory results</th><td>N/A</td><td class="route-col-omop"><code>MEASUREMENT</code>, <code>OBSERVATION</code></td><td class="route-col-sentinel"><code>LABORATORY_RESULT</code>, <code>VITAL_SIGN</code></td></tr>
+              <tr><th scope="row">Mortality</th><td>Death registry</td><td class="route-col-omop"><code>DEATH</code></td><td class="route-col-sentinel"><code>DEATH</code> &amp; <code>CAUSE_OF_DEATH</code></td></tr>
+              <tr class="mapping-emphasis"><th scope="row">Drug dose</th><td>Drug reference data</td><td class="route-col-omop"><code>DRUG_STRENGTH</code><small>Standard OMOP table</small></td><td class="route-col-sentinel">N/A <strong>[Self-created]</strong><small>Local extension required</small></td></tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
       </div>
     </section>
-
-    <section class="section" id="code-harmonization">
+    <section class="section" id="etl">
       <div class="wrap">
-        <div class="section-heading"><p class="eyebrow">Semantic implementation</p><h2>One clinical concept, different local code lists</h2><p>Compare the source lists used for ischemic stroke and statins. The Harmonize control makes the common study concept visible without hiding the local implementation evidence.</p></div>
-        <div class="research-explorer" data-code-comparator></div>
+        <div class="section-heading"><p class="eyebrow">Implementation evidence</p><h2>A four-step ETL process with revision built in</h2></div>
+
+        <div class="widget" data-etl-walkthrough>
+          <div class="widget-head">
+            <h3>Walk through the conversion cycle</h3>
+            <p>Select a step. The static outline below the widget remains available if scripting is unavailable.</p>
+          </div>
+          <div class="etl-interactive">
+            <ul class="etl-steps" data-etl-steps></ul>
+            <div class="etl-detail" data-etl-detail></div>
+          </div>
+        </div>
+
+        <noscript>
+          <ol class="etl-process">
+            <li><span>01</span><div><h3>Summarize the source database</h3><p>Document source structure, coding, dates, availability, and database-specific constraints.</p></div></li>
+            <li><span>02</span><div><h3>Create and review the ETL document</h3><p>Specify structural mappings, source vocabulary handling, and database-specific variable definitions.</p></div></li>
+            <li><span>03</span><div><h3>Implement ETL in SAS</h3><p>Apply the reviewed specifications within the approved implementation environment.</p></div></li>
+            <li><span>04</span><div><h3>Perform data-quality checks</h3><p>Compare the transformed structure and study outputs with expectations before analysis proceeds.</p></div></li>
+          </ol>
+        </noscript>
+
+        <img src="assets/img/ETL-process.svg" alt="ETL illustration: heterogeneous source-data bricks enter a conversion funnel and emerge in a standardized structure.">
       </div>
     </section>
-
+    <section class="section section--soft" id="quality">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Quality assurance</p>
+          <h2>Three canonical dimensions, then study-specific validity</h2>
+          <p>General common-data-model quality checks are distinct from validating whether a specific cohort or analysis behaves as intended.</p>
+        </div>
+        <div class="grid grid--4 quality-dimensions">
+          <article class="card"><span class="number">1</span><h3>Conformance</h3><p>Structure, formats, and identifiers.</p></article>
+          <article class="card"><span class="number">2</span><h3>Completeness</h3><p>Domain and variable availability.</p></article>
+          <article class="card"><span class="number">3</span><h3>Plausibility</h3><p>Values, dates, and clinical patterns.</p></article>
+          <article class="card"><span class="number">4</span><h3>Study-specific validity</h3><p>Cohorts, variables, frequencies, and analytic outputs compared with the protocol and source context.</p></article>
+        </div>
+        <div class="grid grid--2 qa-evidence">
+          <article class="card"><span class="technical-label">OMOP CDM</span><h3>Official Data Quality Dashboard</h3><p><strong>3,000+ automated checks</strong> support general CDM quality assessment.</p></article>
+          <article class="card"><span class="technical-label">Sentinel CDM</span><h3>Self-developed quality checks</h3><p><strong>Three Qchecks</strong>, plus native-versus-CDM result comparison using a <strong>5% difference threshold</strong>.</p></article>
+        </div>
+      </div>
+    </section>
     <section class="section"><div class="wrap"><div class="cta-band"><div><h2>See these methods in use</h2><p>Three cases exercised this machinery: cross-database comparability, framework reuse, and evidence transportability.</p></div><a class="btn btn--light" href="cases.html">All accomplishments</a></div></div></section>
   </main>
   <footer class="site-footer"></footer>
   <script src="assets/js/main.js?v=20260817a" defer></script>
-  <script src="assets/js/interactive.js?v=20260817a" defer></script>
+  <script src="assets/js/interactive.js?v=20260820a" defer></script>
   <script src="assets/js/explorers.js?v=20260817a" defer></script>
   <script src="assets/js/enhancements.js?v=20260817a" defer></script>
 </body>

@@ -31,6 +31,14 @@
       </div>
     </section>
 
+
+    <section class="section section--soft" id="identity">
+      <div class="wrap identity-intro">
+        <p class="identity-intro__lead">We are the data analytics team at the Population Health Data Center (PHDc), National Cheng Kung University. Through IMPRESIVE, we work with data partners across countries to prepare diverse healthcare databases for multinational real-world evidence studies.</p>
+      </div>
+    </section>
+
+
     <section class="section">
       <div class="wrap">
         <div class="section-heading">
@@ -49,20 +57,15 @@
             <small>OMOP and Sentinel common data models.</small>
           </div>
           <div>
-            <dt>Largest published partner scale</dt>
-            <dd>51M</dd>
-            <small>NHIS insured population as of April 2024; partner scales use different periods and definitions.</small>
-          </div>
-          <div>
-            <dt>Automated OMOP quality checks</dt>
-            <dd>3,000+</dd>
-            <small>Official Data Quality Dashboard checks cited in the approved programme deck. <a class="record-link" href="methods.html#quality">See quality validation</a>.</small>
+            <dt>Cohort sample size</dt>
+            <dd>⁓3M</dd>
+            <small>ASCVD, Atopic dermatitis and Prurigo nodularis cohorts.</small>
           </div>
         </dl>
       </div>
     </section>
 
-    <section class="section section--soft" id="architecture-entry">
+    <!-- <section class="section section--soft" id="architecture-entry">
       <div class="wrap">
         <div class="section-heading">
           <p class="eyebrow">The shared architecture</p>
@@ -79,6 +82,26 @@
         <p class="arch-rail__note">A source that falls short is not forced through the pipeline. The characterisation becomes the result, and it defines what the next round has to change.</p>
         <div class="actions"><a class="btn btn--outline" href="how.html#architecture">Walk through the architecture</a></div>
       </div>
+    </section> -->
+
+    <section class="section section--soft" id="workflow">
+      <div class="wrap">
+        <div class="section-heading">
+          <h2>The IMPRESIVE study workflow</h2>
+                <div class="actions"><a class="btn btn--outline" href="how.html#architecture">Walk through the architecture</a></div>
+        </div>
+        <ol class="pipeline pipeline--compact">
+          <li><div><h3>Research question</h3><p>Translate a clinical, policy, or regulatory need into population, exposure, comparator, outcome, follow-up, and time zero. <a href="objective.html">Why preparedness starts here →</a></p></div></li>
+          <li><div><h3>Feasibility &amp; fit for purpose</h3><p>Assess whether each data environment can answer this specific question. Full database conversion is not a prerequisite for every study. <a href="methods.html#fit-for-purpose">Criteria →</a></p></div></li>
+          <li><div><h3>Protocol &amp; variable definition</h3><p>Align the common protocol, analysis plan, code lists, variable specifications, and output formats. <a href="methods.html#code-harmonization">Code lists →</a></p></div></li>
+          <li><div><h3>Standardization &amp; common data model</h3><p>Use OMOP, Sentinel-like, or another governed structure to create a common analytical interface suited to the local setting. <a href="methods.html#cdm-routes">Routes and mappings →</a></p></div></li>
+          <li><div><h3>Quality validation</h3><p>Check structural conformance, completeness, plausibility, and study-specific validity. <a href="methods.html#quality">Quality framework →</a></p></div></li>
+          <li><div><h3>Distributed execution</h3><p>Approved partners run common programs locally and document adaptations, exceptions, and limitations. <a href="methods.html#models">What travels →</a></p></div></li>
+          <li><div><h3>Evidence integration</h3><p>Bring together permitted aggregate outputs while preserving site-level context and separating implementation issues from true differences. <a href="cases.html">Case portfolio →</a></p></div></li>
+          <li><div><h3>Visualization &amp; interpretation</h3><p>Present country-specific and integrated findings with transparent definitions, uncertainty, and contextual explanation. <a href="Visualization/index.html">Visualization platform →</a></p></div></li>
+        </ol>
+      </div>
+      
     </section>
 
     <section class="section" id="cases">
@@ -86,40 +109,35 @@
         <div class="section-heading">
           <p class="eyebrow">Cross-national evidence cases</p>
           <h2>From prepared data to cross-national evidence</h2>
-          <p>Each case follows the same arc: the question, how the network answered it, what came back, and what the finding does not license anyone to conclude.</p>
         </div>
         <div class="case-index">
           <article class="case-tile">
             <span class="case-kicker">Case 01 · ASCVD</span>
             <h3>Risk patterns across East Asian data environments</h3>
             <div class="case-preview case-preview--range" aria-hidden="true"><span class="case-preview__reference"></span><span class="case-preview__range"><i></i><i></i></span><small>HR 1</small><strong>1.2–1.6</strong></div>
-            <p>Recurrent cardiovascular risk compared between very-high-risk and high-risk patients across national claims and hospital record environments.</p>
             <div class="case-accomplishment"><span>Establish</span><strong>Cross-database comparability</strong></div>
-            <a href="case-ascvd.html">Read the ASCVD case →</a>
+            <a href="case-ascvd.html">Read more →</a>
           </article>
           <article class="case-tile case-tile--visualization">
             <span class="case-kicker">Extended case · ASCVD visualization</span>
             <h3>Explore standardized aggregate outputs interactively</h3>
             <div class="case-preview case-preview--viz" aria-hidden="true"><span></span><span></span><span></span><i></i></div>
-            <p>Review current study results for cohort assembly, baseline characteristics, event rates, and comparative estimates through one consistent data contract.</p>
             <div class="case-accomplishment"><span>Explore</span><strong>Interactive output review</strong></div>
-            <a href="Visualization/index.html">Open the visualization →</a>
+            <a href="Visualization/index.html">Read more →</a>
           </article>
           <article class="case-tile case-tile--derm">
             <span class="case-kicker">Case 02 · AD / PN</span>
             <h3>A reusable framework across therapeutic areas</h3>
             <div class="case-preview case-preview--definitions" aria-hidden="true"><span style="--preview-height:82%"></span><span style="--preview-height:48%"></span><span style="--preview-height:24%"></span><small>D1</small><small>D2</small><small>D3</small></div>
-            <p>Disease burden, standard of care, and clinical outcomes characterized in atopic dermatitis and prurigo nodularis while preserving site-specific disease algorithms.</p>
             <div class="case-accomplishment"><span>Expand</span><strong>Reusable study machinery</strong></div>
-            <a href="case-adpn.html">Read the AD / PN case →</a>
+            <a href="case-adpn.html">Read more →</a>
           </article>
           <article class="case-tile case-tile--transport">
             <span class="case-kicker">Case 03 · Transportability</span>
             <h3>Can evidence travel from Taiwan to Japan?</h3>
             <div class="case-preview case-preview--transport" aria-hidden="true"><span class="case-preview__source">TW</span><i></i><span class="case-preview__target">JP</span><small>Observed</small><small>Transported</small></div>
-            <p>A retrospective target-trial emulation compares Taiwan NHIRD and Japan DeSC estimates, then examines estimates transported by a model developed in Taiwan.</p>
             <div class="case-accomplishment"><span>Extend</span><strong>Evidence transportability</strong></div>
-            <a href="transportability.html">Read the transportability case →</a>
+            <a href="transportability.html">Read more →</a>
           </article>
         </div>
       </div>

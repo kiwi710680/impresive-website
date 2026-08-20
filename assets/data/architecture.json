@@ -37,17 +37,16 @@
       "link": {
         "href": "objective.html",
         "text": "Why preparedness starts here"
-      },
-      "step": "1"
+      }
     },
     "common-questions": {
-      "label": "Common questions",
-      "summary": "The decision need is decomposed into separately answerable questions, so that a source unfit for one facet can still contribute to another.",
+      "label": "Research question",
+      "summary": "Translate a clinical, policy, or regulatory need into population, exposure, comparator, outcome, follow-up, and time zero.",
       "link": {
         "href": "objective.html",
         "text": "The objective for multinational studies"
       },
-      "step": "2"
+      "step": "1"
     },
     "disease-burden": {
       "label": "Disease burden",
@@ -102,21 +101,22 @@
       }
     },
     "fit-for-purpose": {
-      "label": "Fit-for-purpose assessment",
-      "summary": "Fitness is a property of a question × source pair, not of a database. The same environment can be fit for a burden question and unfit for an effectiveness question.",
+      "label": "Feasibility & Fit-for-purpose assessment",
+      "summary": "Assess whether each data environment can answer this specific question. Full database conversion is not a prerequisite for every study.",
       "link": {
         "href": "methods.html#fit-for-purpose",
         "text": "The fit-for-purpose criteria"
       },
-      "step": "4"
+      "step": "2"
     },
     "coordinating-centre": {
-      "label": "Coordinating centre",
-      "summary": "Sends one artefact to every participating site and receives only permitted aggregate output in return. It never receives person-level data.",
+      "label": "Protocol & variable definition",
+      "summary": "Align the common protocol, analysis plan, code lists, variable specifications, and output formats.",
       "link": {
-        "href": "methods.html#models",
-        "text": "Compare the three architectures"
-      }
+        "href": "methods.html#code-harmonization",
+        "text": "Semantic implementation"
+      },
+      "step": "3"
     },
     "common-question": {
       "label": "Common question",
@@ -146,14 +146,32 @@
       },
       "step": "5c"
     },
+    "Standardization": {
+      "label": "Standardization",
+      "summary": "Use OMOP, Sentinel-like, or another governed structure to create a common analytical interface suited to the local setting.",
+      "link": {
+        "href": "methods.html#cdm-routes",
+        "text": "Routes and mappings "
+      },
+      "step": "4"
+    },
+    "Quality": {
+      "label": "Quality validation",
+      "summary": "Check conformance, completeness, plausibility, and study-relevant outputs before analysis proceeds. Failed checks return to mappings, definitions, or implementation for revision.",
+      "link": {
+        "href": "methods.html#quality",
+        "text": "Quality assurance and revision"
+      },
+      "step": "5"
+    },
     "pooling": {
-      "label": "Pooling and assessing consistency",
-      "summary": "Aggregate results are brought together and checked for consistency across sites and designs. Displaying a range is not the same as pooling an estimate.",
+      "label": "Evidence integration",
+      "summary": "Bring together permitted aggregate outputs while preserving site-level context and separating implementation issues from true differences.",
       "link": {
         "href": "case-ascvd.html#risk-comparison",
         "text": "Cross-database comparison"
       },
-      "step": "6"
+      "step": "7"
     },
     "diagnostics": {
       "label": "Visualisation and diagnostics",
@@ -184,11 +202,11 @@
       "step": "5*"
     },
     "evidence-integration": {
-      "label": "Evidence integration and visualization",
-      "summary": "Findings across questions are assembled into a totality, with each contribution weighted by the design that produced it and the context it came from.",
+      "label": "Visualization and interpretation",
+      "summary": "Present country-specific and integrated findings with transparent definitions, uncertainty, and contextual explanation.",
       "link": {
-        "href": "cases.html",
-        "text": "The case portfolio"
+        "href": "Visualization/index.html",
+        "text": "See visualization portfolio"
       },
       "step": "8"
     },
@@ -210,13 +228,13 @@
       }
     },
     "results": {
-      "step": "",
-      "label": "Results",
-      "summary": "Each site returns permitted aggregate output to the coordinating centre. Person-level data never leave the approved local environment.",
+      "label": "Distributed execution",
+      "summary": "Approved partners run common programs locally and document adaptations, exceptions, and limitations.",
       "link": {
         "href": "methods.html#models",
         "text": "What each architecture returns"
-      }
+      },
+      "step": "6"
     }
   },
   "intro": {

@@ -26,7 +26,6 @@
     <section class="section section--soft" id="identity">
       <div class="wrap grid grid--2">
         <div>
-          <p class="eyebrow">The formal name</p>
           <h2>A complete pathway from databases to decisions</h2>
           <p class="lead"><strong>I</strong>nternational <strong>M</strong>ulti-database study <strong>PRE</strong>paredness: Databases <strong>S</strong>tandardization, <strong>I</strong>ntegration and <strong>V</strong>isualization for timely <strong>E</strong>valuation on Disease and Treatment.</p>
           <p>The programme prepares local data environments for common study questions, transparent implementation, quality review, distributed analysis, and contextual interpretation. It does not require person-level partner data to be centralized.</p>
@@ -37,6 +36,20 @@
           <p>Preparation makes assumptions, data constraints, methods, local responsibilities, and interpretation boundaries explicit before evidence is combined.</p>
         </div>
       </div>
+
+    </section>
+
+
+    <section class="section" data-mascot-scope>
+      <div class="wrap">
+        <div class="section-heading"><h2>Why collaborate across data environments?</h2></div>
+        <div class="grid grid--2">
+          <article class="card"><span class="number">1</span><h3>Diverse populations and settings</h3><p>Evidence from one country may not represent other populations, reimbursement systems, care pathways, or prescribing practices.</p></article>
+          <article class="card"><span class="number">2</span><h3>Feasibility and precision</h3><p>Multiple data sources can support rarer events, subgroups, and more precise estimates when definitions and follow-up are suitable.</p></article>
+          <article class="card"><span class="number">3</span><h3>Consistency and heterogeneity</h3><p>Cross-country comparison reveals whether patterns are consistent and where clinically or operationally meaningful differences appear.</p></article>
+          <article class="card"><span class="number">4</span><h3>Transportability</h3><p>Comparing contexts helps teams judge whether evidence may inform decisions beyond the setting in which it was first generated.</p></article>
+        </div>
+      </div>
       <div class="wrap identity-intro">
         <p class="eyebrow">What we bring</p>
         <p class="identity-intro__lead">We are the data analytics team at the Population Health Data Center (PHDc), National Cheng Kung University. Through IMPRESIVE, we work with data partners across countries to prepare diverse healthcare databases for multinational real-world evidence studies.</p>
@@ -44,45 +57,12 @@
       </div>
     </section>
 
-    <section class="section" id="purpose">
-      <div class="wrap">
-        <div class="section-heading">
-          <p class="eyebrow">What the infrastructure prepares</p>
-          <h2>Four forms of readiness, one study-specific decision</h2>
-          <p>A converted database is not automatically ready for every question. Readiness must be assessed for the proposed study and revisited when the protocol, data period, definitions, or operating environment changes.</p>
-        </div>
-        <div class="grid grid--4">
-          <article class="card readiness-card readiness-card--data"><h3>Data</h3><p>Can the environment identify the required population, exposure, outcomes, covariates, time zero, and follow-up?</p></article>
-          <article class="card readiness-card readiness-card--method"><h3>Method</h3><p>Can common definitions, quality checks, and analytic programs be implemented consistently?</p></article>
-          <article class="card readiness-card readiness-card--collaboration"><h3>Collaboration</h3><p>Can local teams and governance processes support distributed execution and permitted output sharing?</p></article>
-          <article class="card readiness-card readiness-card--interpretation"><h3>Interpretation</h3><p>Can differences be understood in the context of coding, populations, coverage, and healthcare practice?</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--dark" id="pillars">
-      <div class="wrap">
-        <div class="pillar-map-heading">
-          <div class="section-heading"><p class="eyebrow">Three-pillar navigation map</p><h2>Move from prepared data to usable knowledge</h2><p>Each pillar is a distinct layer of the same evidence journey. Open a pillar to see what it contains, then follow its direct route into the website.</p></div>
-          <a class="btn btn--outline btn--on-dark" href="how.html#workflow">Start with the eight-step workflow</a>
-        </div>
-        <div class="pillar-navigator" aria-label="Three-pillar site navigator">
-          <details class="pillar-link pillar-link--database" open><summary><span>01 · INPUT</span><h3>Database</h3><p>Understand partner environments, coding context, and whether a study question is feasible.</p></summary><div class="pillar-link__detail"><p class="pillar-destination">Partner → survey → readiness</p><ul><li>Source-data survey</li><li>Study-specific readiness</li></ul><a href="databases.html#survey-framework">Open partner readiness →</a></div></details>
-          <span class="pillar-connector" aria-hidden="true">Common definitions</span>
-          <details class="pillar-link pillar-link--analytics"><summary><span>02 · ENGINE</span><h3>Analytics</h3><p>See how common models, reusable programmes, and quality checks make local execution comparable.</p></summary><div class="pillar-link__detail"><p class="pillar-destination">Harmonize → execute → validate</p><ul><li>CDM routes</li><li>Reusable module library</li><li>Quality validation</li></ul><a href="methods.html#analysis-modules">Open the methods →</a></div></details>
-          <span class="pillar-connector" aria-hidden="true">Contextual interpretation</span>
-          <details class="pillar-link pillar-link--knowledge"><summary><span>03 · OUTPUT</span><h3>Knowledge</h3><p>Review cross-setting findings, uncertainty, and the interpretation boundaries behind decisions.</p></summary><div class="pillar-link__detail"><p class="pillar-destination">Evidence → context → application</p><ul><li>Case accomplishments</li><li>Reviewable evidence figures</li><li>Transportability</li></ul><a href="cases.html#case-register">Open accomplishments →</a></div></details>
-        </div>
-        <nav class="pillar-quick-links" aria-label="Three-pillar destinations"><a href="databases.html#readiness-check"><strong>Check readiness</strong><span>Database</span></a><a href="how.html#shared-model"><strong>See the shared model</strong><span>Analytics</span></a><a href="evidence.html"><strong>Explore evidence</strong><span>Knowledge</span></a></nav>
-      </div>
-    </section>
 
     <section class="section section--soft" id="programme-roadmap">
       <div class="wrap">
         <div class="section-heading">
           <p class="eyebrow">The IMPRESIVE journey</p>
           <h2>From individual studies to shared research infrastructure</h2>
-          <p>The programme is continuously evolving, with new capabilities and applications being added over time.</p>
         </div>
         <ol class="living-timeline">
           <li class="timeline-complete">
@@ -124,7 +104,7 @@
             </div>
           </li>
           <li class="timeline-future">
-            <span class="timeline-dot" aria-label="Future">→</span>
+            <span class="timeline-dot" aria-label="Future">Next</span>
             <div class="timeline-event"><span class="when">Open horizon</span><h3>Expand the network for future collaboration</h3><p>Build new partnerships across countries, data environments, and research areas, creating opportunities for shared studies, methodological development, and broader applications of the IMPRESIVE framework.</p><a class="roadmap-cta" href="join.html">Join us <span aria-hidden="true">→</span></a></div>
           </li>
         </ol>
@@ -132,124 +112,84 @@
       </div>
     </section>
 
-    <section class="section impact-section" id="impact" data-impact data-impact-mode="detail">
+
+    <section class="section section--dark" id="pillars">
       <div class="wrap">
-        <div class="section-heading impact-heading">
-          <p class="eyebrow">Four pathways of value</p>
-          <h2>IMPRESIVE Impact</h2>
-          <p>Four connected forms of impact show how harmonised data, reusable methods, and multinational collaboration can strengthen evidence generation and participation.</p>
+        <div class="pillar-map-heading">
+          <div class="section-heading"><p class="eyebrow">Three-pillar navigation map</p><h2>Move from prepared data to usable knowledge</h2></div>
+          <a class="btn btn--outline btn--on-dark" href="how.html#architecture">Start with the core workflow</a>
         </div>
-
-        <div data-impact-content></div>
-        <div class="impact-static-fallback">
-
-        <div class="impact-grid" role="tablist" aria-label="IMPRESIVE impact areas">
-          <button class="impact-card impact-card--scientific is-active" id="impact-tab-scientific" type="button" role="tab" aria-selected="true" aria-controls="impact-panel-scientific" tabindex="0" data-impact-tab data-impact-index="0">
-            <span class="impact-card__mark" aria-hidden="true"><svg class="impact-icon" viewBox="0 0 48 48" focusable="false"><ellipse cx="18" cy="17" rx="10" ry="4"></ellipse><path d="M8 17v8c0 2.2 4.5 4 10 4s10-1.8 10-4v-8M8 21c0 2.2 4.5 4 10 4s10-1.8 10-4M32 11h8v8h-8zM34 15h4M36 13v4M27 33l4 4 9-10"></path></svg></span>
-            <span class="impact-card__content">
-              <span class="impact-card__title">Scientific and academic impact</span>
-              <span class="impact-card__themes">Harmonisation · Reproducibility · Comparability</span>
-            </span>
-          </button>
-
-          <button class="impact-card impact-card--clinical" id="impact-tab-clinical" type="button" role="tab" aria-selected="false" aria-controls="impact-panel-clinical" tabindex="-1" data-impact-tab data-impact-index="1">
-            <span class="impact-card__mark" aria-hidden="true"><svg class="impact-icon" viewBox="0 0 48 48" focusable="false"><circle cx="23" cy="23" r="15"></circle><path d="M8 23h30M23 8c5 5 7 10 7 15s-2 10-7 15c-5-5-7-10-7-15s2-10 7-15M17 14h12M17 32h12M35 30v12M29 36h12"></path></svg></span>
-            <span class="impact-card__content">
-              <span class="impact-card__title">Clinical, policy, and societal impact</span>
-              <span class="impact-card__themes">Timeliness · Transportability · Evidence equity</span>
-            </span>
-          </button>
-
-          <button class="impact-card impact-card--economic" id="impact-tab-economic" type="button" role="tab" aria-selected="false" aria-controls="impact-panel-economic" tabindex="-1" data-impact-tab data-impact-index="2">
-            <span class="impact-card__mark" aria-hidden="true"><svg class="impact-icon" viewBox="0 0 48 48" focusable="false"><ellipse cx="16" cy="14" rx="9" ry="4"></ellipse><path d="M7 14v8c0 2.2 4 4 9 4s9-1.8 9-4v-8M7 18c0 2.2 4 4 9 4s9-1.8 9-4M29 16a12 12 0 0 1 8 19M38 35v-7M38 35h-7M29 40H17v-8h12z"></path></svg></span>
-            <span class="impact-card__content">
-              <span class="impact-card__title">Economic, industry, and technological innovation impact</span>
-              <span class="impact-card__themes">Cost reduction · Reuse · Innovation readiness</span>
-            </span>
-          </button>
-
-          <button class="impact-card impact-card--education" id="impact-tab-education" type="button" role="tab" aria-selected="false" aria-controls="impact-panel-education" tabindex="-1" data-impact-tab data-impact-index="3">
-            <span class="impact-card__mark" aria-hidden="true"><svg class="impact-icon" viewBox="0 0 48 48" focusable="false"><path d="M6 15c7-2 13 0 18 5v20c-5-5-11-7-18-5zM42 15c-7-2-13 0-18 5v20c5-5 11-7 18-5z"></path><circle cx="13" cy="9" r="4"></circle><circle cx="35" cy="9" r="4"></circle><path d="M5 12c3-2 7-2 10 0M33 12c3-2 7-2 10 0"></path></svg></span>
-            <span class="impact-card__content">
-              <span class="impact-card__title">Education and global development impact</span>
-              <span class="impact-card__themes">Capacity building · Participation · Sustainability</span>
-            </span>
-          </button>
+        <div class="pillar-navigator" aria-label="Three-pillar site navigator">
+          <details class="pillar-link pillar-link--database" open><summary><span>01 · INPUT</span><h3>Database</h3><p>Understand partner environments, coding context, and whether a study question is feasible.</p></summary><div class="pillar-link__detail"><p class="pillar-destination">Partner → survey → readiness</p><ul><li>Source-data survey</li><li>Study-specific readiness</li></ul><a href="databases.html#survey-framework">Open partner readiness →</a></div></details>
+          <span class="pillar-connector" aria-hidden="true">Common definitions</span>
+          <details class="pillar-link pillar-link--analytics"><summary><span>02 · ENGINE</span><h3>Analytics</h3><p>See how common models, reusable programmes, and quality checks make local execution comparable.</p></summary><div class="pillar-link__detail"><p class="pillar-destination">Harmonize → execute → validate</p><ul><li>CDM routes</li><li>Reusable module library</li><li>Quality validation</li></ul><a href="methods.html#models">Open the methods →</a></div></details>
+          <span class="pillar-connector" aria-hidden="true">Contextual interpretation</span>
+          <details class="pillar-link pillar-link--knowledge"><summary><span>03 · OUTPUT</span><h3>Knowledge</h3><p>Review cross-setting findings, uncertainty, and the interpretation boundaries behind decisions.</p></summary><div class="pillar-link__detail"><p class="pillar-destination">Evidence → context → application</p><ul><li>Case accomplishments</li><li>Reviewable evidence figures</li><li>Transportability</li></ul><a href="cases.html#case-register">Open accomplishments →</a></div></details>
         </div>
+        <nav class="pillar-quick-links" aria-label="Three-pillar destinations"><a href="databases.html#readiness-check"><strong>Check readiness</strong><span>Database</span></a><a href="methods.html#cdm-routes"><strong>See the shared model</strong><span>Analytics</span></a><a href="evidence.html"><strong>Explore evidence</strong><span>Knowledge</span></a></nav>
+      </div>
+    </section>
 
-        <div class="impact-detail" data-impact-detail data-impact-active="0">
-          <div class="impact-detail__toolbar">
-            <span class="impact-detail__counter" data-impact-counter>01 / 04</span>
-            <div class="impact-detail__controls" aria-label="Browse impact details">
-              <button type="button" data-impact-previous aria-label="Show previous impact">←</button>
-              <button type="button" data-impact-next aria-label="Show next impact">→</button>
-            </div>
+
+
+    <section class="section" id="common-data-model">
+      <div class="wrap">
+        <div class="cdm-intro">
+          <div class="cdm-intro__main">
+            <p class="eyebrow">The shared analytical interface</p>
+
+            <h2>One structure, reusable across studies</h2>
+
+            <p class="cdm-intro__lead">
+              A common data model (CDM) reorganises local data into a shared structure
+              and set of definitions, allowing the same analytical program to be
+              executed across participating databases while person-level data remain
+              within each partner environment.
+            </p>
           </div>
 
-          <article class="impact-detail__panel" id="impact-panel-scientific" role="tabpanel" aria-labelledby="impact-tab-scientific" tabindex="0" data-impact-panel>
-            <p class="impact-detail__label">Scientific and academic impact</p>
-            <h3>Harmonisation · Reproducibility · Comparability</h3>
-            <p class="impact-detail__lead">We align data and methods to produce transparent, reproducible, and comparable multinational evidence.</p>
-            <p>IMPRESIVE uses harmonised definitions, a common data model, shared protocols, and common analytical programmes across participating countries. This reduces avoidable differences in study implementation, improves transparency and reproducibility, and enables meaningful comparison of results across populations and healthcare systems.</p>
-          </article>
+          <aside class="cdm-intro__why">
+            <p class="cdm-intro__label">Why CDM?</p>
 
-          <article class="impact-detail__panel" id="impact-panel-clinical" role="tabpanel" aria-labelledby="impact-tab-clinical" tabindex="0" data-impact-panel>
-            <p class="impact-detail__label">Clinical, policy, and societal impact</p>
-            <h3>Timeliness · Transportability · Evidence equity</h3>
-            <p class="impact-detail__lead">We generate timely and privacy-preserving evidence for clinical, regulatory, and policy decisions.</p>
-            <p>IMPRESIVE combines multinational data with clinical expertise to accelerate evidence generation for drug safety and healthcare decisions. Its distributed approach keeps patient-level data within each country, while cross-country analyses assess whether findings are transportable across healthcare settings and improve evidence representation for Asian and other underrepresented populations.</p>
-          </article>
+            <p>
+              Standardisation requires upfront investment, but once databases have been
+              mapped and validated, that work can be reused across subsequent studies.
+            </p>
 
-          <article class="impact-detail__panel" id="impact-panel-economic" role="tabpanel" aria-labelledby="impact-tab-economic" tabindex="0" data-impact-panel>
-            <p class="impact-detail__label">Economic, industry, and technological innovation impact</p>
-            <h3>Cost reduction · Reuse · Innovation readiness</h3>
-            <p class="impact-detail__lead">We reuse data and analytical infrastructure to reduce research costs and support scalable innovation.</p>
-            <p>IMPRESIVE reuses validated data structures, cohorts, quality checks, and analytical programmes across studies and countries. Although initial infrastructure requires investment, reuse reduces duplicated work, shortens study timelines, and lowers the cost of subsequent research. The structured environment can also support trial feasibility assessment, external model validation, and future data-driven innovation.</p>
-          </article>
-
-          <article class="impact-detail__panel" id="impact-panel-education" role="tabpanel" aria-labelledby="impact-tab-education" tabindex="0" data-impact-panel>
-            <p class="impact-detail__label">Education and global development impact</p>
-            <h3>Capacity building · Participation · Sustainability</h3>
-            <p class="impact-detail__lead">We build shared skills and standards so more countries can participate in multinational research.</p>
-            <p>IMPRESIVE converts its experience in data mapping, validation, and analysis into shared guidance and training for researchers, clinicians, data personnel, and regulators. This creates a common research language, lowers barriers for emerging partners, and enables participating countries to contribute not only data but also to study design, analysis, and interpretation.</p>
-          </article>
+            <div class="cdm-intro__outcomes">
+              <span>Shorter analysis time</span>
+              <span>Better comparability</span>
+              <span>Better reproducibility</span>
+            </div>
+          </aside>
         </div>
-        </div>
+
+        <figure class="cdm-timeline">
+          <img src="assets/img/cdm-timeline.svg" width="1323" height="945" loading="lazy"
+            alt="Timeline of common-data-model adoption in multi-database research, showing the successive programmes and data models that established the approach IMPRESIVE follows.">
+        </figure>
+
+        <div class="actions"><a class="btn btn--outline" href="methods.html#cdm-routes">Compare the OMOP and Sentinel routes</a></div>
       </div>
     </section>
 
     <section class="section section--dark" id="alliance">
       <div class="wrap">
         <div class="section-heading">
-          <p class="eyebrow">PHDc–AsPEN–IMPRESIVE</p>
-          <h2>One collaboration ecosystem, three distinct roles</h2>
+          <h2>PHDc–AsPEN–IMPRESIVE</h2>
           <p>The role map separates organizational coordination, application support, and research infrastructure. PHDc is the primary public contact for this website.</p>
         </div>
         <div class="grid grid--3">
-          <article class="card card--quiet"><span class="technical-label">Organizational bridge &amp; contact</span><h3>PHDc</h3><p>Connects organizations, coordinates multinational collaboration, and serves as the primary public contact for IMPRESIVE.</p><p><a href="https://www.phdcenter.org.tw/" target="_blank" rel="noopener">Visit PHDc →</a></p></article>
-          <article class="card card--quiet"><span class="technical-label">Application support</span><h3>AsPEN</h3><p>Supports collaboration applications within the wider ecosystem when that route is used by AsPEN members initiative.</p></article>
-          <article class="card card--quiet"><span class="technical-label">Research infrastructure</span><h3>IMPRESIVE</h3><p>Provides the study-preparedness framework, standardized structures, reusable analytic programs, and evidence workflow.</p></article>
+          <article class="card card--quiet"><span class="technical-label">Organizational bridge &amp; contact</span><div class="org-title"> <img src="assets/img/PHD_LOGO.png" alt="PHDc" class="org-logo" > <h3>PHDc</h3> </div><p>Connects organizations, coordinates multinational collaboration, and serves as the primary public contact for IMPRESIVE.</p><p><a href="https://www.phdcenter.org.tw/" target="_blank" rel="noopener">Visit PHDc →</a></p></article>
+          <article class="card card--quiet"><span class="technical-label">Application support</span><div class="org-title"> <img src="assets/img/AsPenLogo.png" alt="AsPEN" class="org-logo" > <h3>AsPEN</h3> </div><p>Supports collaboration applications within the wider ecosystem when that route is used by an AsPEN member initiative.</p><p><a href="https://www.aspensig.asia/" target="_blank" rel="noopener">Visit AsPEN →</a></p></article>
+          <article class="card card--quiet"><span class="technical-label">Research infrastructure</span><div class="org-title"> <img src="assets/img/favicon.svg" alt="IMPRESIVE" class="org-logo" > <h3>IMPRESIVE</h3> </div><p>Provides the study-preparedness framework, standardized structures, reusable analytic programs, and evidence workflow.</p></article>
         </div>
+      </div>
+      <div class="wrap identity-intro">
+        <ul><li><strong>Proposal & scope review</strong> — Review research questions, intended uses, roles, feasibility, and priorities before execution.</li><li><strong>Local data control</strong> — Keep person-level data within approved local environments and share only permitted outputs.</li><li><strong>Ethics & local approval</strong> — Follow applicable ethics, privacy, data-owner, and institutional requirements.</li><li><strong>Authorship & publication governance</strong> — Agree on credit, review responsibilities, and dissemination expectations before public release.</li><li><strong>Conflict-of-interest management</strong> — Disclose and manage relevant interests through the approved collaboration process.</li></ul>
       </div>
     </section>
 
-    <section class="section" id="governance-transparency">
-      <div class="wrap">
-        <div class="section-heading">
-          <p class="eyebrow">Governance &amp; transparency</p>
-          <h2>Trust is designed into the collaboration</h2>
-          <p>These public principles summarize how IMPRESIVE aims to keep multinational work accountable. Study-specific committees, agreements, approvals, and release procedures must be confirmed before each project begins.</p>
-        </div>
-        <div class="governance-grid">
-          <article class="governance-card"><span>01</span><h3>Proposal &amp; scope review</h3><p>Questions, intended uses, roles, feasibility, and priorities are reviewed before execution.</p></article>
-          <article class="governance-card"><span>02</span><h3>Local data control</h3><p>Person-level data remain within approved local environments; only permitted outputs are shared.</p></article>
-          <article class="governance-card"><span>03</span><h3>Ethics &amp; local approval</h3><p>Each partner follows the applicable ethics, data-owner, privacy, and institutional requirements.</p></article>
-          <article class="governance-card"><span>04</span><h3>Authorship &amp; publication</h3><p>Credit, review responsibilities, and dissemination expectations are agreed before public release.</p></article>
-          <article class="governance-card"><span>05</span><h3>Conflict-of-interest disclosure</h3><p>Relevant interests are declared and managed within the approved collaboration process.</p></article>
-          <article class="governance-card"><span>06</span><h3>Reproducible release</h3><p>Versioned code, analysis records, quality diagnostics, and interpretation notes support transparent reporting.</p></article>
-        </div>
-      </div>
-    </section>
 
     <section class="section">
       <div class="wrap">
@@ -262,8 +202,6 @@
   </main>
   <footer class="site-footer"></footer>
   <script src="assets/js/main.js?v=20260817a" defer></script>
-  <script src="assets/js/impact-data.js?v=20260817a" defer></script>
-  <script src="assets/js/impact.js?v=20260817a" defer></script>
   <script src="assets/js/mascot.js?v=20260817a" defer></script>
   <script src="assets/js/enhancements.js?v=20260817a" defer></script>
 </body>
