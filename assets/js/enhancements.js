@@ -392,7 +392,7 @@
 
     /* Closed at every width. Opening it by default on wide screens is what made
        it read as an obstacle rather than an aid. */
-    details.open = false;
+    details.open = true;
 
     if ("IntersectionObserver" in window) {
       var links = Array.from(list.querySelectorAll("a"));

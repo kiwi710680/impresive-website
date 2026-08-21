@@ -89,7 +89,7 @@ Chart labels, legends, shapes, and patterns must carry meaning in addition to co
 
 | Token | Value / role |
 |---|---|
-| `--max-width` | `1180px` content boundary |
+| `--max-width` | `1180px` baseline; fluid up to `1500px` on large desktops |
 | `--radius` | `12px` standard surface radius |
 | `--radius-sm` | `8px` control and compact-card radius |
 | `--shadow` | restrained blue-toned elevation |
@@ -112,7 +112,7 @@ Hero and major dark-section gradient: `#0a4e96` to `#0063c3` to `#3b6c73`.
 
 - Headings: `"Segoe UI Variable Display", "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif`
 - Body/UI: `"Segoe UI Variable Text", "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif`
-- Body baseline: 17 px desktop and 16 px compact viewport; line-height about 1.6.
+- Body baseline: 17 px desktop, 18 px on large desktops, and 16 px compact viewport; line-height about 1.6.
 - Hero title hierarchy: at least 2.5 times body size on desktop and at least 2.0 times on narrow viewports.
 - Avoid multiple unrelated font scales inside one card family.
 

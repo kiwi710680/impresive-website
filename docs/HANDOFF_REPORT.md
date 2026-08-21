@@ -1,6 +1,6 @@
 # IMPRESIVE website handoff report
 
-Document date: 2026-08-20
+Document date: 2026-08-21
 
 Release type: final pre-publication stabilization and source-repository handoff
 
@@ -14,7 +14,7 @@ The codebase has no build step and no server-side component. Public pages load a
 
 The governing maintenance principle is scientific and operational restraint. Scientific claims, database descriptions, study status, aggregate results, partner readiness, governance statements, and future-capability labels require owner approval and traceable source material. The manually tuned production layout is also part of the accepted baseline and should not be globally normalized during routine maintenance.
 
-Final QA verdict: **Publication-ready with documented minor limitations**. No known publication-blocking link, asset, layout, navigation, or runtime defect remains after the 2026-08-20 stabilization pass.
+Final QA verdict: **Not publication-ready pending Visualization disclosure control, authoritative incidence-unit confirmation, social metadata, and production cutover approval**. The primary website has no known publication-blocking link, asset, layout, navigation, or runtime defect after the 2026-08-21 QA pass. See `../FINAL_QA_REPORT.md` for the complete release gate and evidence.
 
 ## 2. Product and organizational context
 
@@ -227,10 +227,10 @@ Future restricted features must not be implemented as static GitHub Pages functi
 
 ### QA baseline
 
-- Date: 2026-08-20
+- Date: 2026-08-21
 - Branch: `main`
-- Pre-QA commit: `876926085b1b25ed455c980eec7e018d1b2ac04c`
-- Final QA commit: the commit containing this report
+- Pre-QA commit: `18787cc`
+- Release-candidate state: uncommitted working tree; this QA task did not commit or push
 - Baseline policy: all pre-existing tracked and untracked working-tree changes were treated as intentional manual adjustments and preserved
 
 ### Coverage
@@ -238,15 +238,15 @@ Future restricted features must not be implemented as static GitHub Pages functi
 - Reviewed all 23 public HTML documents: 22 root pages plus `Visualization/index.html`.
 - Substantive pages tested: Home, About, Objective, How, Methods, Accomplishment, ASCVD, AD/PN, Transportability, Partner, Join, and Visualization.
 - Compatibility behavior tested: 404 plus Archive, Mission, Network, News, Resources, Projects, Contact, FAQ, Evidence, and Why redirects.
-- Desktop viewports: approximately 1920, 1440, 1280, and 1024 px.
+- Desktop viewports: approximately 1440, 1280, and 1024 px, with the accepted large-screen implementation retained from the preceding stabilization pass.
 - Tablet viewport: approximately 768 px.
 - Mobile viewports: approximately 430, 390, 375, and 360 px.
 - Automated validation: local routes, fragments, IDs, JSON, XML, JavaScript syntax, local asset paths, duplicate IDs, heading skips, form labels, image alternatives, and development-only paths.
 - Runtime inspection: active navigation, mobile menu focus/Escape behavior, flowchart panel, Impact tabs, ETL steps, FAQ, readiness assessment, evidence filters, accessible tables, and export handlers.
 - Console/network inspection: no site JavaScript error, warning, broken image, or failed local asset request observed in the tested substantive routes.
-- Layout inspection: no document-level horizontal overflow at the tested viewports.
+- Layout inspection: no document-level horizontal overflow remains after the scoped 360 px Home fix.
 
-### Final QA fixes
+### 2026-08-20 stabilization fixes retained in the baseline
 
 - Added the missing Quality-validation record for the interactive How flowchart and corrected the Standardization accessible step number.
 - Replaced invalid `aria-selected` state on ordinary ETL buttons with `aria-pressed` and kept the existing visual state unchanged.
@@ -254,15 +254,24 @@ Future restricted features must not be implemented as static GitHub Pages functi
 - Corrected one malformed AsPEN sentence and the IMPRESIVE logo alternative text.
 - Updated README and maintenance/handoff documentation to match the current routes, modules, and ownership boundaries.
 
-### Verdict and minor limitations
+### 2026-08-21 release-candidate fixes
 
-**Publication-ready with documented minor limitations.**
+- Allowed compact Home workflow links to wrap only below 381 px, eliminating the verified 360 px page overflow without changing wider layouts.
+- Removed one duplicate H3 and one duplicate Impact lead paragraph from Objective; the underlying scientific wording was not rewritten.
+- Added a full release-candidate record in `FINAL_QA_REPORT.md` and updated governance/deployment procedures.
+
+### Verdict and release gates
+
+**Not publication-ready.**
+
+- `Visualization/assets/data/outcomes.json` contains 23 cells with event counts of 10 or fewer (minimum 3). `Visualization/README.md` says sparse-cell disclosure control is required before result sharing but is not implemented. A data owner must provide and approve the suppression/masking rule, or formally approve the current aggregates for unrestricted release and update the governing documentation.
+- The Visualization workbook/specification incidence-unit discrepancy (per 100 versus per 100,000 person-years) requires an authoritative owner decision; the QA pass did not relabel values.
+- The canonical PHD-Center host and the configured repository Pages host currently serve different builds. Production ownership, deployment source/workflow, cutover, and rollback must be confirmed before release.
 
 - The slide-34 cross-database ASCVD estimates remain explicitly labelled provisional and must be replaced from the original approved analysis table before being presented as final scientific results.
-- The intended canonical PHD-Center Pages deployment is operationally separate from this source mirror and requires owner-controlled deployment verification.
 - Browser export handlers were exercised without console/runtime failure; downloaded figure contents should still be visually spot-checked whenever evidence data or SVG/export code changes.
 
-No known publication-blocking issue remains.
+Apart from the disclosure-control gate, no known publication-blocking link, asset, layout, navigation, interaction, or runtime issue remains.
 
 ## 14. Known constraints and maintenance debt
 

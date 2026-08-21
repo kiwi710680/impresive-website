@@ -22,6 +22,7 @@ No one person should silently change both scientific evidence and its approval s
 - Never infer a missing figure value. Keep missing/not-reported values explicit.
 - Never describe a future function as operational.
 - Never add a partner-specific readiness weakness to the public site without approval.
+- Never publish or export sparse outcome cells until the data owner has approved and documented the disclosure-control rule; apply the same rule to JSON, charts, accessible tables, and every download format.
 - Never update a chart and leave its accessible table inconsistent.
 - Never convert inline mascot SVG to `<img>` or a CSS background.
 - Never broaden mascot injection to all cards.
@@ -229,6 +230,23 @@ The export code must:
 
 Reduced-motion CSS must stop animation without clearing SVG geometry.
 
+### Visualization disclosure and unit gate
+
+The public `Visualization/` subsite is a separate evidence surface with source data under `Visualization/assets/data/`. Its README currently records two owner decisions that must be resolved before public release:
+
+1. sparse-cell disclosure control is required by the specification but no threshold/replacement convention is implemented; and
+2. the workbook/specification disagree on whether incidence rates are expressed per 100 or per 100,000 person-years.
+
+Do not infer either rule. Obtain written approval from the scientific/data-governance owner. When an approved sparse-cell rule is supplied, apply it consistently to:
+
+- the stored public JSON payload;
+- on-screen metrics, charts, tooltips, and tables;
+- CSV, SVG, and PNG exports;
+- any totals or derived summaries that could reveal a suppressed cell by subtraction;
+- documentation of the rule, date, owner, and source version.
+
+Run a difference/disclosure review after implementation. A value hidden only in the chart but still present in an accessible table or download remains publicly disclosed.
+
 ## 11. Updating partners and readiness
 
 Public partners currently include:
@@ -370,6 +388,10 @@ Get-ChildItem assets\js\*.js | ForEach-Object { node --check $_.FullName }
 - Future functions are labeled future/reserved, not current.
 - Partner names, geography, and contact details are correct.
 - Sitemap and robots use the approved canonical URL.
+- Every primary page has approved Open Graph/Twitter metadata, a production-safe social-preview image, and a manifest link using the approved canonical host.
+- Visualization sparse cells have an approved disclosure decision applied consistently to source data, rendered output, accessible tables, and downloads.
+- The authoritative Visualization incidence-rate unit is documented and matches labels/calculations.
+- The production source repository, Pages workflow/branch, canonical host, cutover approver, and rollback owner are recorded.
 
 ## 18. Release procedure
 
@@ -380,8 +402,9 @@ Get-ChildItem assets\js\*.js | ForEach-Object { node --check $_.FullName }
 5. Commit with an English summary.
 6. Push the reviewed branch without force.
 7. Merge through the repository's approved process.
-8. If deploying, verify the live project URL and repeat the smoke test, including filename casing and relative assets below the project subpath.
-9. Record the commit and approver in the team's governed release log.
+8. Confirm the deployed source is the approved production repository/workflow and that canonical metadata matches the approved host. The PHD-Center and source-mirror Pages URLs must not be assumed to be interchangeable.
+9. If deploying, verify the live project URL and repeat the smoke test, including filename casing, relative assets below the project subpath, disclosure-controlled Visualization outputs, and downloaded figures.
+10. Record the commit, data/content approval, deployment approver, and rollback point in the team's governed release log.
 
 ## 19. Rollback and incident response
 

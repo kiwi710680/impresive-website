@@ -9,13 +9,14 @@
   }
 
   function impactIcon(id) {
-    var paths = {
-      scientific: '<ellipse cx="18" cy="17" rx="10" ry="4"></ellipse><path d="M8 17v8c0 2.2 4.5 4 10 4s10-1.8 10-4v-8M8 21c0 2.2 4.5 4 10 4s10-1.8 10-4M32 11h8v8h-8zM34 15h4M36 13v4M27 33l4 4 9-10"></path>',
-      clinical: '<circle cx="23" cy="23" r="15"></circle><path d="M8 23h30M23 8c5 5 7 10 7 15s-2 10-7 15c-5-5-7-10-7-15s2-10 7-15M17 14h12M17 32h12M35 30v12M29 36h12"></path>',
-      economic: '<ellipse cx="16" cy="14" rx="9" ry="4"></ellipse><path d="M7 14v8c0 2.2 4 4 9 4s9-1.8 9-4v-8M7 18c0 2.2 4 4 9 4s9-1.8 9-4M29 16a12 12 0 0 1 8 19M38 35v-7M38 35h-7M29 40H17v-8h12z"></path>',
-      education: '<path d="M6 15c7-2 13 0 18 5v20c-5-5-11-7-18-5zM42 15c-7-2-13 0-18 5v20c5-5 11-7 18-5z"></path><circle cx="13" cy="9" r="4"></circle><circle cx="35" cy="9" r="4"></circle><path d="M5 12c3-2 7-2 10 0M33 12c3-2 7-2 10 0"></path>'
+    var dimensions = {
+      scientific: [105, 105],
+      clinical: [141, 141],
+      economic: [145, 144],
+      education: [135, 135]
     };
-    return '<svg class="impact-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">' + paths[id] + "</svg>";
+    var size = dimensions[id];
+    return '<img class="impact-icon" src="assets/img/impact/' + id + '.png" alt="" width="' + size[0] + '" height="' + size[1] + '" loading="lazy" decoding="async">';
   }
 
   function cardMarkup(item, index, prefix, mode) {
