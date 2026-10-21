@@ -7,7 +7,7 @@
   <link rel="canonical" href="https://phd-center.github.io/impresive/databases.html">
   <title>Data Partners &amp; Readiness | IMPRESIVE</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20261021d">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261021o">
 </head>
 <body data-page="databases">
   <header class="site-header">
@@ -83,49 +83,64 @@
       </div>
     </section>
 
-    <section class="section section--soft" id="readiness-check" data-readiness-assessment>
+    <section class="section section--soft" id="readiness-check" data-readiness-questionnaire>
       <div class="wrap">
-        <div class="section-heading">
-          <p class="eyebrow">Data readiness self-assessment</p>
-          <h2>Let’s check your data readiness</h2>
-          <p>Use our interactive simulation tool to complete a preliminary check of your data readiness across eight core source-data domains. This tool highlights key strengths, identifies potential gaps, and outlines priorities for formal feasibility discussions.</p><p>Once you have generated and reviewed your readiness summary, <strong><a href="join.html">Contact Our Team</a></strong> to discuss potential research collaborations and integration opportunities.</p>
-          <callout>Note: This tool provides an exploratory readiness check. It is designed to assist early planning and does not replace study-specific feasibility protocols or formal data reviews.</callout>
+        <div class="rq-guide-grid">
+          <div class="section-heading rq-intro__text">
+            <p class="eyebrow">Data readiness self-assessment</p>
+            <h2>Let’s check your data readiness</h2>
+            <p>Rate your own database against each variable of the PHDcenter-modified Sentinel Common Data Model (mSCDM 8.1.0). Every variable comes with its definition, comments, and conversion guideline, so you can judge it against what the conversion actually needs.</p>
+            <p>Once you have reviewed your readiness summary, <strong><a href="join.html">Contact Our Team</a></strong> to discuss potential research collaborations and integration opportunities.</p>
+            <p class="rq-intro__note">This tool provides an exploratory readiness check for early planning. It does not replace study-specific feasibility protocols or formal data reviews.</p>
+          </div>
+          <aside class="rq-legend" aria-labelledby="rq-legend-title">
+            <h3 id="rq-legend-title">Four answers for every variable</h3>
+            <ul>
+              <li class="rq-legend__item"><span class="rq-legend__chip rq-choice--available">Available</span><span>Recorded directly in your source data.</span></li>
+              <li class="rq-legend__item"><span class="rq-legend__chip rq-choice--derivable">Derivable</span><span>Obtainable by transformation, calculation, or linkage — for example, an end date from a start date plus days supplied.</span></li>
+              <li class="rq-legend__item"><span class="rq-legend__chip rq-choice--not-available">Not available</span><span>Absent from your data environment.</span></li>
+              <li class="rq-legend__item"><span class="rq-legend__chip rq-choice--not-known">Not yet known</span><span>Still to be confirmed with the data owner.</span></li>
+            </ul>
+          </aside>
+          <div class="rq-rules__ladder">
+            <h3>How each table is judged</h3>
+            <p class="rq-rules__lead">Only <strong>essential</strong> variables decide a table’s status — the identifiers, linking keys, and core date and code fields a table cannot be built without. The first rule that applies wins.</p>
+            <ol class="rq-ladder">
+              <li><p>An essential variable is <strong>not available</strong></p><span class="rq-status rq-status--not-ready">Not ready</span></li>
+              <li><p>An essential variable is <strong>unanswered or not yet known</strong></p><span class="rq-status rq-status--incomplete">Incomplete</span></li>
+              <li><p>An essential variable is only <strong>derivable</strong></p><span class="rq-status rq-status--derivable">Ready with derivation</span></li>
+              <li><p>Every essential variable is <strong>available</strong></p><span class="rq-status rq-status--ready">Ready</span></li>
+            </ol>
+          </div>
+          <div class="rq-rules__score">
+            <h3>How the score is calculated</h3>
+            <dl class="rq-weights">
+              <div><dt>Available</dt><dd><span class="rq-weights__bar rq-weights__bar--available" style="--w:100%"></span><b>100%</b></dd></div>
+              <div><dt>Derivable</dt><dd><span class="rq-weights__bar rq-weights__bar--derivable" style="--w:75%"></span><b>75%</b></dd></div>
+              <div><dt>Not available</dt><dd><span class="rq-weights__bar" style="--w:0%"></span><b>0%</b></dd></div>
+              <div><dt>Not yet known</dt><dd><span class="rq-weights__bar" style="--w:0%"></span><b>0%</b></dd></div>
+            </dl>
+            <p>Essential variables count <strong>twice</strong> as much as supplementary ones. The <strong>core readiness index</strong> is the average of the eight core tables; Facility, Provider, and Drug_Strength are scored separately.</p>
+          </div>
         </div>
 
         <div class="assessment-layout">
-          <form class="assessment-form" data-assessment-form>
-            <div class="assessment-grid">
-              <label class="assessment-item"><span><strong>Demographic</strong><small>Person identifier, sex, year of birth, and relevant population descriptors</small></span><select name="demographic"><option value="">Choose a status</option><option value="available">Available</option><option value="derivable">Derivable</option><option value="not-available">Not available</option><option value="not-known">Not yet known</option></select></label>
-              <label class="assessment-item"><span><strong>Enrollment</strong><small>Enrollment start and end dates or an approved observation-period analogue</small></span><select name="enrollment"><option value="">Choose a status</option><option value="available">Available</option><option value="derivable">Derivable</option><option value="not-available">Not available</option><option value="not-known">Not yet known</option></select></label>
-              <label class="assessment-item"><span><strong>Encounter</strong><small>Healthcare-visit type and visit start/end information</small></span><select name="encounter"><option value="">Choose a status</option><option value="available">Available</option><option value="derivable">Derivable</option><option value="not-available">Not available</option><option value="not-known">Not yet known</option></select></label>
-              <label class="assessment-item"><span><strong>Diagnosis</strong><small>Diagnosis codes and dates</small></span><select name="diagnosis"><option value="">Choose a status</option><option value="available">Available</option><option value="derivable">Derivable</option><option value="not-available">Not available</option><option value="not-known">Not yet known</option></select></label>
-              <label class="assessment-item"><span><strong>Prescribing</strong><small>Drug codes and treatment start/end information</small></span><select name="prescribing"><option value="">Choose a status</option><option value="available">Available</option><option value="derivable">Derivable</option><option value="not-available">Not available</option><option value="not-known">Not yet known</option></select></label>
-              <label class="assessment-item"><span><strong>Procedure</strong><small>Procedure codes and dates</small></span><select name="procedure"><option value="">Choose a status</option><option value="available">Available</option><option value="derivable">Derivable</option><option value="not-available">Not available</option><option value="not-known">Not yet known</option></select></label>
-              <label class="assessment-item"><span><strong>Laboratory result</strong><small>Laboratory data and examination dates</small></span><select name="laboratory-result"><option value="">Choose a status</option><option value="available">Available</option><option value="derivable">Derivable</option><option value="not-available">Not available</option><option value="not-known">Not yet known</option></select></label>
-              <label class="assessment-item"><span><strong>Death</strong><small>Death date and, where approved and available, cause of death</small></span><select name="death"><option value="">Choose a status</option><option value="available">Available</option><option value="derivable">Derivable</option><option value="not-available">Not available</option><option value="not-known">Not yet known</option></select></label>
-            </div>
-
-            <details class="assessment-context">
-              <summary>Add optional operational context</summary>
-              <div class="grid grid--2">
-                <label><span>Temporal granularity</span><textarea name="temporal-granularity" rows="3" placeholder="For example: exact dates, month-level, or year-level"></textarea></label>
-                <label><span>Governance or access constraints</span><textarea name="governance-constraints" rows="3" placeholder="Record only non-sensitive constraints"></textarea></label>
-                <label><span>Local analytic environment</span><textarea name="analytic-environment" rows="3" placeholder="For example: secure SAS environment"></textarea></label>
-              </div>
-            </details>
-
-            <div class="assessment-actions">
-              <button class="btn btn--primary" type="button" data-assessment-summarize>Summarize readiness</button>
-              <button class="btn btn--outline" type="button" data-assessment-copy disabled>Copy summary</button>
-              <button class="btn btn--outline" type="button" data-assessment-print disabled>Print summary</button>
-              <button class="btn btn--quiet-action" type="reset">Reset</button>
-            </div>
+          <form class="assessment-form rq-form" data-readiness-form onsubmit="return false">
+            <noscript><p class="chart-error">JavaScript is needed to load the readiness questionnaire.</p></noscript>
           </form>
-
-          <aside class="assessment-summary" data-readiness-summary aria-live="polite" aria-atomic="true">
-            <p class="technical-label">Current summary</p>
-            <h3>Complete the domain review</h3>
-            <p>Choose one status for each domain, then generate a neutral feasibility summary.</p>
+          <aside class="assessment-summary rq-summary" aria-label="Readiness summary">
+            <div class="rq-summary__live" data-readiness-summary aria-live="polite"></div>
+            <details class="rq-report-details">
+              <summary>Report details <span>(optional)</span></summary>
+              <label><span>Data environment</span><input type="text" data-report-field="environment" placeholder="For example: Taiwan NHIRD" autocomplete="off"></label>
+              <label><span>Prepared by</span><input type="text" data-report-field="preparer" placeholder="Name or team" autocomplete="off"></label>
+            </details>
+            <div class="rq-summary__actions">
+              <button class="btn btn--primary btn--small" type="button" data-readiness-print>Print report</button>
+              <button class="btn btn--outline btn--small" type="button" data-readiness-copy>Copy report</button>
+              <button class="btn btn--outline btn--small" type="button" data-readiness-csv>Download CSV</button>
+              <button class="btn btn--quiet-action btn--small" type="button" data-readiness-reset>Reset answers</button>
+            </div>
           </aside>
         </div>
 
@@ -153,9 +168,11 @@
     <section class="section"><div class="wrap"><div class="cta-band"><div><h2>Partner readiness needs an operating model</h2><p>See the programme roadmap and the distinct roles of PHDc, AsPEN, and IMPRESIVE.</p></div><a class="btn btn--light" href="about.html#alliance">Programme roles &amp; roadmap</a></div></div></section>
   </main>
   <footer class="site-footer"></footer>
-  <script src="assets/js/main.js?v=20261021d" defer></script>
+  <script src="assets/js/main.js?v=20261021e" defer></script>
   <script src="assets/js/explorers.js?v=20261021d" defer></script>
-  <script src="assets/js/enhancements.js?v=20260817a" defer></script>
+  <script src="assets/js/readiness-data.js?v=20261021e" defer></script>
+  <script src="assets/js/readiness.js?v=20261021j" defer></script>
+  <script src="assets/js/enhancements.js?v=20261021j" defer></script>
   <script src="assets/js/portal-return.js" defer></script>
 </body>
 </html>

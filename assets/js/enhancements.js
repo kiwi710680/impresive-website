@@ -364,47 +364,73 @@
     document.body.classList.add("has-reading-tools");
     var words = (main.innerText || "").trim().split(/\s+/).filter(Boolean).length;
     var minutes = Math.max(1, Math.ceil(words / 225));
-    var aside = document.createElement("aside");
-    aside.className = "reading-tools";
-    aside.setAttribute("aria-label", "Page reading guide");
-    var details = document.createElement("details");
-    details.className = "reading-tools__details";
-    var summary = document.createElement("summary");
-    summary.textContent = "On this page";
-    var time = document.createElement("p");
-    time.className = "reading-time";
-    time.textContent = "Approx. " + minutes + " min read";
+
+    /* A slim bar under the hero that stays pinned below the site header.
+       It lives in the normal flow, so it never covers content or narrows the
+       sections, at any width or zoom level. */
+    var nav = document.createElement("nav");
+    nav.className = "reading-tools";
+    nav.setAttribute("aria-label", "On this page");
+    var inner = document.createElement("div");
+    inner.className = "reading-tools__inner";
+    var label = document.createElement("span");
+    label.className = "reading-tools__label";
+    label.textContent = "On this page";
     var list = document.createElement("ol");
-    sections.forEach(function (section) {
+    list.className = "reading-tools__list";
+    sections.forEach(function (section, index) {
       var item = document.createElement("li");
       var link = document.createElement("a");
       link.href = "#" + section.id;
-      link.textContent = section.querySelector("h2").textContent;
       link.dataset.sectionLink = section.id;
+      var number = document.createElement("span");
+      number.className = "reading-tools__index";
+      number.textContent = String(index + 1);
+      number.setAttribute("aria-hidden", "true");
+      link.appendChild(number);
+      link.appendChild(document.createTextNode(section.querySelector("h2").textContent.trim()));
       item.appendChild(link);
       list.appendChild(item);
     });
-    details.appendChild(summary);
-    details.appendChild(time);
-    details.appendChild(list);
-    aside.appendChild(details);
-    hero.insertAdjacentElement("afterend", aside);
+    var time = document.createElement("span");
+    time.className = "reading-time";
+    time.textContent = minutes + " min read";
+    inner.appendChild(label);
+    inner.appendChild(list);
+    inner.appendChild(time);
+    nav.appendChild(inner);
+    hero.insertAdjacentElement("afterend", nav);
 
-    /* Closed at every width. Opening it by default on wide screens is what made
-       it read as an obstacle rather than an aid. */
-    details.open = true;
-
+    var links = Array.from(list.querySelectorAll("a"));
+    function setCurrent(id) {
+      links.forEach(function (link) {
+        var current = link.dataset.sectionLink === id;
+        link.classList.toggle("is-current", current);
+        if (current) {
+          link.setAttribute("aria-current", "location");
+          /* Keep the active link visible when the list scrolls sideways. */
+          var box = list.getBoundingClientRect(), own = link.getBoundingClientRect();
+          if (own.left < box.left || own.right > box.right) list.scrollLeft += own.left - box.left - 24;
+        } else {
+          link.removeAttribute("aria-current");
+        }
+      });
+    }
     if ("IntersectionObserver" in window) {
-      var links = Array.from(list.querySelectorAll("a"));
       var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          links.forEach(function (link) {
-            link.classList.toggle("is-current", link.dataset.sectionLink === entry.target.id);
-          });
-        });
-      }, { threshold: 0, rootMargin: "-18% 0px -68% 0px" });
+        entries.forEach(function (entry) { if (entry.isIntersecting) setCurrent(entry.target.id); });
+      }, { threshold: 0, rootMargin: "-30% 0px -60% 0px" });
       sections.forEach(function (section) { observer.observe(section); });
+    }
+    /* Pinned state gets a shadow so it reads as a layer over the content. */
+    if ("IntersectionObserver" in window) {
+      var sentinel = document.createElement("div");
+      sentinel.className = "reading-tools__sentinel";
+      sentinel.setAttribute("aria-hidden", "true");
+      nav.insertAdjacentElement("beforebegin", sentinel);
+      new IntersectionObserver(function (entries) {
+        nav.classList.toggle("is-pinned", !entries[0].isIntersecting);
+      }, { rootMargin: "-68px 0px 0px 0px" }).observe(sentinel);
     }
   }
 
