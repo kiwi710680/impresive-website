@@ -12,14 +12,16 @@ Repository documentation:
 ## Technical summary
 
 - Static HTML/CSS/JavaScript; no build step, package manager, framework, backend, database, authentication, or server-side data processing.
-- Shared navigation, footer, core widgets, and browser-only readiness assessment are owned by `assets/js/main.js`.
+- Shared navigation, footer, and core widgets are owned by `assets/js/main.js`; the On this page bar is built by `assets/js/enhancements.js`.
+- The Partner page readiness questionnaire is `assets/js/readiness.js`. Its variables, definitions, and essential flags live in `assets/js/readiness-data.js`, generated from the mSCDM 8.1.0 reference document by `scripts/build-readiness-data.py` (rerun it rather than hand-editing the data file). Answers stay in browser memory only.
 - Established evidence figures and accessible tables are generated from `assets/data/results.json` by `assets/js/charts.js`.
 - The 2026-08-12/13 cohort, geographic partner map, module, subgroup, two-CDM, age-prevalence, medication-matrix, and provisional cross-database forest-plot extensions are generated from `assets/data/expansion-0812.json` by `assets/js/explorers.js`.
 - The slide-34 cross-database ASCVD estimates in `expansion-0812.json` are visibly marked provisional because the PowerPoint stores that figure as an SVG without a linked chart workbook. Replace them from the original analysis table before scientific publication.
 - The transportability case reads `assets/data/transportability.json`. Its metadata records final aggregate results supplied from the current raw analysis data.
 - The four Impact records have one content source, `assets/js/impact-data.js`, and are rendered by `assets/js/impact.js` on Objective.
 - The interactive evidence-preparation flowchart is defined in `how.html`, described by `assets/data/architecture.json`, and controlled by `assets/js/architecture.js`.
-- Inline LEGO mascot generation and injection are isolated in `assets/js/mascot.js`.
+- The LEGO mascot has been retired; `assets/js/mascot.js` no longer exists. Mascot notes in the handoff report and maintenance manual are historical.
+- Social previews use `assets/img/og-image.png` (1200 × 630) through Open Graph and Twitter tags on every primary page; `assets/img/apple-touch-icon.png` is the 180 px home-screen icon.
 - All public pages use the consolidated `assets/css/styles.css`; redirect stubs intentionally have no runtime bundle.
 - The intended canonical deployment path remains `https://phd-center.github.io/impresive/`. Pushing this source repository does not by itself deploy or transfer the canonical site.
 
@@ -60,18 +62,16 @@ Legacy routes remain as `noindex` compatibility redirects:
 - `IMPRESIVE Sharing.pptx` is the primary scientific and programme source.
 - Do not publish database-specific results, dates, cohort counts, manuscript status, partner QA findings, or causal explanations unless the approved source explicitly supports them and the content owner has cleared them for release. The new case-summary counts are limited to the values explicitly requested from source slide 12; do not sum them or substitute counts from later animation slides.
 - Use **programme** for the research initiative and **program** for executable analytic code.
+- Spelling follows Oxford style: British forms (programme, centre, colour, enrolment in prose) with -ize endings (standardization, harmonize, characterization, visualization). Table and variable names copied from the mSCDM reference keep their source spelling (for example, the Enrollment table).
 - Retain the formal IMPRESIVE spelling: “International Multi-database study PREparedness: Databases Standardization, Integration and Visualization for timely Evaluation on Disease and Treatment.”
 - Preserve missing figure values as missing. Do not convert them to zero.
 - Interpret cross-database differences in context; do not present the site as a database ranking.
 
-## Shared modules and mascot scope
+## Shared modules
 
 - `assets/js/impact-data.js` is the single live source for the four Impact titles, themes, summaries, and detailed explanations.
 - `assets/js/impact.js` enhances the four static Impact records on Objective into a keyboard-accessible tab/detail interface. The static markup remains the no-JavaScript source of the same content.
-- `assets/js/mascot.js` owns `fig()`, `tower()`, `tile()`, colour presets, page-scene definitions, and all mascot injection logic.
 - Hero compositions remain page-specific. Header and footer decorations are shared.
-- Card mascots are deliberately limited to `.impact-card`, `.model-card`, `.readiness-card`, `.route-card`, `.card.partner`, and cards inside an explicitly marked `[data-mascot-scope]` section. Do not broaden this selector to every `.card`.
-- Mascot SVG output is decorative (`aria-hidden`) and all motion is disabled when the visitor requests reduced motion.
 - PHDc is the primary public contact for this site. AsPEN remains in the About role map only as ecosystem context, not as the main collaboration call to action.
 
 ## Deferred expansion features
@@ -79,7 +79,7 @@ Legacy routes remain as `noindex` compatibility redirects:
 The following items are intentionally marked as future work and are not represented as current capabilities:
 
 - future refinement or replacement of the main hero illustration, if approved, while retaining the Amgen-blue and PHDc-green direction
-- richer scroll-triggered country, method, and milestone animation beyond the current lightweight mascot motion
+- richer scroll-triggered country, method, and milestone animation
 - additional verified years and activities in the living timeline
 - integration of the previously developed project-visualization site after its hosting, ownership, data source, update process, and access boundary are confirmed
 - downloadable protocols, code lists, QA materials, templates, and analytic modules after ownership and version review

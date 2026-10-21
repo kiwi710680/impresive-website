@@ -5,9 +5,9 @@
     {
       id: "scientific",
       title: "Scientific and academic impact",
-      themes: "Harmonisation · Reproducibility · Comparability",
+      themes: "Harmonization · Reproducibility · Comparability",
       summary: "We align data and methods to produce transparent, reproducible, and comparable multinational evidence.",
-      detail: "IMPRESIVE uses harmonised definitions, a common data model, shared protocols, and common analytical programmes across participating countries. This reduces avoidable differences in study implementation, improves transparency and reproducibility, and enables meaningful comparison of results across populations and healthcare systems."
+      detail: "IMPRESIVE uses harmonized definitions, a common data model, shared protocols, and common analytical programmes across participating countries. This reduces avoidable differences in study implementation, improves transparency and reproducibility, and enables meaningful comparison of results across populations and healthcare systems."
     },
     {
       id: "clinical",

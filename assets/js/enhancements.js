@@ -402,15 +402,28 @@
     hero.insertAdjacentElement("afterend", nav);
 
     var links = Array.from(list.querySelectorAll("a"));
+    /* Fade only the edge that has more links beyond it. */
+    function updateEdges() {
+      var max = list.scrollWidth - list.clientWidth;
+      list.classList.toggle("is-clipped-start", list.scrollLeft > 2);
+      list.classList.toggle("is-clipped-end", list.scrollLeft < max - 2);
+    }
+    list.addEventListener("scroll", updateEdges, { passive: true });
+    window.addEventListener("resize", updateEdges);
+    /* Run now and after load: animation frames pause in background tabs. */
+    updateEdges();
+    window.addEventListener("load", updateEdges);
     function setCurrent(id) {
       links.forEach(function (link) {
         var current = link.dataset.sectionLink === id;
         link.classList.toggle("is-current", current);
         if (current) {
           link.setAttribute("aria-current", "location");
-          /* Keep the active link visible when the list scrolls sideways. */
+          /* Keep the active link in view, centred, when the list scrolls sideways. */
           var box = list.getBoundingClientRect(), own = link.getBoundingClientRect();
-          if (own.left < box.left || own.right > box.right) list.scrollLeft += own.left - box.left - 24;
+          if (own.left < box.left + 32 || own.right > box.right - 32) {
+            list.scrollTo({ left: list.scrollLeft + own.left - box.left - (box.width - own.width) / 2, behavior: "smooth" });
+          }
         } else {
           link.removeAttribute("aria-current");
         }

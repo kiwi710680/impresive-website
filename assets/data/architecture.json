@@ -12,7 +12,7 @@
     "assess": {
       "label": "Assess",
       "question": "Can this source answer this question?",
-      "summary": "Characterisation reports what a source actually contains. Fitness is then judged for a question × source pair, never for a database in general."
+      "summary": "Characterization reports what a source actually contains. Fitness is then judged for a question × source pair, never for a database in general."
     },
     "implement": {
       "label": "Implement",
@@ -84,17 +84,17 @@
       }
     },
     "data-characterisation": {
-      "label": "Data characterisation",
+      "label": "Data characterization",
       "summary": "Counts, coverage, coding availability, and temporal completeness are examined before any analysis is specified. This is descriptive work, and it is a deliverable in its own right.",
       "link": {
         "href": "Visualization/index.html",
-        "text": "Open the characterisation interface"
+        "text": "Open the characterization interface"
       },
       "step": "3"
     },
     "characterisation-plots": {
-      "label": "Characterisation plots",
-      "summary": "The descriptive output of characterisation: cohort assembly, baseline composition, and distributions, reviewed before anyone reads an effect estimate.",
+      "label": "Characterization plots",
+      "summary": "The descriptive output of characterization: cohort assembly, baseline composition, and distributions, reviewed before anyone reads an effect estimate.",
       "link": {
         "href": "Visualization/index.html",
         "text": "Open the visualization platform"
@@ -174,7 +174,7 @@
       "step": "7"
     },
     "diagnostics": {
-      "label": "Visualisation and diagnostics",
+      "label": "Visualization and diagnostics",
       "summary": "Balance, overlap, and negative controls are inspected before an estimate is interpreted. Diagnostics are how implementation problems are separated from real differences.",
       "link": {
         "href": "Visualization/index.html",
@@ -239,7 +239,7 @@
   },
   "intro": {
     "eyebrow": "The full pathway",
-    "title": "Nine steps from decision need to decision",
+    "title": "Eight steps from decision need to decision",
     "body": "Every numbered step is explained here. Select any box in the diagram to see what it means, which case exercised it, and where its technical detail lives."
   }
 }

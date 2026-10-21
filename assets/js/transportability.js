@@ -29,7 +29,7 @@
       var chart = el("div", "transport-chart-shell");
       var tableMount = el("div", "table-scroll");
       var legend = el("div", "chart-legend");
-      [["TW", "Taiwan NHIRD", "#2d9d38"], ["Transported", "Japan transported by Taiwan model", "#ed6a00"], ["JP", "Japan DeSC", "#1874b8"]].forEach(function (item) {
+      [["TW", "Taiwan NHIRD", "#174a7e"], ["Transported", "Japan transported by Taiwan model", "#ed6a00"], ["JP", "Japan DeSC", "#a33b6b"]].forEach(function (item) {
         var chip = el("span", "chart-legend-item", item[1]); chip.style.setProperty("--legend-color", item[2]); legend.appendChild(chip);
       });
 
@@ -55,7 +55,7 @@
           var yBase = 70 + rowIndex * 66;
           view.appendChild(svg("text", { x: 195, y: yBase + 6, "text-anchor": "end", class: "forest-outcome-label" }, outcome));
           view.appendChild(svg("line", { x1: 205, x2: 910, y1: yBase + 28, y2: yBase + 28, class: "forest-row-line" }));
-          [["TW", -12, "#2d9d38"], ["Transported", 0, "#ed6a00"], ["JP", 12, "#1874b8"]].forEach(function (series) {
+          [["TW", -12, "#174a7e"], ["Transported", 0, "#ed6a00"], ["JP", 12, "#a33b6b"]].forEach(function (series) {
             var estimate = records[outcome][series[0]];
             if (!estimate) return;
             var y = yBase + series[1];

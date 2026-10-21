@@ -70,7 +70,7 @@ body[data-page="visualization"] { background: var(--canvas); }
 .btn--small { min-height: 40px; padding: .35rem .9rem; font-size: .86rem; }
 
 .viz-panel {
-  display: grid; gap: 1.35rem;
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.35rem;
   padding: clamp(1.15rem, 3vw, 1.75rem);
   margin-bottom: 1.5rem;
   border: 1px solid var(--line);
@@ -78,7 +78,7 @@ body[data-page="visualization"] { background: var(--canvas); }
   background: var(--viz-surface);
   box-shadow: var(--shadow);
 }
-.viz-panel__section { display: grid; gap: .6rem; min-width: 0; }
+.viz-panel__section { display: grid; grid-template-columns: minmax(0, 1fr); gap: .6rem; min-width: 0; }
 /* A select sizes itself to its longest option, so "Fine & Gray
    subdistribution hazard ratio" would otherwise widen the page on a phone. */
 .viz-panel .explorer-field,
@@ -395,4 +395,9 @@ body[data-page="visualization"] { background: var(--canvas); }
   .site-header, .site-footer, .reading-tools, .viz-tablebar__actions, .analysis-remove { display: none !important; }
   .viz-chart-shell, .viz-scroll { overflow: visible; border: 1px solid #999; }
   .outcome-panel { break-inside: avoid; }
+}
+
+/* Touch screens: sortable column headers reach the 44 px target. */
+@media (pointer: coarse) {
+  .viz-sort { min-width: 44px; min-height: 44px; }
 }

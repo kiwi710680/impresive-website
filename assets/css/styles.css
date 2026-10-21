@@ -552,7 +552,7 @@ button, input, textarea { font: inherit; }
 .case-preview--chart { padding: .6rem .75rem .45rem; }
 .case-preview__chart { display: block; width: 100%; height: auto; font-family: var(--font); }
 .case-story { display: grid; gap: 1rem; padding: 0; margin: 0; list-style: none; }
-.case-story li { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 1.25rem; margin: 0; padding: 1.35rem; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--white); }
+.case-story li { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); gap: 1.25rem; margin: 0; padding: 1.35rem; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--white); }
 .case-story .story-label { color: var(--blue-700); font-size: .72rem; font-weight: 800; letter-spacing: .09em; line-height: 1.35; text-transform: uppercase; }
 .case-story h3 { margin-bottom: .4rem; }
 .case-story p:last-child { margin-bottom: 0; }
@@ -1684,7 +1684,7 @@ body.has-reading-tools .partner-map-detail { max-height: calc(100vh - var(--head
   font-weight: 750;
   line-height: 1.5;
 }
-.identity-intro > h3{ max-width: 94ch; margin-bottom: 2; color: var(--blue-700); font-size: 1.93rem; }
+.identity-intro > h3{ max-width: 94ch; margin-bottom: 1rem; color: var(--blue-700); font-size: 1.93rem; }
 .record-link { display: inline; font-weight: 750; }
 .section--dark .identity-intro {
   color: var(--ink);
@@ -3142,3 +3142,43 @@ body[data-page="cases"] .case-index { grid-template-columns: repeat(2, minmax(0,
 .rq-report__actions li { margin: .15rem 0; }
 .rq-report__note { font-style: italic; }
 .rq-report__footer { margin-top: 1.4rem; padding-top: .5rem; border-top: 1px solid #b9c2c9; color: #444; font-size: 8.5pt; }
+
+/* ============================================================
+   2026-10-22 review fixes
+   ============================================================ */
+
+/* Text selection in the brand palette instead of the browser default. */
+::selection { background: rgba(0, 99, 195, .2); color: inherit; }
+
+/* Call-to-action buttons keep their label on one line; the band reflows instead. */
+.cta-band .btn, .cta-actions .btn { flex: none; white-space: nowrap; }
+@media (max-width: 420px) {
+  .cta-band .btn, .cta-actions .btn { white-space: normal; }
+}
+
+/* Spacing that used to come from an inline style and a <br>. */
+.pull-finding--spaced { margin-top: 1.5rem; }
+.section-heading--figure { margin: clamp(2.5rem, 5vw, 3.5rem) 0 1.25rem; }
+.section-heading--figure h3 { margin: 0; }
+
+/* Touch screens: every control reaches the 44 px target. */
+@media (pointer: coarse) {
+  .case-tile > a { display: inline-flex; min-block-size: 44px; align-items: center; }
+  .rq-link-button { min-block-size: 44px; }
+  .rq-var__spec summary { min-block-size: 44px; }
+  .rq-report-details summary { display: flex; min-block-size: 44px; align-items: center; }
+  .rq-report-details input { min-block-size: 44px; }
+}
+
+/* On this page: fade whichever edge has more links beyond it. */
+.reading-tools__list { -webkit-mask-image: none; mask-image: none; }
+.reading-tools__list.is-clipped-end { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 32px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 32px), transparent); }
+.reading-tools__list.is-clipped-start { -webkit-mask-image: linear-gradient(90deg, transparent, #000 32px); mask-image: linear-gradient(90deg, transparent, #000 32px); }
+.reading-tools__list.is-clipped-start.is-clipped-end { -webkit-mask-image: linear-gradient(90deg, transparent, #000 32px, #000 calc(100% - 32px), transparent); mask-image: linear-gradient(90deg, transparent, #000 32px, #000 calc(100% - 32px), transparent); }
+
+/* The ETL illustration keeps its natural proportions now that it declares its size. */
+.etl-figure { display: block; max-width: 100%; height: auto; }
+
+/* About: the pipeline statement reads as a calm lead, not small bold grey text
+   (a later p:last-child rule used to override the lead style). */
+.identity-intro > p.identity-intro__lead { max-width: 82ch; margin: 0; color: var(--ink); font-size: clamp(1.05rem, 1.6vw, 1.18rem); font-weight: 500; line-height: 1.7; }

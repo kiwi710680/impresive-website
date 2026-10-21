@@ -374,10 +374,10 @@ Get-ChildItem assets\js\*.js | ForEach-Object { node --check $_.FullName }
 - Methods model comparator and ETL walkthrough switch all options/steps.
 - ASCVD, AD/PN, Transportability, and Visualization figures/tables load and controls redraw correctly.
 - Evidence SVG/PNG downloads retain point estimates and axis titles.
-- Partner readiness summary handles all status branches and reset.
+- Partner readiness questionnaire: every table starts collapsed, each status branch (Ready, Ready with derivation, Incomplete, Not ready) is reachable, the summary stays pinned while scrolling on desktop, Print report and Copy report include every variable, and Reset clears all answers.
+- On this page bar stays pinned below the header, highlights the section being read, and never covers content at any zoom level.
 - Join FAQ, PHDc link, and email work.
 - Mobile navigation opens, focuses, closes with Escape, and returns focus.
-- One mascot remains visible on compact viewports.
 - Reduced-motion mode removes nonessential motion without moving SVG chart geometry.
 - No-JavaScript navigation remains usable.
 
