@@ -522,9 +522,15 @@
         payload.databaseOrder.forEach(function (code) {
           var card = el("article", "code-list-card"); card.style.setProperty("--db-color", payload.databases[code].color); card.appendChild(el("h3", "", code));
           if (harmonized) {
-            card.appendChild(el("span", "harmonized-concept", "Shared study concept")); card.appendChild(el("strong", "", concept)); card.appendChild(el("p", "source-note", "Local codes remain documented below the shared concept boundary."));
+            /* Harmonized: every site resolves to the same standard concept. */
+            var standard = (data.standardConcepts || {})[concept] || { name: concept };
+            card.classList.add("code-list-card--harmonized");
+            card.appendChild(el("span", "harmonized-concept", "Shared study concept")); card.appendChild(el("strong", "", standard.name));
+            if (standard.conceptId) { var id = el("div", "code-chip-list"); id.appendChild(el("code", "code-chip code-chip--concept", "Concept ID " + standard.conceptId)); card.appendChild(id); }
+          } else {
+            var codes = el("div", "code-chip-list"); data.concepts[concept][code].forEach(function (value) { codes.appendChild(el("code", "code-chip", value)); }); card.appendChild(codes);
           }
-          var codes = el("div", "code-chip-list"); data.concepts[concept][code].forEach(function (value) { codes.appendChild(el("code", "code-chip", value)); }); card.appendChild(codes); grid.appendChild(card);
+          grid.appendChild(card);
         });
       }
       var label = el("label", "explorer-field"); label.appendChild(el("span", "", "Clinical concept")); label.appendChild(select); form.appendChild(label); form.appendChild(toggle);

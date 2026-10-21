@@ -121,6 +121,9 @@
       panels.forEach(function (panel) {
         panel.hidden = panel.id !== tab.getAttribute("aria-controls");
       });
+      comparator.querySelectorAll("[data-radar-series]").forEach(function (series) {
+        series.classList.toggle("is-active", series.getAttribute("data-radar-series") === tab.getAttribute("aria-controls"));
+      });
     }
 
     tabs.forEach(function (tab, index) {
@@ -155,6 +158,9 @@
       });
       panels.forEach(function (panel) {
         panel.hidden = panel.id !== tab.getAttribute("aria-controls");
+      });
+      comparator.querySelectorAll("[data-radar-series]").forEach(function (series) {
+        series.classList.toggle("is-active", series.getAttribute("data-radar-series") === tab.getAttribute("aria-controls"));
       });
     }
 

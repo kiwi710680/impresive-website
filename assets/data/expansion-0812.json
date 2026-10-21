@@ -233,6 +233,10 @@
   },
   "codeLists": {
     "sourceSlides": [42],
+    "standardConcepts": {
+      "Ischemic stroke": {"name": "Ischemic stroke", "conceptId": 4310996, "vocabulary": "OMOP standard concept"},
+      "Statin": {"name": "HMG CoA reductase inhibitors", "conceptId": 21601855, "vocabulary": "OMOP standard concept (ATC C10AA)"}
+    },
     "concepts": {
       "Ischemic stroke": {
         "NHIRD": ["I63"], "CGRD": ["I63"], "NHIS": ["I63", "I64"], "HIRA": ["I63", "I64"], "CDARS": ["433", "434"], "DeSC": ["I63"]

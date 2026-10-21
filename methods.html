@@ -7,7 +7,7 @@
   <link rel="canonical" href="https://phd-center.github.io/impresive/methods.html">
   <title>Methods | IMPRESIVE</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20261021c">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261021d">
 </head>
 <body data-page="methods">
   <header class="site-header">
@@ -56,43 +56,50 @@
     </section>
     <section class="section section--soft" id="code-harmonization">
       <div class="wrap">
-        <div class="section-heading"><p class="eyebrow">Semantic implementation</p><h2>One clinical concept, different local code lists</h2><p>Compare the source lists used for ischemic stroke and statins. The Harmonize control makes the common study concept visible without hiding the local implementation evidence.</p></div>
+        <div class="section-heading"><p class="eyebrow">Semantic implementation</p><h2>One clinical concept, different local code lists</h2><p>Compare the source lists used for ischemic stroke and statins. Local lists differ by site; select Harmonize to see every list resolve to the same standard OMOP concept and concept ID.</p></div>
         <div class="research-explorer" data-code-comparator></div>
       </div>
     </section>
     <section class="section section--models" id="models" data-model-comparator>
       <div class="wrap">
-        <div class="section-heading"><p class="eyebrow">Distributed data networks</p><h2>Three alternatives for what travels</h2><p>The approaches are parallel options with different trade-offs. More standardization can reduce site-to-site implementation variation, but it requires greater preparation and infrastructure.</p></div>
+        <div class="section-heading"><p class="eyebrow">Distributed data networks</p><h2>Three alternatives for what travels</h2><p>The approaches are parallel options with different trade-offs. More standardization can reduce site-to-site implementation variation and speed up repeated analyses, but it requires greater upfront preparation and infrastructure.</p></div>
         <div class="model-controls" role="tablist" aria-label="Compare distributed research approaches">
           <button id="model-tab-question" type="button" role="tab" aria-selected="true" aria-controls="model-question">Common Question</button>
           <button id="model-tab-protocol" type="button" role="tab" aria-selected="false" aria-controls="model-protocol" tabindex="-1">Common Protocol</button>
           <button id="model-tab-cdm" type="button" role="tab" aria-selected="false" aria-controls="model-cdm" tabindex="-1">Common Data Model + Code</button>
         </div>
-        <div class="model-comparison">
-          <article class="model-card" id="model-question" role="tabpanel" aria-labelledby="model-tab-question" data-model-panel>
-            <span class="model-index">01</span><h3>Common Question</h3>
-            <p><strong>What crosses the boundary:</strong> the coordinating center sends the research question.</p>
-            <p><strong>What remains locally variable:</strong> study design, definitions, methods, and implementation.</p>
-            <div class="variation-scale" data-metric="variation" data-level="high"><span>Relative site-to-site variation</span><strong>Higher</strong><i aria-hidden="true"></i></div>
-            <div class="variation-scale" data-metric="flexibility" data-level="high"><span>Relative local flexibility</span><strong>Higher</strong><i aria-hidden="true"></i></div>
-            <p class="model-tradeoff"><strong>Trade-off:</strong> preserves the most local flexibility, with the greatest risk of implementation differences.</p>
-          </article>
-          <article class="model-card" id="model-protocol" role="tabpanel" aria-labelledby="model-tab-protocol" data-model-panel>
-            <span class="model-index">02</span><h3>Common Protocol</h3>
-            <p><strong>What crosses the boundary:</strong> study design, eligibility criteria, variable definitions, and analytic methods.</p>
-            <p><strong>What remains locally variable:</strong> some interpretation and implementation of the protocol.</p>
-            <div class="variation-scale" data-metric="variation" data-level="medium"><span>Relative site-to-site variation</span><strong>Moderate</strong><i aria-hidden="true"></i></div>
-            <div class="variation-scale" data-metric="flexibility" data-level="medium"><span>Relative local flexibility</span><strong>Moderate</strong><i aria-hidden="true"></i></div>
-            <p class="model-tradeoff"><strong>Trade-off:</strong> improves comparability while retaining local implementation work.</p>
-          </article>
-          <article class="model-card" id="model-cdm" role="tabpanel" aria-labelledby="model-tab-cdm" data-model-panel>
-            <span class="model-index">03</span><h3>Common Data Model + Code</h3>
-            <p><strong>What crosses the boundary:</strong> a standardized data structure and a common analytic program.</p>
-            <p><strong>What remains local:</strong> person-level data, access controls, governance, and documented adaptations.</p>
-            <div class="variation-scale" data-metric="variation" data-level="low"><span>Relative site-to-site variation</span><strong>Lower</strong><i aria-hidden="true"></i></div>
-            <div class="variation-scale" data-metric="flexibility" data-level="low"><span>Relative local flexibility</span><strong>Lower</strong><i aria-hidden="true"></i></div>
-            <p class="model-tradeoff"><strong>Trade-off:</strong> offers the most consistent implementation, with greater mapping and infrastructure requirements.</p>
-          </article>
+        <div class="model-layout">
+          <div class="model-comparison">
+            <article class="model-card" id="model-question" role="tabpanel" aria-labelledby="model-tab-question" data-model-panel>
+              <span class="model-index">01</span><h3>Common Question</h3>
+              <p><strong>What crosses the boundary:</strong> the coordinating center sends the research question.</p>
+              <p><strong>What remains locally variable:</strong> study design, definitions, methods, and implementation.</p>
+              <div class="variation-scale" data-metric="variation" data-level="high"><span>Relative site-to-site variation</span><strong>Higher</strong><i aria-hidden="true"></i></div>
+              <div class="variation-scale" data-metric="flexibility" data-level="high"><span>Relative local flexibility</span><strong>Higher</strong><i aria-hidden="true"></i></div>
+              <p class="model-tradeoff"><strong>Trade-off:</strong> preserves the most local flexibility, with the greatest risk of implementation differences.</p>
+            </article>
+            <article class="model-card" id="model-protocol" role="tabpanel" aria-labelledby="model-tab-protocol" data-model-panel>
+              <span class="model-index">02</span><h3>Common Protocol</h3>
+              <p><strong>What crosses the boundary:</strong> study design, eligibility criteria, variable definitions, and analytic methods.</p>
+              <p><strong>What remains locally variable:</strong> some interpretation and implementation of the protocol.</p>
+              <div class="variation-scale" data-metric="variation" data-level="medium"><span>Relative site-to-site variation</span><strong>Moderate</strong><i aria-hidden="true"></i></div>
+              <div class="variation-scale" data-metric="flexibility" data-level="medium"><span>Relative local flexibility</span><strong>Moderate</strong><i aria-hidden="true"></i></div>
+              <p class="model-tradeoff"><strong>Trade-off:</strong> improves comparability while retaining local implementation work.</p>
+            </article>
+            <article class="model-card" id="model-cdm" role="tabpanel" aria-labelledby="model-tab-cdm" data-model-panel>
+              <span class="model-index">03</span><h3>Common Data Model + Code</h3>
+              <p><strong>What crosses the boundary:</strong> a standardized data structure and a common analytic program.</p>
+              <p><strong>What remains local:</strong> person-level data, access controls, governance, and documented adaptations.</p>
+              <div class="variation-scale" data-metric="variation" data-level="low"><span>Relative site-to-site variation</span><strong>Lower</strong><i aria-hidden="true"></i></div>
+              <div class="variation-scale" data-metric="flexibility" data-level="low"><span>Relative local flexibility</span><strong>Lower</strong><i aria-hidden="true"></i></div>
+              <p class="model-tradeoff"><strong>Trade-off:</strong> offers the most consistent implementation, with greater mapping and infrastructure requirements.</p>
+            </article>
+          </div>
+          <figure class="model-radar" aria-label="Trade-off radar chart">
+            <figcaption><strong>Trade-offs at a glance</strong><span>The selected approach is highlighted. Ratings are relative and qualitative (lower, moderate, higher), not measured scores.</span></figcaption>
+            <svg class="model-radar__chart" viewBox="0 0 520 400" role="img" aria-labelledby="model-radar-title model-radar-desc"><title id="model-radar-title">Trade-offs of the three distributed approaches</title><desc id="model-radar-desc">Relative qualitative ratings from 1 (lower) to 3 (higher) on six aspects. Common Question: cross-site consistency 1, local flexibility 3, upfront infrastructure 1, analysis speed once set up 1, reuse across studies 1, site analytic workload 3. Common Protocol: cross-site consistency 2, local flexibility 2, upfront infrastructure 2, analysis speed once set up 2, reuse across studies 2, site analytic workload 2. Common Data Model + Code: cross-site consistency 3, local flexibility 1, upfront infrastructure 3, analysis speed once set up 3, reuse across studies 3, site analytic workload 1.</desc><polygon class="model-radar__ring" points="260.0,158.3 296.1,179.2 296.1,220.8 260.0,241.7 223.9,220.8 223.9,179.2"/><polygon class="model-radar__ring" points="260.0,116.7 332.2,158.3 332.2,241.7 260.0,283.3 187.8,241.7 187.8,158.3"/><polygon class="model-radar__ring" points="260.0,75.0 368.3,137.5 368.3,262.5 260.0,325.0 151.7,262.5 151.7,137.5"/><line class="model-radar__axis" x1="260" y1="200" x2="260.0" y2="75.0"/><text class="model-radar__label" x="260.0" y="48.7" text-anchor="middle"><tspan x="260.0" dy="0">Cross-site</tspan><tspan x="260.0" dy="14">consistency</tspan></text><line class="model-radar__axis" x1="260" y1="200" x2="368.3" y2="137.5"/><text class="model-radar__label" x="379.8" y="127.8" text-anchor="start"><tspan x="379.8" dy="0">Local</tspan><tspan x="379.8" dy="14">flexibility</tspan></text><line class="model-radar__axis" x1="260" y1="200" x2="368.3" y2="262.5"/><text class="model-radar__label" x="379.8" y="266.2" text-anchor="start"><tspan x="379.8" dy="0">Upfront</tspan><tspan x="379.8" dy="14">infrastructure</tspan></text><line class="model-radar__axis" x1="260" y1="200" x2="260.0" y2="325.0"/><text class="model-radar__label" x="260.0" y="345.3" text-anchor="middle"><tspan x="260.0" dy="0">Analysis speed</tspan><tspan x="260.0" dy="14">once set up</tspan></text><line class="model-radar__axis" x1="260" y1="200" x2="151.7" y2="262.5"/><text class="model-radar__label" x="140.2" y="266.2" text-anchor="end"><tspan x="140.2" dy="0">Reuse</tspan><tspan x="140.2" dy="14">across studies</tspan></text><line class="model-radar__axis" x1="260" y1="200" x2="151.7" y2="137.5"/><text class="model-radar__label" x="140.2" y="127.8" text-anchor="end"><tspan x="140.2" dy="0">Site</tspan><tspan x="140.2" dy="14">analytic workload</tspan></text><text class="model-radar__level" x="265.0" y="169.3">Lower</text><text class="model-radar__level" x="265.0" y="127.7">Moderate</text><text class="model-radar__level" x="265.0" y="86.0">Higher</text><g class="model-radar__series model-radar__series--question" data-radar-series="model-question"><polygon points="260.0,158.3 368.3,137.5 296.1,220.8 260.0,241.7 223.9,220.8 151.7,137.5"/><circle cx="260.0" cy="158.3" r="4"/><circle cx="368.3" cy="137.5" r="4"/><circle cx="296.1" cy="220.8" r="4"/><circle cx="260.0" cy="241.7" r="4"/><circle cx="223.9" cy="220.8" r="4"/><circle cx="151.7" cy="137.5" r="4"/></g><g class="model-radar__series model-radar__series--protocol" data-radar-series="model-protocol"><polygon points="260.0,116.7 332.2,158.3 332.2,241.7 260.0,283.3 187.8,241.7 187.8,158.3"/><circle cx="260.0" cy="116.7" r="4"/><circle cx="332.2" cy="158.3" r="4"/><circle cx="332.2" cy="241.7" r="4"/><circle cx="260.0" cy="283.3" r="4"/><circle cx="187.8" cy="241.7" r="4"/><circle cx="187.8" cy="158.3" r="4"/></g><g class="model-radar__series model-radar__series--cdm" data-radar-series="model-cdm"><polygon points="260.0,75.0 296.1,179.2 368.3,262.5 260.0,325.0 151.7,262.5 223.9,179.2"/><circle cx="260.0" cy="75.0" r="4"/><circle cx="296.1" cy="179.2" r="4"/><circle cx="368.3" cy="262.5" r="4"/><circle cx="260.0" cy="325.0" r="4"/><circle cx="151.7" cy="262.5" r="4"/><circle cx="223.9" cy="179.2" r="4"/></g></svg>
+            <ul class="model-radar__legend"><li class="model-radar__key model-radar__key--question">Common Question</li><li class="model-radar__key model-radar__key--protocol">Common Protocol</li><li class="model-radar__key model-radar__key--cdm">Common Data Model + Code</li></ul>
+          </figure>
         </div>
       </div>
     </section>    
@@ -195,9 +202,9 @@
     <section class="section"><div class="wrap"><div class="cta-band"><div><h2>See these methods in use</h2><p>Three cases exercised this machinery: cross-database comparability, framework reuse, and evidence transportability.</p></div><a class="btn btn--light" href="cases.html">All accomplishments</a></div></div></section>
   </main>
   <footer class="site-footer"></footer>
-  <script src="assets/js/main.js?v=20260817a" defer></script>
+  <script src="assets/js/main.js?v=20261021d" defer></script>
   <script src="assets/js/interactive.js?v=20260820a" defer></script>
-  <script src="assets/js/explorers.js?v=20261021c" defer></script>
+  <script src="assets/js/explorers.js?v=20261021d" defer></script>
   <script src="assets/js/enhancements.js?v=20260817a" defer></script>
   <script src="assets/js/portal-return.js" defer></script>
 </body>
