@@ -104,6 +104,27 @@
 
   /* ------------------------------------------- continuous: mean ± 95% CI */
 
+  /* Round tick values (1, 2, 2.5 or 5 × 10^k steps) inside [lo, hi]. */
+  function niceTicks(lo, hi, count) {
+    var raw = (hi - lo) / count;
+    var mag = Math.pow(10, Math.floor(Math.log10(raw)));
+    var step = [1, 2, 2.5, 5, 10].map(function (m) { return m * mag; })
+      .filter(function (s) { return s >= raw; })[0];
+    var ticks = [];
+    for (var v = Math.ceil(lo / step) * step; v <= hi + step * 1e-9; v += step) {
+      ticks.push(Math.round(v / step) * step);
+    }
+    return ticks;
+  }
+
+  function decimalsFor(ticks) {
+    return ticks.reduce(function (most, v) {
+      var text = String(+v.toFixed(6));
+      var dot = text.indexOf(".");
+      return Math.max(most, dot < 0 ? 0 : text.length - dot - 1);
+    }, 0);
+  }
+
   function renderMeanCi(mount, rows) {
     V.clear(mount);
     var usable = rows.filter(function (r) { return r.exposureMean !== null && r.referenceMean !== null; });
@@ -148,20 +169,35 @@
       if (!(span > 0)) span = Math.max(Math.abs(hi) * 0.02, 0.1);
       var pad = span * 0.18;
       lo -= pad; hi += pad;
-      var x = function (v) { return left + ((v - lo) / (hi - lo)) * (right - left); };
+
+      /* Every row axis starts at 0. When the data sit far from 0, the stretch
+         between 0 and the data is collapsed behind a "~" axis break so the
+         intervals keep their resolution. */
+      var broken = lo > 0 && lo > (hi - lo) * 0.6;
+      if (!broken) lo = Math.min(lo, 0);
+      var dataLeft = broken ? left + 58 : left;
+      var x = function (v) { return dataLeft + ((v - lo) / (hi - lo)) * (right - dataLeft); };
 
       node.appendChild(V.svg("text", { x: left - 16, y: baseY + 34, "text-anchor": "end", class: "viz-row-label" }, r.label));
 
       /* Row axis with its own ticks, so the reader can see the scale differs. */
       var axisY = baseY + 74;
       node.appendChild(V.svg("line", { x1: left, x2: right, y1: axisY, y2: axisY, class: "viz-row-axis" }));
-      for (var t = 0; t <= 4; t += 1) {
-        var value = lo + ((hi - lo) / 4) * t;
+      var ticks = niceTicks(lo, hi, 5);
+      var tickDigits = decimalsFor(ticks);
+      if (broken) {
+        var breakX = left + 30;
+        node.appendChild(V.svg("line", { x1: left, x2: left, y1: baseY + 4, y2: axisY + 5, class: "viz-gridline" }));
+        node.appendChild(V.svg("text", { x: left, y: axisY + 20, "text-anchor": "middle", class: "viz-axis-label" }, "0"));
+        node.appendChild(V.svg("rect", { x: breakX - 10, y: axisY - 4, width: 20, height: 8, class: "viz-axis-break-gap" }));
+        node.appendChild(V.svg("text", { x: breakX, y: axisY + 8, "text-anchor": "middle", class: "viz-axis-break" }, "~"));
+      }
+      ticks.forEach(function (value) {
         var tx = x(value);
         node.appendChild(V.svg("line", { x1: tx, x2: tx, y1: baseY + 4, y2: axisY + 5, class: "viz-gridline" }));
         node.appendChild(V.svg("text", { x: tx, y: axisY + 20, "text-anchor": "middle", class: "viz-axis-label" },
-          V.d(value, span < 2 ? 2 : 1)));
-      }
+          V.d(value, tickDigits)));
+      });
 
       groups.forEach(function (g) {
         var y = baseY + g.dy;
@@ -202,7 +238,7 @@
     V.makeNavigable(node, marks, tip);
     mount.appendChild(groupLegend());
     mount.appendChild(V.el("p", "viz-note",
-      "Each characteristic is drawn on its own horizontal scale, so intervals can be compared within a row but not between rows. " +
+      "Each characteristic is drawn on its own horizontal scale starting at 0, so intervals can be compared within a row but not between rows. A \"~\" on an axis marks a break where the range between 0 and the data is collapsed. " +
       "Confidence intervals are derived as mean ± 1.96 × SD / √n using the reported standard deviation and group size; the workbook does not supply intervals directly." +
       (anyWidened
         ? " Intervals narrower than " + MIN_INTERVAL_PX + " pixels are drawn at that minimum width so they remain visible as horizontal intervals — read the exact limits printed beside each estimate, not the drawn length."

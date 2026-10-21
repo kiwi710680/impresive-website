@@ -31,6 +31,15 @@
     }).format(value);
   }
 
+  function niceCeiling(value) {
+    var magnitude = Math.pow(10, Math.floor(Math.log10(value)));
+    var steps = [1, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10];
+    for (var i = 0; i < steps.length; i += 1) {
+      if (steps[i] * magnitude >= value) return steps[i] * magnitude;
+    }
+    return 10 * magnitude;
+  }
+
   function appendSvgTitle(svg, title, description, idBase) {
     var titleId = idBase + "-title";
     var descriptionId = idBase + "-description";
@@ -455,24 +464,34 @@
       var width = 900;
       var height = 505;
       var left = 115;
-      var right = 820;
+      var right = 860;
       var top = 45;
       var bottom = 420;
-      var xPositions = [left + 70, (left + right) / 2, right - 70];
-      var minValue = 0.001;
-      var maxValue = 100;
+      var shown = data.databaseOrder.filter(function (code) { return selected.has(code); });
+      var groupWidth = (right - left) / data.definitions.length;
+      var barGap = 6;
+      var barWidth = Math.min(46, (groupWidth - 40) / Math.max(shown.length, 1) - barGap);
+      var observedMax = 0;
+      shown.forEach(function (code) {
+        data.definitions.forEach(function (definition) {
+          var value = disease.values[code][definition.id];
+          if (value !== null) observedMax = Math.max(observedMax, value);
+        });
+      });
+      /* Linear prevalence axis from 0, topped at a round value. */
+      var maxValue = niceCeiling(observedMax || 1);
       var y = function (value) {
-        return bottom - ((Math.log10(value) - Math.log10(minValue)) / (Math.log10(maxValue) - Math.log10(minValue))) * (bottom - top);
+        return bottom - (value / maxValue) * (bottom - top);
       };
 
       var svg = svgElement("svg", {
-        class: "evidence-chart evidence-chart--slope",
+        class: "evidence-chart evidence-chart--bars",
         viewBox: "0 0 " + width + " " + height
       });
       appendSvgTitle(
         svg,
         disease.label + " prevalence by case definition",
-        "A logarithmic slope chart compares adult 2020 prevalence across three fixed case definitions. Missing values create visible gaps and are not treated as zero.",
+        "A grouped bar chart compares adult 2020 prevalence across three fixed case definitions on a linear scale starting at 0. Missing values are labelled as not reported and are not treated as zero.",
         "case-definition-" + diseaseCode.toLowerCase()
       );
 
@@ -480,83 +499,79 @@
         return definition.id === emphasizedDefinition;
       });
       svg.appendChild(svgElement("rect", {
-        x: xPositions[emphasizedIndex] - 48,
+        x: left + groupWidth * emphasizedIndex + 6,
         y: top,
-        width: 96,
+        width: groupWidth - 12,
         height: bottom - top,
         rx: 6,
         class: "chart-definition-highlight"
       }));
 
-      [0.001, 0.01, 0.1, 1, 10, 100].forEach(function (tick) {
+      for (var tickIndex = 0; tickIndex <= 5; tickIndex += 1) {
+        var tick = (maxValue / 5) * tickIndex;
         var tickY = y(tick);
         svg.appendChild(svgElement("line", {
           x1: left,
           y1: tickY,
           x2: right,
           y2: tickY,
-          class: "chart-gridline"
+          class: tickIndex === 0 ? "chart-baseline" : "chart-gridline"
         }));
         svg.appendChild(svgElement("text", {
-          x: left - 18,
+          x: left - 14,
           y: tickY + 4,
           class: "chart-tick",
           "text-anchor": "end"
-        }, formatNumber(tick) + "%"));
-      });
+        }, formatNumber(+tick.toFixed(3)) + "%"));
+      }
 
       data.definitions.forEach(function (definition, index) {
-        var tickX = xPositions[index];
-        svg.appendChild(svgElement("line", {
-          x1: tickX,
-          y1: top,
-          x2: tickX,
-          y2: bottom,
-          class: "chart-definition-line"
-        }));
+        var groupLeft = left + groupWidth * index;
+        var clusterWidth = shown.length * (barWidth + barGap) - barGap;
+        var start = groupLeft + (groupWidth - clusterWidth) / 2;
         svg.appendChild(svgElement("text", {
-          x: tickX,
+          x: groupLeft + groupWidth / 2,
           y: bottom + 32,
           class: "chart-definition-label",
           "text-anchor": "middle"
         }, definition.shortLabel));
-      });
 
-      data.databaseOrder.forEach(function (code) {
-        if (!selected.has(code)) return;
-        var values = disease.values[code];
-        var database = databases[code];
-
-        for (var index = 0; index < data.definitions.length - 1; index += 1) {
-          var current = values[data.definitions[index].id];
-          var next = values[data.definitions[index + 1].id];
-          if (current === null || next === null) continue;
-          svg.appendChild(svgElement("line", {
-            x1: xPositions[index],
-            y1: y(current),
-            x2: xPositions[index + 1],
-            y2: y(next),
-            pathLength: 1,
-            stroke: database.color,
-            class: "slope-segment"
-          }));
-        }
-
-        data.definitions.forEach(function (definition, index) {
-          var value = values[definition.id];
+        shown.forEach(function (code, barIndex) {
+          var value = disease.values[code][definition.id];
+          var database = databases[code];
+          var barX = start + barIndex * (barWidth + barGap);
+          var centre = barX + barWidth / 2;
           if (value === null) {
             svg.appendChild(svgElement("text", {
-              x: xPositions[index],
-              y: top - 10,
+              x: centre,
+              y: bottom - 8,
               class: "chart-not-reported",
               "text-anchor": "middle"
-            }, code + ": not reported"));
+            }, "n/r"));
             return;
           }
-          var marker = appendMarker(svg, xPositions[index], y(value), database, 5, false);
           var tooltip = code + " · " + definition.shortLabel + ": " + formatNumber(value) + "%";
-          marker.appendChild(svgElement("title", {}, tooltip));
-          marker.setAttribute("tabindex", "0"); marker.setAttribute("role", "img"); marker.setAttribute("aria-label", tooltip); marker.setAttribute("data-chart-tooltip", tooltip);
+          var bar = svgElement("rect", {
+            x: barX,
+            y: y(value),
+            width: barWidth,
+            height: Math.max(bottom - y(value), 1.5),
+            rx: 3,
+            fill: database.color,
+            class: "research-svg-bar",
+            tabindex: "0",
+            role: "img",
+            "aria-label": tooltip,
+            "data-chart-tooltip": tooltip
+          });
+          bar.appendChild(svgElement("title", {}, tooltip));
+          svg.appendChild(bar);
+          svg.appendChild(svgElement("text", {
+            x: centre,
+            y: Math.min(y(value), bottom - 1.5) - 6,
+            class: "chart-bar-value",
+            "text-anchor": "middle"
+          }, value < 1 ? formatNumber(value) : value.toFixed(1)));
         });
       });
 
@@ -566,12 +581,19 @@
         class: "chart-axis-label",
         transform: "rotate(-90 18 " + ((top + bottom) / 2) + ")",
         "text-anchor": "middle"
-      }, "Prevalence (%, logarithmic scale)"));
+      }, "Prevalence (%)"));
+
+      var legendX = left;
+      shown.forEach(function (code) {
+        svg.appendChild(svgElement("rect", { x: legendX, y: height - 26, width: 12, height: 12, rx: 2, fill: databases[code].color }));
+        svg.appendChild(svgElement("text", { x: legendX + 18, y: height - 16, class: "chart-database-label" }, code + (databases[code].sourceMarker || "")));
+        legendX += 98;
+      });
       mount.appendChild(svg);
 
       if (explanation) {
         var selectedDefinition = data.definitions[emphasizedIndex];
-        var explanationText = selectedDefinition.shortLabel + " — " + selectedDefinition.label+".";
+        var explanationText = "Definition " + (emphasizedIndex + 1) + " (" + selectedDefinition.shortLabel + ") — " + selectedDefinition.label + ".";
         if (selectedDefinition.databaseSpecificNote) explanationText += " " + selectedDefinition.databaseSpecificNote;
         explanation.textContent = explanationText;
       }

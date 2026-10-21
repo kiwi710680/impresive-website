@@ -400,36 +400,40 @@
       function render() {
         clear(chart); clear(legend);
         var tooltip = createChartTooltip(chart);
-        var svg = createSvg("svg", { viewBox: "0 0 760 360", role: "img", "aria-label": disease + " prevalence by age and database" });
-        var max = disease === "AD" ? 14 : 1;
+        var svg = createSvg("svg", { viewBox: "0 0 760 360", role: "img", "aria-label": disease + " prevalence by age and database, grouped bar chart" });
+        var max = disease === "AD" ? 16 : 1;
         var left = 70, top = 35, width = 650, height = 250;
+        var groupWidth = width / data.ageGroups.length;
+        var barGap = 4;
+        var barWidth = Math.min(26, (groupWidth - 28) / data.databaseOrder.length - barGap);
         [0, .25, .5, .75, 1].forEach(function (fraction) {
           var y = top + height - height * fraction;
-          var line = createSvg("line", { x1: left, x2: left + width, y1: y, y2: y, class: "chart-gridline" });
+          var line = createSvg("line", { x1: left, x2: left + width, y1: y, y2: y, class: fraction === 0 ? "chart-baseline" : "chart-gridline" });
           svg.appendChild(line);
-          var text = createSvg("text", { x: left - 12, y: y + 5, "text-anchor": "end", class: "chart-axis-label" }); text.textContent = (max * fraction).toFixed(max < 2 ? 2 : 0) + "%"; svg.appendChild(text);
+          var tick = max * fraction;
+          var text = createSvg("text", { x: left - 12, y: y + 5, "text-anchor": "end", class: "chart-axis-label" }); text.textContent = (+tick.toFixed(2)) + "%"; svg.appendChild(text);
         });
         data.ageGroups.forEach(function (label, i) {
-          var x = left + (width / (data.ageGroups.length - 1)) * i;
-          var text = createSvg("text", { x: x, y: top + height + 35, "text-anchor": "middle", class: "chart-axis-label" }); text.textContent = label; svg.appendChild(text);
+          var groupLeft = left + groupWidth * i;
+          var clusterWidth = data.databaseOrder.length * (barWidth + barGap) - barGap;
+          var start = groupLeft + (groupWidth - clusterWidth) / 2;
+          var text = createSvg("text", { x: groupLeft + groupWidth / 2, y: top + height + 35, "text-anchor": "middle", class: "chart-axis-label" }); text.textContent = label; svg.appendChild(text);
+          data.databaseOrder.forEach(function (code, barIndex) {
+            var value = data.diseases[disease][code][i];
+            var barX = start + barIndex * (barWidth + barGap);
+            if (value === null) {
+              var missing = createSvg("text", { x: barX + barWidth / 2, y: top + height - 6, "text-anchor": "middle", class: "chart-not-reported" }); missing.textContent = "n/r"; svg.appendChild(missing);
+              return;
+            }
+            var barHeight = Math.max((value / max) * height, 1.5);
+            var label = code + " · " + data.ageGroups[i] + ": " + value + "%";
+            var bar = createSvg("rect", { x: barX, y: top + height - barHeight, width: barWidth, height: barHeight, rx: 3, fill: payload.databases[code].color, class: "research-svg-bar", tabindex: "0", "aria-label": label });
+            var title = createSvg("title"); title.textContent = label; bar.appendChild(title); svg.appendChild(bar);
+            bindChartTooltip(bar, tooltip, chart, label);
+          });
         });
         data.databaseOrder.forEach(function (code) {
-          var values = data.diseases[disease][code];
-          var color = payload.databases[code].color;
-          var points = values.map(function (value, i) {
-            if (value === null) return null;
-            return [left + (width / (data.ageGroups.length - 1)) * i, top + height - (value / max) * height, value];
-          }).filter(Boolean);
-          var path = createSvg("polyline", { points: points.map(function (p) { return p[0] + "," + p[1]; }).join(" "), fill: "none", stroke: color, "stroke-width": "4", class: "research-line" });
-          svg.appendChild(path);
-          points.forEach(function (p) {
-            var ageIndex = Math.round((p[0] - left) / (width / (data.ageGroups.length - 1)));
-            var dot = createSvg("circle", { cx: p[0], cy: p[1], r: "7", fill: color, class: "research-point" });
-            var label = code + " · " + data.ageGroups[ageIndex] + ": " + p[2] + "%";
-            var title = createSvg("title"); title.textContent = label; dot.appendChild(title); svg.appendChild(dot);
-            bindChartTooltip(dot, tooltip, chart, label);
-          });
-          var item = el("span", "chart-legend-item", code); item.style.setProperty("--legend-color", color); legend.appendChild(item);
+          var item = el("span", "chart-legend-item", code); item.style.setProperty("--legend-color", payload.databases[code].color); legend.appendChild(item);
         });
         chart.insertBefore(svg, tooltip);
       }
