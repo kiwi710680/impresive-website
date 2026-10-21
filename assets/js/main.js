@@ -96,7 +96,6 @@
 
   if (footer) {
     footer.innerHTML =
-      '<div class="lego-parade-slot" aria-hidden="true"></div>' +
       '<div class="wrap">' +
         '<div class="footer-grid">' +
           '<div><div class="footer-brand"><img src="' + base + 'assets/img/favicon.svg" alt="">IMPRESIVE</div><p>International multi-database study preparedness for reproducible, privacy-preserving real-world evidence.</p></div>' +

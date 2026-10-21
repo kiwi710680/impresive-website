@@ -2861,3 +2861,8 @@ body[data-page="cases"] .case-index { grid-template-columns: repeat(2, minmax(0,
     font-size: 18px;
   }
 }
+
+/* Inner-page hero copy spans the full content width now that the right-side
+   mascot illustration is gone; the "last updated" pill keeps its own width. */
+.page-hero h1,
+.page-hero p:not(.page-updated) { max-width: none; }
