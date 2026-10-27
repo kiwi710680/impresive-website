@@ -1,0 +1,43 @@
+name: Deploy to Synology NAS
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Rclone
+        run: sudo apt-get update && sudo apt-get install -y rclone
+
+      - name: Configure Rclone
+        run: |
+          mkdir -p ~/.config/rclone
+          cat <<EOF > ~/.config/rclone/rclone.conf
+          [synology]
+          type = webdav
+          url = https://impresive.phdcenter.org.tw
+          vendor = other
+          user = ${{ secrets.NAS_USER }}
+          pass = $(rclone obscure "${{ secrets.NAS_PASSWORD }}")
+          EOF
+
+      - name: Deploy to Synology NAS via WebDAV
+        run: |
+          rclone sync ./ synology:impresive \
+            --exclude ".git/**" \
+            --exclude ".github/**" \
+            --exclude ".gitignore" \
+            --exclude "README.md" \
+            --fast-list \
+            --transfers 8 \
+            --verbose
