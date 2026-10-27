@@ -2,12 +2,8 @@ name: Deploy to Synology NAS
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
-
-permissions:
-  contents: read
 
 jobs:
   deploy:
@@ -17,27 +13,53 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install Rclone
-        run: sudo apt-get update && sudo apt-get install -y rclone
+        run: sudo -v ; curl https://rclone.org/install.sh | sudo bash
 
-      - name: Configure Rclone
+      - name: Deploy to NCKU PHDc NAS via WebDAV
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          WEBDAV_URL: "https://dev.aspensig.asia" # 請確認這是正確的 NAS WebDAV 入口
+          WEBDAV_USER: ${{ secrets.NAS_USER }}
+          WEBDAV_PASS: ${{ secrets.NAS_PASSWORD }}
         run: |
-          mkdir -p ~/.config/rclone
-          cat <<EOF > ~/.config/rclone/rclone.conf
-          [synology]
-          type = webdav
-          url = https://impresive.phdcenter.org.tw
-          vendor = other
-          user = ${{ secrets.NAS_USER }}
-          pass = $(rclone obscure "${{ secrets.NAS_PASSWORD }}")
-          EOF
+          OBSCURED_PASS=$(rclone obscure "$WEBDAV_PASS")
 
-      - name: Deploy to Synology NAS via WebDAV
-        run: |
-          rclone sync ./ synology:impresive \
-            --exclude ".git/**" \
-            --exclude ".github/**" \
-            --exclude ".gitignore" \
-            --exclude "README.md" \
-            --fast-list \
-            --transfers 8 \
-            --verbose
+          # Pass 1 - 結構同步。依據檔案大小上傳新檔案並刪除 NAS 上已不存在的舊檔案。
+          # 排除 git 系統資料夾，將專案根目錄推送到 NAS 的 /volume1/impresive 內
+          rclone sync ./ :webdav:/impresive \
+            --exclude=".git/**" \
+            --exclude=".github/**" \
+            --webdav-url="$WEBDAV_URL" \
+            --webdav-user="$WEBDAV_USER" \
+            --webdav-pass="$OBSCURED_PASS" \
+            --webdav-vendor="other" \
+            --transfers=2 \
+            --checkers=2 \
+            --contimeout=30s \
+            --timeout=120s \
+            --retries=3 \
+            --low-level-retries=5
+
+          # Pass 2 - 強制覆蓋文字檔。
+          # 解決 NAS WebDAV 無法辨識同檔名但內容已修改（大小相同）的 HTML/CSS/JS 檔案。
+          rclone copy ./ :webdav:/impresive \
+            --exclude=".git/**" \
+            --exclude=".github/**" \
+            --include="*.html" \
+            --include="*.xml" \
+            --include="*.txt" \
+            --include="*.json" \
+            --include="*.css" \
+            --include="*.js" \
+            --ignore-times \
+            --webdav-url="$WEBDAV_URL" \
+            --webdav-user="$WEBDAV_USER" \
+            --webdav-pass="$OBSCURED_PASS" \
+            --webdav-vendor="other" \
+            --transfers=2 \
+            --checkers=2 \
+            --contimeout=30s \
+            --timeout=120s \
+            --retries=3 \
+            --low-level-retries=5
