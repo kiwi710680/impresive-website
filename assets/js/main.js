@@ -94,16 +94,26 @@
     window.addEventListener("scroll", updateHeader, { passive: true });
   }
 
-  if (footer) {
+  /* The footer is written into each page's HTML so it also works without JavaScript;
+     it is only generated here for a page that ships an empty footer. */
+  if (footer && !footer.children.length) {
     footer.innerHTML =
       '<div class="wrap">' +
-        '<div class="footer-grid">' +
-          '<div><div class="footer-brand"><img src="' + base + 'assets/img/favicon.svg" alt="">IMPRESIVE</div><p>International multi-database study preparedness for reproducible, privacy-preserving real-world evidence.</p></div>' +
-          '<div><h3>Explore</h3><ul><li><a href="' + base + 'about.html">About IMPRESIVE</a></li><li><a href="' + base + 'objective.html">Objectives for multinational studies</a></li><li><a href="' + base + 'how.html">How IMPRESIVE works</a></li><li><a href="' + base + 'methods.html">Methods &amp; technical reference</a></li><li><a href="' + base + 'cases.html">Accomplishments</a></li></ul></div>' +
-          '<div><h3>Evidence &amp; participation</h3><ul><li><a href="' + base + 'cases.html#case-register">Cases &amp; evidence</a></li><li><a href="' + base + 'databases.html">Partners &amp; readiness</a></li><li><a href="' + base + 'about.html#programme-roadmap">Programme roadmap</a></li><li><a href="' + base + 'about.html#governance-transparency">Governance &amp; transparency</a></li><li><a href="' + base + 'join.html">Join, FAQ &amp; contact</a></li></ul></div>' +
+        '<div class="footer-main">' +
+          '<div class="footer-identity">' +
+            '<a class="footer-brand" href="' + base + 'index.html"><img src="' + base + 'assets/img/favicon.svg" alt="">IMPRESIVE</a>' +
+            '<p>International multi-database study preparedness for reproducible, privacy-preserving real-world evidence.</p>' +
+            '<a class="footer-contact" href="mailto:phdc@phdcenter.org.tw">phdc@phdcenter.org.tw</a>' +
+          "</div>" +
+          '<nav class="footer-nav" aria-label="Footer">' +
+            '<div><h3>Explore</h3><ul><li><a href="' + base + 'about.html">About IMPRESIVE</a></li><li><a href="' + base + 'objective.html">Objectives for multinational studies</a></li><li><a href="' + base + 'how.html">How IMPRESIVE works</a></li><li><a href="' + base + 'methods.html">Methods &amp; technical reference</a></li><li><a href="' + base + 'cases.html">Accomplishments</a></li></ul></div>' +
+            '<div><h3>Evidence &amp; participation</h3><ul><li><a href="' + base + 'cases.html#case-register">Cases &amp; evidence</a></li><li><a href="' + base + 'databases.html">Partners &amp; readiness</a></li><li><a href="' + base + 'about.html#programme-roadmap">Programme roadmap</a></li><li><a href="' + base + 'about.html#governance-transparency">Governance &amp; transparency</a></li><li><a href="' + base + 'join.html">Join, FAQ &amp; contact</a></li></ul></div>' +
+          "</nav>" +
         "</div>" +
-        '<div class="footer-bottom"><span>&copy; <span id="year"></span> IMPRESIVE</span><span>Prepared databases · Integrated evidence · Timely decisions</span></div>' +
+        '<div class="footer-bottom"><span>&copy; <span id="year"></span> IMPRESIVE · Population Health Data Center, National Cheng Kung University</span><span>Prepared databases · Integrated evidence · Timely decisions</span></div>' +
       "</div>";
+  }
+  if (footer) {
     var year = footer.querySelector("#year");
     if (year) year.textContent = String(new Date().getFullYear());
   }

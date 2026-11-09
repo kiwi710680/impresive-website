@@ -8,22 +8,26 @@
   <meta name="theme-color" content="#0063c3">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="IMPRESIVE">
+  <meta property="og:locale" content="en_GB">
   <meta property="og:title" content="Case 02 · Atopic Dermatitis and Prurigo Nodularis | IMPRESIVE">
   <meta property="og:description" content="AD and PN case study: applying the IMPRESIVE framework to an additional therapeutic area and showing how operational definitions change prevalence estimates.">
   <meta property="og:url" content="https://phd-center.github.io/impresive/case-adpn.html">
-  <meta property="og:image" content="https://phd-center.github.io/impresive/assets/img/og-image.png">
+  <meta property="og:image" content="https://phd-center.github.io/impresive/assets/img/og/og-case-adpn.jpg">
+  <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="IMPRESIVE: leveraging local healthcare data for global real-world evidence">
+  <meta property="og:image:alt" content="Case 02 · AD / PN: adult atopic-dermatitis prevalence under three case definitions in four data environments">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Case 02 · Atopic Dermatitis and Prurigo Nodularis | IMPRESIVE">
   <meta name="twitter:description" content="AD and PN case study: applying the IMPRESIVE framework to an additional therapeutic area and showing how operational definitions change prevalence estimates.">
-  <meta name="twitter:image" content="https://phd-center.github.io/impresive/assets/img/og-image.png">
+  <meta name="twitter:image" content="https://phd-center.github.io/impresive/assets/img/og/og-case-adpn.jpg">
+  <meta name="twitter:image:alt" content="Case 02 · AD / PN: adult atopic-dermatitis prevalence under three case definitions in four data environments">
   <title>Case 02 · Atopic Dermatitis and Prurigo Nodularis | IMPRESIVE</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20261022a">
+  <link rel="preload" href="assets/fonts/InterVariable-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261107f">
 </head>
 <body data-page="case-adpn">
   <header class="site-header">
@@ -87,9 +91,6 @@
           <p>The programme applied three definitions of increasing specificity and compared the resulting prevalence estimates across participating environments.</p>
         </div>
 
-        <div class="section-heading section-heading--figure">
-          <h3>Explore how prevalence changes with the operational definition</h3>
-        </div>
         <figure class="evidence-figure" data-evidence-figure="case-definitions">
           <div class="figure-heading">
             <div><p class="technical-label">Adult population · 2020</p><h3>Prevalence by case definition</h3></div>
@@ -129,20 +130,6 @@
           <h2>Cross-environment variation differed by outcome</h2>
           <p>The programme reported three clinical outcomes as incidence rates per person-year with confidence intervals. They behave very differently from one another, and that pattern is itself the result.</p>
         </div>
-        <div class="grid grid--3">
-          <article class="card"><span class="technical-label">Observed range across five environments</span><h3>Complications</h3><p>Point estimates ranged from <strong>0.04 to 0.55 events per person-year across the five environments shown.</strong></p></article>
-          <article class="card"><span class="technical-label">Observed range across five environments</span><h3>Treatment change</h3><p>Point estimates ranged from <strong>0.03 to 5.54 events per person-year across the five environments shown.</strong></p></article>
-        </div>
-        <div class="callout callout--spaced">
-          <strong>Interpretation boundary</strong>
-          <p>The observed variation should not be attributed to a single cause from these results alone. Differences may reflect population characteristics, coding practices, data coverage, clinical practice, or local implementation. The reported rates describe the cross-environment variation but do not establish which mechanisms produced it.</p>
-        </div>
-      </div>
-      <div class="wrap">
-        <div class="section-heading">
-          <br>
-          <h3>Compare three clinical outcomes across five environments</h3>
-        </div>
         <figure class="evidence-figure" data-evidence-figure="ad-outcomes">
           <div class="figure-heading">
             <div><p class="technical-label">Confidence-interval dot plot</p><h3>Reported incidence rates per person-year</h3></div>
@@ -155,6 +142,19 @@
           <details class="figure-table"><summary>View accessible data table</summary><div class="table-scroll" data-table-mount></div></details>
         </figure>
         <dl class="figure-metadata"><div><dt>Measure</dt><dd>Incidence rate with confidence interval</dd></div><div><dt>Unit</dt><dd>Events per person-year</dd></div></dl>
+        <div class="finding-summary">
+          <div>
+          <dl class="range-list">
+            <div><dt>Complications</dt><dd><strong>0.04 – 0.55</strong> events per person-year</dd></div>
+            <div><dt>Treatment change</dt><dd><strong>0.03 – 5.54</strong> events per person-year</dd></div>
+          </dl>
+          <p class="range-list__note">Observed range of point estimates across the five environments shown.</p>
+          </div>
+          <div class="callout">
+            <strong>Interpretation boundary</strong>
+            <p>The observed variation should not be attributed to a single cause from these results alone. Differences may reflect population characteristics, coding practices, data coverage, clinical practice, or local implementation. The reported rates describe the cross-environment variation but do not establish which mechanisms produced it.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -177,7 +177,16 @@
             <span class="story-label">Local</span>
             <div>
               <h3>The source code lists behind each concept</h3>
-              <p>A coding library carries site-specific definitions. Ischemic stroke, for example, is I63 in NHIRD, CGRD, and DeSC; I63 and I64 in NHIS and HIRA; and 433 and 434 in CDARS. The framework does not pretend these coding systems are identical.</p>
+              <p>A coding library carries site-specific definitions. The framework does not pretend these coding systems are identical. Example: ischemic stroke.</p>
+              <table class="code-table">
+                <caption class="visually-hidden">Ischemic stroke codes by data environment</caption>
+                <thead><tr><th scope="col">Data environments</th><th scope="col">Codes</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">NHIRD, CGRD, DeSC</th><td><code>I63</code></td></tr>
+                  <tr><th scope="row">NHIS, HIRA</th><td><code>I63</code> <code>I64</code></td></tr>
+                  <tr><th scope="row">CDARS</th><td><code>433</code> <code>434</code></td></tr>
+                </tbody>
+              </table>
             </div>
           </li>
           <li>
@@ -200,11 +209,26 @@
       </div>
     </section>
   </main>
-  <footer class="site-footer"></footer>
-  <script src="assets/js/main.js?v=20261022a" defer></script>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-main">
+        <div class="footer-identity">
+          <a class="footer-brand" href="index.html"><img src="assets/img/favicon.svg" width="34" height="34" alt="">IMPRESIVE</a>
+          <p>International multi-database study preparedness for reproducible, privacy-preserving real-world evidence.</p>
+          <a class="footer-contact" href="mailto:phdc@phdcenter.org.tw">phdc@phdcenter.org.tw</a>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <div><h3>Explore</h3><ul><li><a href="about.html">About IMPRESIVE</a></li><li><a href="objective.html">Objectives for multinational studies</a></li><li><a href="how.html">How IMPRESIVE works</a></li><li><a href="methods.html">Methods &amp; technical reference</a></li><li><a href="cases.html">Accomplishments</a></li></ul></div>
+          <div><h3>Evidence &amp; participation</h3><ul><li><a href="cases.html#case-register">Cases &amp; evidence</a></li><li><a href="databases.html">Partners &amp; readiness</a></li><li><a href="about.html#programme-roadmap">Programme roadmap</a></li><li><a href="about.html#governance-transparency">Governance &amp; transparency</a></li><li><a href="join.html">Join, FAQ &amp; contact</a></li></ul></div>
+        </nav>
+      </div>
+      <div class="footer-bottom"><span>&copy; <span id="year">2026</span> IMPRESIVE · Population Health Data Center, National Cheng Kung University</span><span>Prepared databases · Integrated evidence · Timely decisions</span></div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js?v=20261107e" defer></script>
   <script src="assets/js/charts.js?v=20261022a" defer></script>
   <script src="assets/js/explorers.js?v=20261022a" defer></script>
-  <script src="assets/js/enhancements.js?v=20261022a" defer></script>
+  <script src="assets/js/enhancements.js?v=20261107e" defer></script>
   <script src="assets/js/portal-return.js?v=20261022a" defer></script>
 </body>
 </html>

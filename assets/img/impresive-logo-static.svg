@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="logo" viewBox="-150 -150 300 300" width="300" height="300" role="img" aria-labelledby="title desc">
+  <title id="title">IMPRESIVE network logo</title>
+  <desc id="desc">Six blue-to-green nodes connected by ten lines.</desc>
+  <defs>
+    <linearGradient id="gradient" gradientUnits="userSpaceOnUse" x1="-120" y1="120" x2="120" y2="-120">
+      <stop offset="0" stop-color="#0a3f8f"/>
+      <stop offset="0.55" stop-color="#0b74d8"/>
+      <stop offset="1" stop-color="#2fae7a"/>
+    </linearGradient>
+  </defs>
+  <!-- The background is transparent; the SVG can be embedded directly as an image. -->
+  <g id="connections" fill="none" stroke="url(#gradient)" stroke-width="7" stroke-linecap="round">
+    <path id="edge1" d="M0 -98.889 L-91.852 -53.704" stroke-dasharray="102.364" stroke-dashoffset="0"/>
+    <path id="edge2" d="M0 -98.889 L91.852 -53.704" stroke-dasharray="102.364" stroke-dashoffset="0"/>
+    <path id="edge3" d="M0 -98.889 L91.852 50" stroke-dasharray="174.942" stroke-dashoffset="0"/>
+    <path id="edge4" d="M-91.852 -53.704 L-91.852 50" stroke-dasharray="103.704" stroke-dashoffset="0"/>
+    <path id="edge5" d="M91.852 -53.704 L91.852 50" stroke-dasharray="103.704" stroke-dashoffset="0"/>
+    <path id="edge6" d="M91.852 -53.704 L-91.852 50" stroke-dasharray="210.954" stroke-dashoffset="0"/>
+    <path id="edge7" d="M91.852 -53.704 L0 98.889" stroke-dasharray="178.105" stroke-dashoffset="0"/>
+    <path id="edge8" d="M-91.852 50 L91.852 50" stroke-dasharray="183.704" stroke-dashoffset="0"/>
+    <path id="edge9" d="M-91.852 50 L0 98.889" stroke-dasharray="104.052" stroke-dashoffset="0"/>
+    <path id="edge10" d="M0 98.889 L91.852 50" stroke-dasharray="104.052" stroke-dashoffset="0"/>
+  </g>
+  <g id="nodes" fill="url(#gradient)">
+    <circle id="node1" cx="0" cy="-98.889" r="22"/>
+    <circle id="node2" cx="-91.852" cy="-53.704" r="22"/>
+    <circle id="node3" cx="91.852" cy="-53.704" r="22"/>
+    <circle id="node4" cx="-91.852" cy="50" r="22"/>
+    <circle id="node5" cx="91.852" cy="50" r="22"/>
+    <circle id="node6" cx="0" cy="98.889" r="22"/>
+  </g>
+
+</svg>

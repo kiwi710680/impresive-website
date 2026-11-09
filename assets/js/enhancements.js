@@ -297,12 +297,14 @@
       pngButton.className = "figure-action";
       pngButton.textContent = "Download PNG";
       pngButton.disabled = true;
+      pngButton.title = "Available once the figure has loaded";
 
       var svgButton = document.createElement("button");
       svgButton.type = "button";
       svgButton.className = "figure-action";
       svgButton.textContent = "Download SVG";
       svgButton.disabled = true;
+      svgButton.title = "Available once the figure has loaded";
 
       var linkButton = document.createElement("button");
       linkButton.type = "button";
@@ -320,6 +322,8 @@
         prepareChart(svg);
         pngButton.disabled = false;
         svgButton.disabled = false;
+        pngButton.removeAttribute("title");
+        svgButton.removeAttribute("title");
       }
 
       chartReady();
@@ -348,7 +352,7 @@
   }
 
   function setupReadingTools() {
-    if (!["how", "methods", "case-ascvd", "case-adpn", "databases", "about", "visualization"].includes(document.body.getAttribute("data-page"))) return;
+    if (!["how", "methods", "case-ascvd", "case-adpn", "transportability", "databases", "about", "visualization"].includes(document.body.getAttribute("data-page"))) return;
     var main = document.querySelector("main");
     var hero = main && main.querySelector(":scope > .page-hero");
     if (!main || !hero) return;

@@ -8,22 +8,26 @@
   <meta name="theme-color" content="#0063c3">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="IMPRESIVE">
+  <meta property="og:locale" content="en_GB">
   <meta property="og:title" content="Join IMPRESIVE | FAQ and collaboration">
   <meta property="og:description" content="Participation pathways, frequently asked questions, and the PHDc collaboration route for IMPRESIVE.">
   <meta property="og:url" content="https://phd-center.github.io/impresive/join.html">
-  <meta property="og:image" content="https://phd-center.github.io/impresive/assets/img/og-image.png">
+  <meta property="og:image" content="https://phd-center.github.io/impresive/assets/img/og/og-default.jpg">
+  <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="IMPRESIVE: leveraging local healthcare data for global real-world evidence">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Join IMPRESIVE | FAQ and collaboration">
   <meta name="twitter:description" content="Participation pathways, frequently asked questions, and the PHDc collaboration route for IMPRESIVE.">
-  <meta name="twitter:image" content="https://phd-center.github.io/impresive/assets/img/og-image.png">
+  <meta name="twitter:image" content="https://phd-center.github.io/impresive/assets/img/og/og-default.jpg">
+  <meta name="twitter:image:alt" content="IMPRESIVE: leveraging local healthcare data for global real-world evidence">
   <title>Join IMPRESIVE | FAQ and collaboration</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20261022a">
+  <link rel="preload" href="assets/fonts/InterVariable-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261107f">
 </head>
 <body data-page="join">
   <header class="site-header">
@@ -56,10 +60,11 @@
           </div>
           <aside class="phdc-contact-card" aria-labelledby="phdc-contact-title">
             <img src="assets/img/PHD_LOGONAME_HORIZONETAL-1.png" width="549" height="134" loading="lazy" alt="PHDc logo">
-            <span class="tag tag--next">Primary public contact</span>
-            <h3 id="phdc-contact-title">PHDc public email</h3>
-            <a class="phdc-contact-email" href="mailto:phdc@phdcenter.org.tw">phdc@phdcenter.org.tw</a>
-            <p>Use this address for public enquiries about IMPRESIVE participation and collaboration.</p>
+            <div class="phdc-contact-card__panel">
+              <h3 id="phdc-contact-title" class="phdc-contact-card__label">Primary public contact</h3>
+              <a class="phdc-contact-email" href="mailto:phdc@phdcenter.org.tw"><span>phdc<wbr>@phdcenter.org.tw</span></a>
+              <p>Use this address for public enquiries about IMPRESIVE participation and collaboration.</p>
+            </div>
           </aside>
         </div>
       </div>
@@ -84,7 +89,7 @@
       <div class="wrap">
         <div class="section-heading"><h2>Frequently asked questions</h2></div>
         <div class="faq-list">
-          <article class="faq-item"><h3><button class="faq-question" type="button" aria-expanded="true" aria-controls="faq-1">What is IMPRESIVE?</button></h3><div class="faq-answer" id="faq-1"><p>An international multi-database study-preparedness platform. It aligns data feasibility, methods, collaboration, and interpretation before and during distributed research.</p></div></article>
+          <article class="faq-item"><h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-1">What is IMPRESIVE?</button></h3><div class="faq-answer" id="faq-1" hidden><p>An international multi-database study-preparedness platform. It aligns data feasibility, methods, collaboration, and interpretation before and during distributed research.</p></div></article>
           <article class="faq-item"><h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-2">Are partner data centralized?</button></h3><div class="faq-answer" id="faq-2" hidden><p>No. Person-level source data remain under local control. Approved local teams run common programs and return only outputs permitted by local governance.</p></div></article>
           <article class="faq-item"><h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-3">Must every database use OMOP?</button></h3><div class="faq-answer" id="faq-3" hidden><p>No. The programme has used both OMOP and Sentinel common data models. The route must fit the study question, source data, secure environment, and required terminology handling.</p></div></article>
           <article class="faq-item"><h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-4">Is a converted database automatically study-ready?</button></h3><div class="faq-answer" id="faq-4" hidden><p>No. Readiness depends on the question and includes required variables, follow-up, method implementation, local governance, and interpretability.</p></div></article>
@@ -94,9 +99,24 @@
       </div>
     </section>
   </main>
-  <footer class="site-footer"></footer>
-  <script src="assets/js/main.js?v=20261022a" defer></script>
-  <script src="assets/js/enhancements.js?v=20261022a" defer></script>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-main">
+        <div class="footer-identity">
+          <a class="footer-brand" href="index.html"><img src="assets/img/favicon.svg" width="34" height="34" alt="">IMPRESIVE</a>
+          <p>International multi-database study preparedness for reproducible, privacy-preserving real-world evidence.</p>
+          <a class="footer-contact" href="mailto:phdc@phdcenter.org.tw">phdc@phdcenter.org.tw</a>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <div><h3>Explore</h3><ul><li><a href="about.html">About IMPRESIVE</a></li><li><a href="objective.html">Objectives for multinational studies</a></li><li><a href="how.html">How IMPRESIVE works</a></li><li><a href="methods.html">Methods &amp; technical reference</a></li><li><a href="cases.html">Accomplishments</a></li></ul></div>
+          <div><h3>Evidence &amp; participation</h3><ul><li><a href="cases.html#case-register">Cases &amp; evidence</a></li><li><a href="databases.html">Partners &amp; readiness</a></li><li><a href="about.html#programme-roadmap">Programme roadmap</a></li><li><a href="about.html#governance-transparency">Governance &amp; transparency</a></li><li><a href="join.html">Join, FAQ &amp; contact</a></li></ul></div>
+        </nav>
+      </div>
+      <div class="footer-bottom"><span>&copy; <span id="year">2026</span> IMPRESIVE · Population Health Data Center, National Cheng Kung University</span><span>Prepared databases · Integrated evidence · Timely decisions</span></div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js?v=20261107e" defer></script>
+  <script src="assets/js/enhancements.js?v=20261107e" defer></script>
   <script src="assets/js/portal-return.js?v=20261022a" defer></script>
 </body>
 </html>

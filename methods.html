@@ -3,27 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="IMPRESIVE methods: fit-for-purpose criteria, quality validation, the four-step ETL process, OMOP and Sentinel routes, structural mappings, reusable analysis modules, and code harmonization.">
+  <meta name="description" content="IMPRESIVE methods: fit-for-purpose criteria, quality validation, ETL, OMOP and Sentinel routes, structural mappings, analysis modules, code harmonization.">
   <link rel="canonical" href="https://phd-center.github.io/impresive/methods.html">
   <meta name="theme-color" content="#0063c3">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="IMPRESIVE">
+  <meta property="og:locale" content="en_GB">
   <meta property="og:title" content="Methods | IMPRESIVE">
-  <meta property="og:description" content="IMPRESIVE methods: fit-for-purpose criteria, quality validation, the four-step ETL process, OMOP and Sentinel routes, structural mappings, reusable analysis modules, and code harmonization.">
+  <meta property="og:description" content="IMPRESIVE methods: fit-for-purpose criteria, quality validation, ETL, OMOP and Sentinel routes, structural mappings, analysis modules, code harmonization.">
   <meta property="og:url" content="https://phd-center.github.io/impresive/methods.html">
-  <meta property="og:image" content="https://phd-center.github.io/impresive/assets/img/og-image.png">
+  <meta property="og:image" content="https://phd-center.github.io/impresive/assets/img/og/og-default.jpg">
+  <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="IMPRESIVE: leveraging local healthcare data for global real-world evidence">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Methods | IMPRESIVE">
-  <meta name="twitter:description" content="IMPRESIVE methods: fit-for-purpose criteria, quality validation, the four-step ETL process, OMOP and Sentinel routes, structural mappings, reusable analysis modules, and code harmonization.">
-  <meta name="twitter:image" content="https://phd-center.github.io/impresive/assets/img/og-image.png">
+  <meta name="twitter:description" content="IMPRESIVE methods: fit-for-purpose criteria, quality validation, ETL, OMOP and Sentinel routes, structural mappings, analysis modules, code harmonization.">
+  <meta name="twitter:image" content="https://phd-center.github.io/impresive/assets/img/og/og-default.jpg">
+  <meta name="twitter:image:alt" content="IMPRESIVE: leveraging local healthcare data for global real-world evidence">
   <title>Methods | IMPRESIVE</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20261022a">
+  <link rel="preload" href="assets/fonts/InterVariable-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261107f">
 </head>
 <body data-page="methods">
   <header class="site-header">
@@ -134,6 +138,8 @@
         </div>
         <div class="callout callout--spaced"><strong>Local adaptation is part of the method.</strong><p>Structural conversion alone is not enough. Date construction, drug information, source-specific code mapping, and variable definitions must be documented and validated.</p></div>
         <div class="section-heading section-heading--sub"><h2>Structural mapping example</h2><p>The NHIRD mapping shows how the same clinical domains are represented in OMOP and Sentinel.</p></div>
+        <details class="table-disclosure">
+          <summary>Show the mapping table <span>9 clinical domains · Taiwan NHIRD → OMOP and Sentinel</span></summary>
         <div class="route-table-widget" data-route-table data-route-active="both">
           <div class="explorer-controls" data-route-controls aria-label="Filter mapping routes">
             <button class="explorer-button" type="button" aria-pressed="true" data-route-mode="both">Both routes</button>
@@ -158,6 +164,7 @@
           </table>
         </div>
         </div>
+        </details>
       </div>
     </section>
     <section class="section" id="etl">
@@ -208,11 +215,26 @@
     </section>
     <section class="section"><div class="wrap"><div class="cta-band"><div><h2>See these methods in use</h2><p>Three cases exercised this machinery: cross-database comparability, framework reuse, and evidence transportability.</p></div><a class="btn btn--light" href="cases.html">All accomplishments</a></div></div></section>
   </main>
-  <footer class="site-footer"></footer>
-  <script src="assets/js/main.js?v=20261022a" defer></script>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-main">
+        <div class="footer-identity">
+          <a class="footer-brand" href="index.html"><img src="assets/img/favicon.svg" width="34" height="34" alt="">IMPRESIVE</a>
+          <p>International multi-database study preparedness for reproducible, privacy-preserving real-world evidence.</p>
+          <a class="footer-contact" href="mailto:phdc@phdcenter.org.tw">phdc@phdcenter.org.tw</a>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <div><h3>Explore</h3><ul><li><a href="about.html">About IMPRESIVE</a></li><li><a href="objective.html">Objectives for multinational studies</a></li><li><a href="how.html">How IMPRESIVE works</a></li><li><a href="methods.html">Methods &amp; technical reference</a></li><li><a href="cases.html">Accomplishments</a></li></ul></div>
+          <div><h3>Evidence &amp; participation</h3><ul><li><a href="cases.html#case-register">Cases &amp; evidence</a></li><li><a href="databases.html">Partners &amp; readiness</a></li><li><a href="about.html#programme-roadmap">Programme roadmap</a></li><li><a href="about.html#governance-transparency">Governance &amp; transparency</a></li><li><a href="join.html">Join, FAQ &amp; contact</a></li></ul></div>
+        </nav>
+      </div>
+      <div class="footer-bottom"><span>&copy; <span id="year">2026</span> IMPRESIVE · Population Health Data Center, National Cheng Kung University</span><span>Prepared databases · Integrated evidence · Timely decisions</span></div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js?v=20261107e" defer></script>
   <script src="assets/js/interactive.js?v=20261022a" defer></script>
   <script src="assets/js/explorers.js?v=20261022a" defer></script>
-  <script src="assets/js/enhancements.js?v=20261022a" defer></script>
+  <script src="assets/js/enhancements.js?v=20261107e" defer></script>
   <script src="assets/js/portal-return.js?v=20261022a" defer></script>
 </body>
 </html>

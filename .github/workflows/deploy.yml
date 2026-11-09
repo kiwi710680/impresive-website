@@ -27,9 +27,17 @@ jobs:
 
           # Pass 1 - 結構同步。依據檔案大小上傳新檔案並刪除 NAS 上已不存在的舊檔案。
           # 排除 git 系統資料夾，將專案根目錄推送到 NAS 的 /volume1/impresive 內
+          # 內部文件（*.md、docs/、scripts/、_archive/、Visualization/build/）不公開；
+          # --delete-excluded 會把先前已上傳到 NAS 的這些檔案一併移除。
           rclone sync ./ :webdav:/impresive \
             --exclude=".git/**" \
             --exclude=".github/**" \
+            --exclude="*.md" \
+            --exclude="_archive/**" \
+            --exclude="docs/**" \
+            --exclude="scripts/**" \
+            --exclude="Visualization/build/**" \
+            --delete-excluded \
             --webdav-url="$WEBDAV_URL" \
             --webdav-user="$WEBDAV_USER" \
             --webdav-pass="$OBSCURED_PASS" \
@@ -46,6 +54,10 @@ jobs:
           rclone copy ./ :webdav:/impresive \
             --exclude=".git/**" \
             --exclude=".github/**" \
+            --exclude="_archive/**" \
+            --exclude="docs/**" \
+            --exclude="scripts/**" \
+            --exclude="Visualization/build/**" \
             --include="*.html" \
             --include="*.xml" \
             --include="*.txt" \

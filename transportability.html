@@ -8,22 +8,26 @@
   <meta name="theme-color" content="#0063c3">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="IMPRESIVE">
+  <meta property="og:locale" content="en_GB">
   <meta property="og:title" content="Case 03 · Transportability | IMPRESIVE">
   <meta property="og:description" content="IMPRESIVE transportability case: a proof-of-concept retrospective target-trial emulation across Taiwan NHIRD and Japan DeSC.">
   <meta property="og:url" content="https://phd-center.github.io/impresive/transportability.html">
-  <meta property="og:image" content="https://phd-center.github.io/impresive/assets/img/og-image.png">
+  <meta property="og:image" content="https://phd-center.github.io/impresive/assets/img/og/og-transportability.jpg">
+  <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="IMPRESIVE: leveraging local healthcare data for global real-world evidence">
+  <meta property="og:image:alt" content="Case 03 · Transportability: MACE relative risk, prasugrel versus clopidogrel, Taiwan observed, transported, and Japan observed">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Case 03 · Transportability | IMPRESIVE">
   <meta name="twitter:description" content="IMPRESIVE transportability case: a proof-of-concept retrospective target-trial emulation across Taiwan NHIRD and Japan DeSC.">
-  <meta name="twitter:image" content="https://phd-center.github.io/impresive/assets/img/og-image.png">
+  <meta name="twitter:image" content="https://phd-center.github.io/impresive/assets/img/og/og-transportability.jpg">
+  <meta name="twitter:image:alt" content="Case 03 · Transportability: MACE relative risk, prasugrel versus clopidogrel, Taiwan observed, transported, and Japan observed">
   <title>Case 03 · Transportability | IMPRESIVE</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20261022a">
+  <link rel="preload" href="assets/fonts/InterVariable-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261107f">
 </head>
 <body data-page="transportability">
   <header class="site-header">
@@ -53,13 +57,10 @@
 
     <section class="section section--soft" id="design">
       <div class="wrap">
-        <div class="section-heading"><p class="eyebrow">Method</p><h2>Cohort studies using a target-trial emulation framework</h2><p>Hospitalized patients with acute coronary syndrome are studied separately in each database. The three head-to-head comparisons are prasugrel versus clopidogrel, ticagrelor versus clopidogrel, and ticagrelor versus prasugrel. Permitted aggregate results are then synthesized for cross-database interpretation.</p></div>
+        <div class="section-heading"><p class="eyebrow">Method</p><h2>Cohort studies using a target-trial emulation framework</h2><p>Hospitalized patients with acute coronary syndrome are studied separately in each database. Permitted aggregate results are then synthesized for cross-database interpretation.</p><ul class="comparison-chips" aria-label="Three head-to-head comparisons"><li>Prasugrel <span>vs</span> clopidogrel</li><li>Ticagrelor <span>vs</span> clopidogrel</li><li>Ticagrelor <span>vs</span> prasugrel</li></ul></div>
         <div class="grid grid--2">
-          <article class="card transport-setting-card"><div class="transport-setting-card__heading"><img class="country-flag country-flag--large" src="assets/img/taiwan.png" width="512" height="512" loading="lazy" decoding="async" alt="Taiwan flag"><div><span class="technical-label">Taiwan</span><h3>NHIRD</h3></div></div><p>Population-based national claims environment used to develop the source model and estimate observed treatment effects.</p></article>
-          <article class="card transport-setting-card"><div class="transport-setting-card__heading"><img class="country-flag country-flag--large" src="assets/img/japan.png" width="512" height="512" loading="lazy" decoding="async" alt="Japan flag"><div><span class="technical-label">Japan</span><h3>DeSC</h3></div></div><p>Population-based claims environment used to estimate the observed target-setting effect and evaluate the transported estimate.</p></article>
-        </div>
-        <div class="table-scroll transport-period-table" tabindex="0" aria-label="Study period by database">
-          <table class="research-table"><caption>Database coverage and subject-enrolment periods</caption><thead><tr><th scope="col">Database</th><th scope="col">Database start</th><th scope="col">Database end</th><th scope="col">Enrolment start</th><th scope="col">Enrolment end</th></tr></thead><tbody><tr><th scope="row">Taiwan NHIRD</th><td>2013-01-01</td><td>2022-12-31</td><td>2014-01-01</td><td>2021-12-31</td></tr><tr><th scope="row">Japan DeSC</th><td>2016-01-01</td><td>2023-08-31</td><td>2017-01-01</td><td>2022-08-31</td></tr></tbody></table>
+          <article class="card transport-setting-card"><div class="transport-setting-card__heading"><img class="country-flag country-flag--large" src="assets/img/taiwan.png" width="512" height="512" loading="lazy" decoding="async" alt="Taiwan flag"><div><span class="technical-label">Taiwan</span><h3>NHIRD</h3></div></div><p>Population-based national claims environment used to develop the source model and estimate observed treatment effects.</p><dl class="period-list"><div><dt>Database coverage</dt><dd><time datetime="2013-01-01">2013/01/01</time><span class="period-list__to"> – </span><time datetime="2022-12-31">2022/12/31</time></dd></div><div><dt>Enrolment</dt><dd><time datetime="2014-01-01">2014/01/01</time><span class="period-list__to"> – </span><time datetime="2021-12-31">2021/12/31</time></dd></div></dl></article>
+          <article class="card transport-setting-card"><div class="transport-setting-card__heading"><img class="country-flag country-flag--large" src="assets/img/japan.png" width="512" height="512" loading="lazy" decoding="async" alt="Japan flag"><div><span class="technical-label">Japan</span><h3>DeSC</h3></div></div><p>Population-based claims environment used to estimate the observed target-setting effect and evaluate the transported estimate.</p><dl class="period-list"><div><dt>Database coverage</dt><dd><time datetime="2016-01-01">2016/01/01</time><span class="period-list__to"> – </span><time datetime="2023-08-31">2023/08/31</time></dd></div><div><dt>Enrolment</dt><dd><time datetime="2017-01-01">2017/01/01</time><span class="period-list__to"> – </span><time datetime="2022-08-31">2022/08/31</time></dd></div></dl></article>
         </div>
       </div>
     </section>
@@ -107,10 +108,25 @@
 
     <section class="section section--soft"><div class="wrap"><div class="cta-band"><div><h2>Return to the expanding case portfolio</h2><p>Compare this methodological extension with the established ASCVD and AD/PN cases.</p></div><a class="btn btn--light" href="cases.html">All accomplishments</a></div></div></section>
   </main>
-  <footer class="site-footer"></footer>
-  <script src="assets/js/main.js?v=20261022a" defer></script>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-main">
+        <div class="footer-identity">
+          <a class="footer-brand" href="index.html"><img src="assets/img/favicon.svg" width="34" height="34" alt="">IMPRESIVE</a>
+          <p>International multi-database study preparedness for reproducible, privacy-preserving real-world evidence.</p>
+          <a class="footer-contact" href="mailto:phdc@phdcenter.org.tw">phdc@phdcenter.org.tw</a>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <div><h3>Explore</h3><ul><li><a href="about.html">About IMPRESIVE</a></li><li><a href="objective.html">Objectives for multinational studies</a></li><li><a href="how.html">How IMPRESIVE works</a></li><li><a href="methods.html">Methods &amp; technical reference</a></li><li><a href="cases.html">Accomplishments</a></li></ul></div>
+          <div><h3>Evidence &amp; participation</h3><ul><li><a href="cases.html#case-register">Cases &amp; evidence</a></li><li><a href="databases.html">Partners &amp; readiness</a></li><li><a href="about.html#programme-roadmap">Programme roadmap</a></li><li><a href="about.html#governance-transparency">Governance &amp; transparency</a></li><li><a href="join.html">Join, FAQ &amp; contact</a></li></ul></div>
+        </nav>
+      </div>
+      <div class="footer-bottom"><span>&copy; <span id="year">2026</span> IMPRESIVE · Population Health Data Center, National Cheng Kung University</span><span>Prepared databases · Integrated evidence · Timely decisions</span></div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js?v=20261107e" defer></script>
   <script src="assets/js/transportability.js?v=20261022a" defer></script>
-  <script src="assets/js/enhancements.js?v=20261022a" defer></script>
+  <script src="assets/js/enhancements.js?v=20261107e" defer></script>
   <script src="assets/js/portal-return.js?v=20261022a" defer></script>
 </body>
 </html>

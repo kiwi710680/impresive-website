@@ -143,3 +143,14 @@ Using the supplied Amgen blue is an intentional site-owner palette choice. Colou
 ## Implementation scope
 
 The approved token, responsive, motion, and interaction system is consolidated in `assets/css/styles.css`. User-facing pages load this single stylesheet; redirect-only stubs remain stylesheet-free.
+
+
+## Addendum 2026-11-06: M1 light theme
+
+The block "M1 light theme (2026-11-06)" at the end of `assets/css/styles.css` overrides parts of the tables above. Where they disagree, the addendum wins.
+
+- Heroes (`.hero`, `.page-hero`) use a light surface: `linear-gradient(120deg, #e9f2fb 0%, #f7fbff 55%, #eaf4ef 100%)` with a 4 px `#0063c3` top line. Hero headings `#0b2545`, hero copy `#2f4559`.
+- Brand colours `#0063c3` and `#3f7b64` are for lines, fills and backgrounds. Text uses the darker variants: links and actions `#0058ad` (hover `#0a3f7a`), green labels `#2b6650` (`--green-ink`).
+- `--ink-soft` is `#3b5064`. Target: body copy at 7:1 or higher.
+- Soft sections are flat `#f3f8f5`. Dark sections, CTA bands, the PHDc contact card and the footer are solid `#0b2545` (`--night`); the on-dark text tokens still apply there.
+- Font: Inter, self-hosted at `assets/fonts/InterVariable.woff2` (SIL OFL 1.1); Segoe UI and system Chinese fonts as fallback.

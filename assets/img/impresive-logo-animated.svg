@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="logo" viewBox="-150 -150 300 300" width="300" height="300" role="img" aria-labelledby="title desc">
+  <title id="title">IMPRESIVE animated network logo</title>
+  <desc id="desc">Six blue-to-green nodes appear, ten lines connect, and flowing light particles move through the network. Open as a standalone SVG and click to replay the introduction.</desc>
+  <defs>
+    <linearGradient id="gradient" gradientUnits="userSpaceOnUse" x1="-120" y1="120" x2="120" y2="-120">
+      <stop offset="0" stop-color="#0a3f8f"/>
+      <stop offset="0.55" stop-color="#0b74d8"/>
+      <stop offset="1" stop-color="#2fae7a"/>
+    </linearGradient>
+  </defs>
+  <!-- The background is transparent; the SVG can be embedded directly as an image. -->
+  <!-- All animations use native SVG SMIL. A one-line inline click handler resets the timeline; there are no external dependencies. -->
+  <g id="connections" fill="none" stroke="url(#gradient)" stroke-width="7" stroke-linecap="round">
+    <path id="edge1" d="M0 -98.889 L-91.852 -53.704" stroke-dasharray="102.364" stroke-dashoffset="102.364">
+      <animate attributeName="stroke-dashoffset" values="102.364;0" dur="0.40s" begin="0.6s" fill="freeze" restart="always" calcMode="spline" keyTimes="0;1" keySplines="0.2 0.7 0.2 1"/>
+    </path>
+    <path id="edge2" d="M0 -98.889 L91.852 -53.704" stroke-dasharray="102.364" stroke-dashoffset="102.364">
+      <animate attributeName="stroke-dashoffset" values="102.364;0" dur="0.40s" begin="0.67s" fill="freeze" restart="always" calcMode="spline" keyTimes="0;1" keySplines="0.2 0.7 0.2 1"/>
+    </path>
+    <path id="edge3" d="M0 -98.889 L91.852 50" stroke-dasharray="174.942" stroke-dashoffset="174.942">
+      <animate attributeName="stroke-dashoffset" values="174.942;0" dur="0.40s" begin="0.74s" fill="freeze" restart="always" calcMode="spline" keyTimes="0;1" keySplines="0.2 0.7 0.2 1"/>
+    </path>
+    <path id="edge4" d="M-91.852 -53.704 L-91.852 50" stroke-dasharray="103.704" stroke-dashoffset="103.704">
+      <animate attributeName="stroke-dashoffset" values="103.704;0" dur="0.40s" begin="0.81s" fill="freeze" restart="always" calcMode="spline" keyTimes="0;1" keySplines="0.2 0.7 0.2 1"/>
+    </path>
+    <path id="edge5" d="M91.852 -53.704 L91.852 50" stroke-dasharray="103.704" stroke-dashoffset="103.704">
+      <animate attributeName="stroke-dashoffset" values="103.704;0" dur="0.40s" begin="0.88s" fill="freeze" restart="always" calcMode="spline" keyTimes="0;1" keySplines="0.2 0.7 0.2 1"/>
+    </path>
+    <path id="edge6" d="M91.852 -53.704 L-91.852 50" stroke-dasharray="210.954" stroke-dashoffset="210.954">
+      <animate attributeName="stroke-dashoffset" values="210.954;0" dur="0.40s" begin="0.95s" fill="freeze" restart="always" calcMode="spline" keyTimes="0;1" keySplines="0.2 0.7 0.2 1"/>
+    </path>
+    <path id="edge7" d="M91.852 -53.704 L0 98.889" stroke-dasharray="178.105" stroke-dashoffset="178.105">
+      <animate attributeName="stroke-dashoffset" values="178.105;0" dur="0.40s" begin="1.02s" fill="freeze" restart="always" calcMode="spline" keyTimes="0;1" keySplines="0.2 0.7 0.2 1"/>
+    </path>
+    <path id="edge8" d="M-91.852 50 L91.852 50" stroke-dasharray="183.704" stroke-dashoffset="183.704">
+      <animate attributeName="stroke-dashoffset" values="183.704;0" dur="0.40s" begin="1.09s" fill="freeze" restart="always" calcMode="spline" keyTimes="0;1" keySplines="0.2 0.7 0.2 1"/>
+    </path>
+    <path id="edge9" d="M-91.852 50 L0 98.889" stroke-dasharray="104.052" stroke-dashoffset="104.052">
+      <animate attributeName="stroke-dashoffset" values="104.052;0" dur="0.40s" begin="1.16s" fill="freeze" restart="always" calcMode="spline" keyTimes="0;1" keySplines="0.2 0.7 0.2 1"/>
+    </path>
+    <path id="edge10" d="M0 98.889 L91.852 50" stroke-dasharray="104.052" stroke-dashoffset="104.052">
+      <animate attributeName="stroke-dashoffset" values="104.052;0" dur="0.40s" begin="1.23s" fill="freeze" restart="always" calcMode="spline" keyTimes="0;1" keySplines="0.2 0.7 0.2 1"/>
+    </path>
+  </g>
+  <g id="data-flow" fill="#fff">
+    <circle r="2.52" opacity="0" aria-hidden="true">
+      <animateMotion path="M0 -98.889 L-91.852 -53.704" dur="2.22s" begin="2.05s" repeatCount="indefinite" restart="always"/>
+      <animate attributeName="opacity" values="0;0.72;0.72;0" keyTimes="0;0.15;0.85;1" dur="2.22s" begin="2.05s" repeatCount="indefinite" restart="always"/>
+    </circle>
+    <circle r="2.52" opacity="0" aria-hidden="true">
+      <animateMotion path="M0 -98.889 L91.852 -53.704" dur="2.5s" begin="2.17s" repeatCount="indefinite" restart="always"/>
+      <animate attributeName="opacity" values="0;0.72;0.72;0" keyTimes="0;0.15;0.85;1" dur="2.5s" begin="2.17s" repeatCount="indefinite" restart="always"/>
+    </circle>
+    <circle r="2.52" opacity="0" aria-hidden="true">
+      <animateMotion path="M0 -98.889 L91.852 50" dur="2.78s" begin="2.29s" repeatCount="indefinite" restart="always"/>
+      <animate attributeName="opacity" values="0;0.72;0.72;0" keyTimes="0;0.15;0.85;1" dur="2.78s" begin="2.29s" repeatCount="indefinite" restart="always"/>
+    </circle>
+    <circle r="2.52" opacity="0" aria-hidden="true">
+      <animateMotion path="M-91.852 -53.704 L-91.852 50" dur="2.22s" begin="2.41s" repeatCount="indefinite" restart="always"/>
+      <animate attributeName="opacity" values="0;0.72;0.72;0" keyTimes="0;0.15;0.85;1" dur="2.22s" begin="2.41s" repeatCount="indefinite" restart="always"/>
+    </circle>
+    <circle r="2.52" opacity="0" aria-hidden="true">
+      <animateMotion path="M91.852 -53.704 L91.852 50" dur="2.5s" begin="2.53s" repeatCount="indefinite" restart="always"/>
+      <animate attributeName="opacity" values="0;0.72;0.72;0" keyTimes="0;0.15;0.85;1" dur="2.5s" begin="2.53s" repeatCount="indefinite" restart="always"/>
+    </circle>
+    <circle r="2.52" opacity="0" aria-hidden="true">
+      <animateMotion path="M91.852 -53.704 L-91.852 50" dur="2.78s" begin="2.65s" repeatCount="indefinite" restart="always"/>
+      <animate attributeName="opacity" values="0;0.72;0.72;0" keyTimes="0;0.15;0.85;1" dur="2.78s" begin="2.65s" repeatCount="indefinite" restart="always"/>
+    </circle>
+    <circle r="2.52" opacity="0" aria-hidden="true">
+      <animateMotion path="M91.852 -53.704 L0 98.889" dur="2.22s" begin="2.77s" repeatCount="indefinite" restart="always"/>
+      <animate attributeName="opacity" values="0;0.72;0.72;0" keyTimes="0;0.15;0.85;1" dur="2.22s" begin="2.77s" repeatCount="indefinite" restart="always"/>
+    </circle>
+    <circle r="2.52" opacity="0" aria-hidden="true">
+      <animateMotion path="M-91.852 50 L91.852 50" dur="2.5s" begin="2.89s" repeatCount="indefinite" restart="always"/>
+      <animate attributeName="opacity" values="0;0.72;0.72;0" keyTimes="0;0.15;0.85;1" dur="2.5s" begin="2.89s" repeatCount="indefinite" restart="always"/>
+    </circle>
+    <circle r="2.52" opacity="0" aria-hidden="true">
+      <animateMotion path="M-91.852 50 L0 98.889" dur="2.78s" begin="3.01s" repeatCount="indefinite" restart="always"/>
+      <animate attributeName="opacity" values="0;0.72;0.72;0" keyTimes="0;0.15;0.85;1" dur="2.78s" begin="3.01s" repeatCount="indefinite" restart="always"/>
+    </circle>
+    <circle r="2.52" opacity="0" aria-hidden="true">
+      <animateMotion path="M0 98.889 L91.852 50" dur="2.22s" begin="3.13s" repeatCount="indefinite" restart="always"/>
+      <animate attributeName="opacity" values="0;0.72;0.72;0" keyTimes="0;0.15;0.85;1" dur="2.22s" begin="3.13s" repeatCount="indefinite" restart="always"/>
+    </circle>
+  </g>
+  <g id="nodes" fill="url(#gradient)">
+    <circle id="node1" cx="0" cy="-98.889" r="0">
+      <animate attributeName="r" values="0;24.42;22" keyTimes="0;0.72;1" dur="0.45s" begin="0s" fill="freeze" restart="always" calcMode="spline" keySplines="0.25 0.6 0.35 1;0.1 0.7 0.3 1"/>
+      <animate attributeName="r" values="22;23.76;22;20.46;22" dur="3.05s" begin="2.1s" repeatCount="indefinite" restart="always" calcMode="spline" keyTimes="0;0.25;0.5;0.75;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </circle>
+    <circle id="node2" cx="-91.852" cy="-53.704" r="0">
+      <animate attributeName="r" values="0;24.42;22" keyTimes="0;0.72;1" dur="0.45s" begin="0.1s" fill="freeze" restart="always" calcMode="spline" keySplines="0.25 0.6 0.35 1;0.1 0.7 0.3 1"/>
+      <animate attributeName="r" values="22;23.76;22;20.46;22" dur="3.05s" begin="2.34s" repeatCount="indefinite" restart="always" calcMode="spline" keyTimes="0;0.25;0.5;0.75;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </circle>
+    <circle id="node3" cx="91.852" cy="-53.704" r="0">
+      <animate attributeName="r" values="0;24.42;22" keyTimes="0;0.72;1" dur="0.45s" begin="0.2s" fill="freeze" restart="always" calcMode="spline" keySplines="0.25 0.6 0.35 1;0.1 0.7 0.3 1"/>
+      <animate attributeName="r" values="22;23.76;22;20.46;22" dur="3.05s" begin="2.58s" repeatCount="indefinite" restart="always" calcMode="spline" keyTimes="0;0.25;0.5;0.75;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </circle>
+    <circle id="node4" cx="-91.852" cy="50" r="0">
+      <animate attributeName="r" values="0;24.42;22" keyTimes="0;0.72;1" dur="0.45s" begin="0.3s" fill="freeze" restart="always" calcMode="spline" keySplines="0.25 0.6 0.35 1;0.1 0.7 0.3 1"/>
+      <animate attributeName="r" values="22;23.76;22;20.46;22" dur="3.05s" begin="2.82s" repeatCount="indefinite" restart="always" calcMode="spline" keyTimes="0;0.25;0.5;0.75;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </circle>
+    <circle id="node5" cx="91.852" cy="50" r="0">
+      <animate attributeName="r" values="0;24.42;22" keyTimes="0;0.72;1" dur="0.45s" begin="0.4s" fill="freeze" restart="always" calcMode="spline" keySplines="0.25 0.6 0.35 1;0.1 0.7 0.3 1"/>
+      <animate attributeName="r" values="22;23.76;22;20.46;22" dur="3.05s" begin="3.06s" repeatCount="indefinite" restart="always" calcMode="spline" keyTimes="0;0.25;0.5;0.75;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </circle>
+    <circle id="node6" cx="0" cy="98.889" r="0">
+      <animate attributeName="r" values="0;24.42;22" keyTimes="0;0.72;1" dur="0.45s" begin="0.5s" fill="freeze" restart="always" calcMode="spline" keySplines="0.25 0.6 0.35 1;0.1 0.7 0.3 1"/>
+      <animate attributeName="r" values="22;23.76;22;20.46;22" dur="3.05s" begin="3.3s" repeatCount="indefinite" restart="always" calcMode="spline" keyTimes="0;0.25;0.5;0.75;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+    </circle>
+  </g>
+
+</svg>

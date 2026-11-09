@@ -8,22 +8,26 @@
   <meta name="theme-color" content="#0063c3">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="IMPRESIVE">
+  <meta property="og:locale" content="en_GB">
   <meta property="og:title" content="Data Partners &amp; Readiness | IMPRESIVE">
   <meta property="og:description" content="IMPRESIVE partner data environments and the four dimensions used to assess multi-database study readiness.">
   <meta property="og:url" content="https://phd-center.github.io/impresive/databases.html">
-  <meta property="og:image" content="https://phd-center.github.io/impresive/assets/img/og-image.png">
+  <meta property="og:image" content="https://phd-center.github.io/impresive/assets/img/og/og-default.jpg">
+  <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="IMPRESIVE: leveraging local healthcare data for global real-world evidence">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Data Partners &amp; Readiness | IMPRESIVE">
   <meta name="twitter:description" content="IMPRESIVE partner data environments and the four dimensions used to assess multi-database study readiness.">
-  <meta name="twitter:image" content="https://phd-center.github.io/impresive/assets/img/og-image.png">
+  <meta name="twitter:image" content="https://phd-center.github.io/impresive/assets/img/og/og-default.jpg">
+  <meta name="twitter:image:alt" content="IMPRESIVE: leveraging local healthcare data for global real-world evidence">
   <title>Data Partners &amp; Readiness | IMPRESIVE</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20261022a">
+  <link rel="preload" href="assets/fonts/InterVariable-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261107f">
 </head>
 <body data-page="databases">
   <header class="site-header">
@@ -51,28 +55,12 @@
         <div class="section-heading">
           <p class="eyebrow">The instrument behind the readiness check</p>
           <h2>Eight source-data domains, assessed before conversion begins</h2>
-          <p>Our Source Data Survey evaluates each data dimension, categorizing items as:</p>
-          <ul class="readiness-list">
-            <li>
-              <strong>Directly Available: </strong>
-              <span>Ready for immediate extraction and mapping.</span>
-            </li>
-
-            <li>
-              <strong>Derivable: </strong>
-              <span>Obtainable through variable transformation or secondary logic.</span>
-            </li>
-
-            <li>
-              <strong>Not Available: </strong>
-              <span>Absent from the local data environment.</span>
-            </li>
-          </ul>
-
-          <p>
-            This structured assessment captures both data availability and the
-            analytical effort required for harmonization.
-          </p>
+          <p>Our Source Data Survey evaluates each data dimension and captures both data availability and the analytical effort required for harmonization. Each item is categorized as:</p>
+          <dl class="availability-key">
+            <div class="availability-key__item availability-key__item--direct"><dt>Directly available</dt><dd>Ready for immediate extraction and mapping.</dd></div>
+            <div class="availability-key__item availability-key__item--derived"><dt>Derivable</dt><dd>Obtainable through variable transformation or secondary logic.</dd></div>
+            <div class="availability-key__item availability-key__item--none"><dt>Not available</dt><dd>Absent from the local data environment.</dd></div>
+          </dl>
         </div>
         <div class="survey-matrix">
           <table>
@@ -183,12 +171,27 @@
 
     <section class="section"><div class="wrap"><div class="cta-band"><div><h2>Partner readiness needs an operating model</h2><p>See the programme roadmap and the distinct roles of PHDc, AsPEN, and IMPRESIVE.</p></div><a class="btn btn--light" href="about.html#alliance">Programme roles &amp; roadmap</a></div></div></section>
   </main>
-  <footer class="site-footer"></footer>
-  <script src="assets/js/main.js?v=20261022a" defer></script>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-main">
+        <div class="footer-identity">
+          <a class="footer-brand" href="index.html"><img src="assets/img/favicon.svg" width="34" height="34" alt="">IMPRESIVE</a>
+          <p>International multi-database study preparedness for reproducible, privacy-preserving real-world evidence.</p>
+          <a class="footer-contact" href="mailto:phdc@phdcenter.org.tw">phdc@phdcenter.org.tw</a>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <div><h3>Explore</h3><ul><li><a href="about.html">About IMPRESIVE</a></li><li><a href="objective.html">Objectives for multinational studies</a></li><li><a href="how.html">How IMPRESIVE works</a></li><li><a href="methods.html">Methods &amp; technical reference</a></li><li><a href="cases.html">Accomplishments</a></li></ul></div>
+          <div><h3>Evidence &amp; participation</h3><ul><li><a href="cases.html#case-register">Cases &amp; evidence</a></li><li><a href="databases.html">Partners &amp; readiness</a></li><li><a href="about.html#programme-roadmap">Programme roadmap</a></li><li><a href="about.html#governance-transparency">Governance &amp; transparency</a></li><li><a href="join.html">Join, FAQ &amp; contact</a></li></ul></div>
+        </nav>
+      </div>
+      <div class="footer-bottom"><span>&copy; <span id="year">2026</span> IMPRESIVE · Population Health Data Center, National Cheng Kung University</span><span>Prepared databases · Integrated evidence · Timely decisions</span></div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js?v=20261107e" defer></script>
   <script src="assets/js/explorers.js?v=20261022a" defer></script>
   <script src="assets/js/readiness-data.js?v=20261022a" defer></script>
   <script src="assets/js/readiness.js?v=20261022a" defer></script>
-  <script src="assets/js/enhancements.js?v=20261022a" defer></script>
+  <script src="assets/js/enhancements.js?v=20261107e" defer></script>
   <script src="assets/js/portal-return.js?v=20261022a" defer></script>
 </body>
 </html>

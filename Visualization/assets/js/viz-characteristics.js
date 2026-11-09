@@ -587,7 +587,7 @@
 
       var shown = selected === null ? rows.length : rows.filter(isSelected).length;
       V.clear(statusMount);
-      statusMount.appendChild(V.el("span", "", shown + " of " + rows.length + " characteristics feed the figures above."));
+      statusMount.appendChild(V.el("span", "", shown + " of " + rows.length + " characteristics feed the figures below."));
     }
 
     exportButton.addEventListener("click", function () {

@@ -8,22 +8,26 @@
   <meta name="theme-color" content="#0063c3">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="IMPRESIVE">
+  <meta property="og:locale" content="en_GB">
   <meta property="og:title" content="About IMPRESIVE">
   <meta property="og:description" content="Learn what IMPRESIVE is, how the programme has evolved, and how it relates to PHDc and AsPEN.">
   <meta property="og:url" content="https://phd-center.github.io/impresive/about.html">
-  <meta property="og:image" content="https://phd-center.github.io/impresive/assets/img/og-image.png">
+  <meta property="og:image" content="https://phd-center.github.io/impresive/assets/img/og/og-default.jpg">
+  <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="IMPRESIVE: leveraging local healthcare data for global real-world evidence">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="About IMPRESIVE">
   <meta name="twitter:description" content="Learn what IMPRESIVE is, how the programme has evolved, and how it relates to PHDc and AsPEN.">
-  <meta name="twitter:image" content="https://phd-center.github.io/impresive/assets/img/og-image.png">
+  <meta name="twitter:image" content="https://phd-center.github.io/impresive/assets/img/og/og-default.jpg">
+  <meta name="twitter:image:alt" content="IMPRESIVE: leveraging local healthcare data for global real-world evidence">
   <title>About IMPRESIVE</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20261022a">
+  <link rel="preload" href="assets/fonts/InterVariable-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261107f">
 </head>
 <body data-page="about">
   <header class="site-header">
@@ -43,16 +47,34 @@
       <div class="wrap">
         <div>
           <h2>A complete pathway from databases to decisions</h2>
-          <p class="lead"><strong>I</strong>nternational <strong>M</strong>ulti-database study <strong>PRE</strong>paredness: Databases <strong>S</strong>tandardization, <strong>I</strong>ntegration and <strong>V</strong>isualization for timely <strong>E</strong>valuation on Disease and Treatment.</p>
-          <p>The programme prepares local data environments for common study questions, transparent implementation, quality review, distributed analysis, and contextual interpretation. It does not require person-level partner data to be centralized.</p>
+          <p class="lead">The programme prepares local data environments for common study questions, transparent implementation, quality review, distributed analysis, and contextual interpretation. It does not require person-level partner data to be centralized.</p>
         </div>
         <!-- <div class="callout">
           <strong>Core message</strong>
           <h3>Prepared databases. Integrated evidence. Timely decisions.</h3>
           <p>Preparation makes assumptions, data constraints, methods, local responsibilities, and interpretation boundaries explicit before evidence is combined.</p>
         </div> -->
-        <div class="identity-intro">
-          <p class="identity-intro__lead">Our work spans the entire research pipeline, from feasibility assessment, protocol and variable specification, and data standardization (CDM implementation) to quality validation, common analytical programming, distributed analysis, and cross-database interpretation. <br>We provide the methods, reusable code, quality-assurance processes, and analytical support required to transform research questions into decision-ready evidence, while person-level data remain securely under local control.</p>
+        <div class="pathway-flow">
+          <h3 class="pathway-flow__label">Our work spans the entire research pipeline</h3>
+          <ol class="process-rail">
+            <li>Feasibility assessment</li>
+            <li>Protocol and variable specification</li>
+            <li>Data standardization (CDM implementation)</li>
+            <li>Quality validation</li>
+            <li>Common analytical programming</li>
+            <li>Distributed analysis</li>
+            <li>Cross-database interpretation</li>
+          </ol>
+          <div class="provide-strip">
+            <h3 class="provide-strip__label">We provide</h3>
+            <ul>
+              <li>Methods</li>
+              <li>Reusable code</li>
+              <li>Quality-assurance processes</li>
+              <li>Analytical support</li>
+            </ul>
+            <p>to transform research questions into decision-ready evidence.</p>
+          </div>
         </div>
       </div>
 
@@ -62,12 +84,12 @@
     <section class="section" data-mascot-scope>
       <div class="wrap">
         <div class="section-heading"><h2>Why collaborate across data environments?</h2></div>
-        <div class="callout callout--soft">
-          <li><strong>Diverse Populations & Settings: </strong>Evidence from a single database may not generalize to populations in other regions. Differences in reimbursement systems, care pathways, and prescribing practices vary significantly across databases, directly impacting measured health outcomes.</li>
-          <li><strong>Feasibility & Precision: </strong>Aggregating multiple data sources enables investigations into rare events, rare exposures, or small patient subgroups. This improves statistical precision and yields more reliable treatment effect estimates when definitions and follow-up periods are standardized.</li>
-          <li><strong>Consistency & Heterogeneity: </strong>Cross-country comparisons reveal whether diagnosis and prescribing patterns are globally consistent or where clinically and operationally meaningful variations exist.</li>
-          <li><strong>Transportability: </strong>Multi-database analyses assess whether evidence generated in one setting can reliably inform clinical and policy decisions in another.</li>
-        </div>
+        <ul class="reason-grid">
+          <li><h3>Diverse populations &amp; settings</h3><p>Evidence from a single database may not generalize to populations in other regions. Differences in reimbursement systems, care pathways, and prescribing practices vary significantly across databases, directly impacting measured health outcomes.</p></li>
+          <li><h3>Feasibility &amp; precision</h3><p>Aggregating multiple data sources enables investigations into rare events, rare exposures, or small patient subgroups. This improves statistical precision and yields more reliable treatment effect estimates when definitions and follow-up periods are standardized.</p></li>
+          <li><h3>Consistency &amp; heterogeneity</h3><p>Cross-country comparisons reveal whether diagnosis and prescribing patterns are globally consistent or where clinically and operationally meaningful variations exist.</p></li>
+          <li><h3>Transportability</h3><p>Multi-database analyses assess whether evidence generated in one setting can reliably inform clinical and policy decisions in another.</p></li>
+        </ul>
       </div>
     </section>
 
@@ -165,7 +187,7 @@
       </div>
     </section>
 
-    <section class="section section--dark" id="pillars">
+    <section class="section section--dark section--board" id="pillars">
       <div class="wrap">
         <div class="pillar-map-heading">
           <div class="section-heading"><p class="eyebrow">Three core principles</p><h2>Prepared databases. Timely analyses. Informed decisions.</h2></div>
@@ -197,9 +219,15 @@
           <article class="card card--quiet"><span class="technical-label">Research infrastructure</span><div class="org-title"> <img src="assets/img/favicon.svg" alt="IMPRESIVE" class="org-logo" width="64" height="64" loading="lazy" decoding="async" > <h3>IMPRESIVE</h3> </div><p>IMPRESIVE is the underlying infrastructure ensuring study-preparedness, standardized structures, reusable analytical programs, and seamless evidence workflows.</p></article>
         </div>
       </div>
-      <div class="wrap identity-intro">
+      <div class="wrap identity-intro" id="governance-transparency">
         <h3>Internal rules</h3>
-        <ul><li><strong>Proposal & scope review: </strong>intended uses, roles, feasibility, and priorities are thoroughly evaluated before any project execution begins.</li><li><strong>Local data control: </strong>our framework guarantees that person-level data remain within approved local environments, sharing only aggregate, privacy-compliant outputs.</li><li><strong>Ethics & regulatory approval: </strong>we strictly follow applicable ethics committees, privacy laws, data-owner requirements, and institutional guidelines.</li><li><strong>Authorship & publication governance: </strong>we ensure clear credit allocation, peer-review responsibilities, and publication expectations are established prior to public release.</li><li><strong>Conflict-of-interest management: </strong>we disclose relevant interests through the research cycle.</li></ul>
+        <dl class="rule-grid">
+          <div><dt>Proposal &amp; scope review</dt><dd>Intended uses, roles, feasibility, and priorities are thoroughly evaluated before any project execution begins.</dd></div>
+          <div><dt>Local data control</dt><dd>Our framework guarantees that person-level data remain within approved local environments, sharing only aggregate, privacy-compliant outputs.</dd></div>
+          <div><dt>Ethics &amp; regulatory approval</dt><dd>We strictly follow applicable ethics committees, privacy laws, data-owner requirements, and institutional guidelines.</dd></div>
+          <div><dt>Authorship &amp; publication governance</dt><dd>We ensure clear credit allocation, peer-review responsibilities, and publication expectations are established prior to public release.</dd></div>
+          <div><dt>Conflict-of-interest management</dt><dd>We disclose relevant interests through the research cycle.</dd></div>
+        </dl>
       </div>
     </section>
 
@@ -213,9 +241,24 @@
       </div>
     </section>
   </main>
-  <footer class="site-footer"></footer>
-  <script src="assets/js/main.js?v=20261022a" defer></script>
-  <script src="assets/js/enhancements.js?v=20261022a" defer></script>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-main">
+        <div class="footer-identity">
+          <a class="footer-brand" href="index.html"><img src="assets/img/favicon.svg" width="34" height="34" alt="">IMPRESIVE</a>
+          <p>International multi-database study preparedness for reproducible, privacy-preserving real-world evidence.</p>
+          <a class="footer-contact" href="mailto:phdc@phdcenter.org.tw">phdc@phdcenter.org.tw</a>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <div><h3>Explore</h3><ul><li><a href="about.html">About IMPRESIVE</a></li><li><a href="objective.html">Objectives for multinational studies</a></li><li><a href="how.html">How IMPRESIVE works</a></li><li><a href="methods.html">Methods &amp; technical reference</a></li><li><a href="cases.html">Accomplishments</a></li></ul></div>
+          <div><h3>Evidence &amp; participation</h3><ul><li><a href="cases.html#case-register">Cases &amp; evidence</a></li><li><a href="databases.html">Partners &amp; readiness</a></li><li><a href="about.html#programme-roadmap">Programme roadmap</a></li><li><a href="about.html#governance-transparency">Governance &amp; transparency</a></li><li><a href="join.html">Join, FAQ &amp; contact</a></li></ul></div>
+        </nav>
+      </div>
+      <div class="footer-bottom"><span>&copy; <span id="year">2026</span> IMPRESIVE · Population Health Data Center, National Cheng Kung University</span><span>Prepared databases · Integrated evidence · Timely decisions</span></div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js?v=20261107e" defer></script>
+  <script src="assets/js/enhancements.js?v=20261107e" defer></script>
   <script src="assets/js/portal-return.js?v=20261022a" defer></script>
 </body>
 </html>
